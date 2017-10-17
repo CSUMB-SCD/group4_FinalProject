@@ -1,8 +1,9 @@
 # group4_FinalProject
-Jessie Dowding, Samba Diallo, Regie Daquioag, and Phillip Emmons
+Jessie Dowding, Samba Diallo, Regie Daquioag, and Phillip Emmons <br>
+Project: Movie Insights
 
 
-When running on Cloud9: <br>
+## When running on Cloud9: <br>
 Don't forget to install Express
 
         npm install -g express-generator
