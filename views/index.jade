@@ -1,5 +1,42 @@
-extends layout
+//http://html2jade.aaron-powell.com/
+// https://www.sitepoint.com/jade-tutorial-for-beginners/
+// hyphen is jscript tag
+        
+//- var message = "Live as brave men; and if fortune is adverse, front its blows with brave hearts.";
+//- var name ="Marcus Tullius Cicero";
+//- var linkMessage = "https://www.twitter.com/";
+//- var muhImage = "/img/test.jpg";
 
-block content
-  h1= title
-  p Welcome to #{para}
+html
+head
+    meta(charset='utf-8')
+             
+    title Assignment 2
+    
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    style(type='text/css').
+         #gettyImg {
+              //background-image: url('!{imageURI}');
+              //background-size: 100% 100%;
+              //background-repeat: no-repeat;
+              //height: 750px;
+          }
+          
+body#bodyVal
+
+  div#bgLeft
+         
+  div#bgRight
+  
+  div#gettyImg #{title}
+    div#textArea 
+  
+      article
+        p #{para}
+                            
+        //p #{author}
+          
+    footer
+      a.btn(href= '#{linkMessage}' target="_blank") Twitter!
+     
