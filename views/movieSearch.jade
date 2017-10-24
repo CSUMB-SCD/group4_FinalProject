@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  p Welcome to #{para}
+  form(action='/')
+    | Movie Title: 
+    input(type='text', name='movieTitle')
+    br
+    | Producers Name: 
+    input(type='text', name='producersName')
+    br
+    input(type='submit', value='Submit')
