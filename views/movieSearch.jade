@@ -1,12 +1,18 @@
 extends layout
 
 block content
-  p Welcome to #{para}
+  p Welcome #{para}
   form(action='/')
     | Movie Title: 
     input(type='text', name='movieTitle')
     br
+    | Date: 
+    input(type='date', name='movieDate')
+    br
     | Producers Name: 
     input(type='text', name='producersName')
+    br
+    | actor/actress: 
+    input(type='text', name='actorActress')
     br
     input(type='submit', value='Submit')

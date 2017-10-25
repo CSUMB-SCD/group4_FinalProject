@@ -2,9 +2,15 @@ doctype html
 html
   head
     title= title
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    h1.title= title
+    .row
+      .col-sm-11(style='background-color:lavenderblush;')
+        h1.title= title
+      .col-sm-1(style='background-color:lavender;')
+        button.btn.btn-default(type='button') Logout
+
     #myTopnav.topnav
       a(href='/') Home
       a(href='/movieSearch') Movie Search
