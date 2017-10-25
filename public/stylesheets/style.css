@@ -36,6 +36,12 @@ a {
     color: white;
 }
 
-.title {
+.title{
   text-align: center;
+}
+footer {
+  vertical-align: bottom;
+  text-align: center;
+  position: relative;
+  top: 100px;
 }
