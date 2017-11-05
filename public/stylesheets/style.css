@@ -40,9 +40,21 @@ a {
 .title{
   text-align: center;
 }
+
 footer {
   vertical-align: bottom;
   text-align: center;
   position: relative;
   top: 100px;
+}
+
+table {
+  border: 2px solid black;
+  margin: 0 auto;
+  width: 300px;
+}
+
+td, th {
+  border: 2px solid black;
+  text-align: center;
 }
