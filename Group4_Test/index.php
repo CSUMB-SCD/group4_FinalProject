@@ -10,10 +10,6 @@
       <div class="col-sm-11">
         <h1 class="title">Home</h1>
       </div>
-      <div class="col-sm-1">
-        <button type="button" class="btn btn-default">Logout</button>
-      </div>
-    </div>
     <?php
         include 'inc/nav.php';
     ?>
