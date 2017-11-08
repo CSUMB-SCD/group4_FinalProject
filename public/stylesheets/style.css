@@ -27,8 +27,11 @@ header{
   margin: 0 auto;
   width: 80%;
     color: #fff;
-    font-size: 3.0em;
+    font-size: 3.5em;
     font-family: arial,cursive;
+    padding: 2% 0 2% 0;
+    font-style: italic;
+    font-weight: bold;
   
 }
 /*#textArea {*/
@@ -42,17 +45,17 @@ header{
 /*    padding-top:10px;*/
 /*}*/
 
-#gettyImg {
+/*#gettyImg {*/
     /*background-image: url('../img/test.jpg');
     background-size: cover;
     either here or as an inline image*/
-    margin: 0 auto;
-    border: solid 2px black;
-    width: 80%;
-    display: inline-block;
-    box-shadow: 15px 15px 7px #656565;
-    margin-top: 10%;
-}
+/*    margin: 0 auto;*/
+/*    border: solid 2px black;*/
+/*    width: 80%;*/
+/*    display: inline-block;*/
+/*    box-shadow: 15px 15px 7px #656565;*/
+/*    margin-top: 10%;*/
+/*}*/
 
 article {
     color: #fff;
