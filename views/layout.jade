@@ -2,6 +2,24 @@ doctype html
 html
   head
     title= title
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    .row
+      .col-sm-11
+        h1.title= title
+      .col-sm-1
+        button.btn.btn-default(type='button') Logout
+
+    #myTopnav.topnav
+      a(href='/') Home
+      a(href='/movieSearch') Movie Search
     block content
+    
+    block footer
+      footer.footer
+          .container
+            button.btn.btn-default(type='button') About Us
+            button.btn.btn-default(type='button') Basic Info
+            button.btn.btn-default(type='button') Contact
+

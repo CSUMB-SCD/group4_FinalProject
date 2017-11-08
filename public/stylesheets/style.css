@@ -79,22 +79,42 @@ footer {
     text-align: left;
 }
 
-/*.btn {*/
-/*    background: #025Ab8;*/
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    margin: 2%;
+}
 
-/*    border-radius: 28px;*/
-/*    font-family: Arial;*/
-/*    color: #ffffff;*/
-/*    font-size: 1.7em;*/
-/*    font-weight: bold;*/
-/*    padding: 10px 20px 10px 20px;*/
-/*    text-decoration: none;*/
-/*    position:fixed;*/
-/*    bottom: 25%;*/
-/*    left: 25%;*/
-/*}*/
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
 
-/*.btn:hover {*/
-/*    background: #31B0D5;*/
-/*    text-decoration: none;*/
-/*}*/
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.title{
+  text-align: center;
+}
+footer {
+  vertical-align: bottom;
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
