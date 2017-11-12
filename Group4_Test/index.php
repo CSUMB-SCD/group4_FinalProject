@@ -10,7 +10,7 @@
     include 'inc/dbConnection.php';
     include 'php/source.php';
     
-    //$dbConn = getDBConnection("m7jj2camtbmdo8g6");
+    //$dbConn = getDBConnection();
 
   if(isset($_POST['logout'])){
       session_destroy();
@@ -35,7 +35,12 @@
     <?php
         include 'inc/nav.php';
     ?>
-        <div class="containerAD">
+<div id="id01" class="">
+  
+  <form method="POST" class="" name="loginForm">
+
+
+    <div class="containerAD">
       <label><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="username" required id="ittAD">
 
@@ -47,6 +52,19 @@
       <input type="submit" name ="login" value="Login" class="btnAD btn" />
      
     </div>
+
+   
+  </form>
+</div>    
+
+<?php
+            if(isset($_POST['login'])){
+              echo "goMain";
+                goMain();
+        }
+      ?>
+     
+
 
     <?php
         include 'inc/footer.php';
