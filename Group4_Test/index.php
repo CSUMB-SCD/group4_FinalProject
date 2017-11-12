@@ -10,7 +10,7 @@
     include 'inc/dbConnection.php';
     include 'php/source.php';
     
-    $dbConn = getDBConnection("comicDB");
+    //$dbConn = getDBConnection("m7jj2camtbmdo8g6");
 
   if(isset($_POST['logout'])){
       session_destroy();
