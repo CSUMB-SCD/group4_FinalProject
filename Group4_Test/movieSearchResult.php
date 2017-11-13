@@ -26,46 +26,38 @@
 
 <!DOCTYPE html>
 <html>
-  <meta charset='utf-8'/>
-  <head>
-    <title>Movie Search Results</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-   
-       
+    <meta charset='utf-8'/>
+    <head>
+        <title>Movie Search Results</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
         <?php
-          include 'inc/header.php';
-          include 'inc/nav.php';
+        include 'inc/header.php';
+        include 'inc/nav.php';
         ?>
-        
         <div class= "wrapper" style="width: 50% !important">
-        <h4 id="welcome">Welcome </h4>
-        <div id="id02" class="">
-          <h1 class="title">Movie Search Results</h1>
-          <div class="containerAD">
-          <table>
-              <tr>
-                <th>Movie Details</th>
-                <th>Result</th>
-              </tr>
-              <tr>
-                <td>Title</td>
-                <td>percentage%</td>
-              </tr>
-        </table>
+            <h4 id="welcome">Welcome </h4>
+            <div id="id02" class="">
+                <h1 class="title">Movie Search Results</h1>
+                <div class="containerAD">
+                    <table>
+                        <tr>
+                            <th>Movie Details</th>
+                            <th>Result</th>
+                        </tr>
+                        <tr>
+                            <td>Title</td>
+                            <td>percentage%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
-         </div>
-          </div>
-    <?php
+        <?php
         include 'inc/footer.php';
-    ?>
-     <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
-  </body>
+        ?>
+        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
+    </body>
 </html>
-
-
- 
- 
- 

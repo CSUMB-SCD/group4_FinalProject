@@ -38,10 +38,9 @@
     </head>
     <body>
         <?php
-          include 'inc/header.php';
-          include 'inc/nav.php';
+        include 'inc/header.php';
+        include 'inc/nav.php';
         ?>
-        
         <div class= "wrapper">
             <h4 id="welcome">Welcome </h4>
             <div class="containerAD">
@@ -82,8 +81,8 @@
             </div> 
         </div>
         <?php
-            include 'inc/footer.php';
+        include 'inc/footer.php';
         ?>
-         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
-  </body>
+        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
+    </body>
 </html>

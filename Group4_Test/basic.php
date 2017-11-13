@@ -22,20 +22,19 @@
         //echo "goMain <br>";
         goMain();
     }
-    
 ?>
 
 <!DOCTYPE html>
 <html>
-  <meta charset='utf-8'/>
-  <head>
+    <meta charset='utf-8'/>
+    <head>
     <title>Deliverables</title></title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-     <?php include 'inc/header.php';
-          include 'inc/nav.php';
+    </head>
+    <body>
+        <?php include 'inc/header.php';
+        include 'inc/nav.php';
         ?>
         <div class= "wrapper" style="width: 40% !important">
             <h4 id="welcome">Welcome </h4>
@@ -43,7 +42,7 @@
                 <h3><strong>Deliverables</strong></h3>
                 <p>Our goal is to roll out a motion picture predictability application based on actresses, actors, soundtrack composers, writers, release date, budget, release day of the week, and directors prior work that affects a movie’s triumph or crash. A value will be assigned to film crew and additionally to their past movies they worked on as if it was really bad, or won an Oscar award. Likewise, if the movie was released on Christmas day, it will have a greater mean value than another made available on Labor Day weekend, or just some random day.
                 </p>
-                  <p>Users will have their search results saved to a DB which they will be able to access later to review their previous searches.
+                <p>Users will have their search results saved to a DB which they will be able to access later to review their previous searches.
                 </p>
                 <h3><strong>Extra Features</strong></h3>
                 <ul>
@@ -58,9 +57,9 @@
                 </ul>
             </div>
         </div>
-    <?php
+        <?php
         include 'inc/footer.php';
-    ?>
-     <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
-  </body>
+        ?>
+        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
+    </body>
 </html>

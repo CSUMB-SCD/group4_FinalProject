@@ -1,12 +1,14 @@
 body {
-  padding: 1% 3% 1% 3%;
-  font-family: "Lucida Grande" , Helvetica, Arial, sans-serif;
+    padding: 1% 3% 1% 3%;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-p{
+
+p {
     font-size: 1.2em;
 }
 
 /* Add a black background color to the top navigation */
+
 .topnav {
     background-color: #333;
     overflow: hidden;
@@ -18,8 +20,8 @@ p{
     list-style: none;
 }
 
-
 /* Style the links inside the navigation bar */
+
 .topnav a {
     display: inline-block;
     color: #f2f2f2;
@@ -28,21 +30,21 @@ p{
     text-decoration: none;
     font-size: 1.4em;
     width: 200px;
-    
 }
 
 /* Change the color of links on hover */
+
 .topnav a:hover {
     background-color: #ddd;
     color: black;
 }
 
 /* Add a color to the active/current link */
+
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
 }
-
 
 footer {
     display: inline;
@@ -51,53 +53,51 @@ footer {
     vertical-align: bottom;
     text-align: center;
     top: 100px;
-
-
 }
 
 table {
-  margin: 0 auto;
-  width: 80%;
+    margin: 0 auto;
+    width: 80%;
 }
 
 td {
-  /*border: 1px solid black;*/
-  width: 50%;
-  padding: 10px 25px 0px 25px;
-  vertical-align: top;
-  
+    /*border: 1px solid black;*/
+    width: 50%;
+    padding: 10px 25px 0px 25px;
+    vertical-align: top;
 }
 
-li{
-    padding:2px;
-    font-size:1.2em;
+li {
+    padding: 2px;
+    font-size: 1.2em;
 }
 
+/*------custom font example-------*/
+/*@font-face {*/
+/*    font-family: iMan;*/
+/*    src: url('../font/iMan.ttf');*/
+/*}*/
 
-
-/****************************   NEW   *******************/
-
-@font-face { font-family: iMan; src: url('../font/iMan.ttf'); } 
 #bgLeft {
-  position: absolute;
-  background-image: url("../img/bg1.jpg");
-  left: 0;
-  top: 0;
-  width: 17%;
-  height: 130%;
+    position: absolute;
+    background-image: url("../img/bg1.jpg");
+    left: 0;
+    top: 0;
+    width: 17%;
+    height: 130%;
     opacity: .7;
-  z-index: -1;
+    z-index: -1;
 }
 
 #bgRight {
-  position: absolute;
-  background-image: url("../img/bg2.jpg");
-  right: 0;
-  top: 0;
-  width: 17%;
-  height: 130%;
-  opacity: .7;
-  z-index: -1;
+    position: absolute;
+    background-image: url("../img/bg2.jpg");
+    right: 0;
+    top: 0;
+    width: 17%;
+    height: 130%;
+    opacity: .7;
+    z-index: -1;
 }
 
 .mySlides {
@@ -115,7 +115,7 @@ header {
     position: relative;
 }
 
-#title{
+#title {
     text-align: center;
     font-style: italic;
     font-weight: bolder;
@@ -123,8 +123,7 @@ header {
     text-shadow: 3px 3px 2px #888;
 }
 
-
-#wrapper{
+#wrapper {
     background-color: red;
     color: white;
     border: solid 2px black;
@@ -132,25 +131,22 @@ header {
     font-size: 1.1em;
     box-shadow: 10px 10px 3px gray;
     margin: auto 0;
-    display:inline-block;
+    display: inline-block;
     padding: 10px;
 }
 
-
-
-#carouselCointainer{
-margin: 0 auto;  /*centers carousel*/
-width: 360px;
+#carouselCointainer {
+    margin: 0 auto;
+    /*centers carousel*/
+    width: 360px;
 }
 
 #myCarousel {
-  margin-top: 30px;
-  
+    margin-top: 30px;
 }
 
 .item {
-  border:1px solid #eee;
-
+    border: 1px solid #eee;
 }
 
 #textArea {
@@ -179,44 +175,46 @@ width: 360px;
     text-decoration: none;
     margin: 0 2 0 2;
     width: 150px
-     
 }
 
-.btn:hover, .btn a:hover {
-
-    color:#fff;
+.btn:hover,
+.btn a:hover {
+    color: #fff;
     opacity: .8;
     background-image: linear-gradient(to bottom, #333, #d6d6d6);
     text-decoration: none;
 }
-.btn, .btn a:active{
+
+.btn,
+.btn a:active {
     text-decoration: none;
     color: #fff;
 }
 
-.btn a{
+.btn a {
     color: #fff;
 }
-
 
 .w3-content {
     float: left;
 }
 
-#mLogin{
+#mLogin {
     text-align: center;
 }
 
-.wrapper{
+.wrapper {
     width: 60%;
     margin: auto;
-    padding:10px;
+    padding: 10px;
     min-height: 600px
 }
 
-/**** BEGIN login modal *****/
+/**** BEGIN login modal *****   going to add later *****/
 /* Full-width input fields */
-#ittAD, #itpAD {
+
+#ittAD,
+#itpAD {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -226,28 +224,29 @@ width: 360px;
 }
 
 /* Set a style for all buttons */
+
 .btnAD {
     background-color: #4CAF50;
     color: white;
-
     margin: 8px;
     border: 4px double black;
     cursor: pointer;
     border-radius: 15px;
 }
 
-.sub{
-    float:right !important;
+.sub {
+    float: right !important;
 }
 
 /* Extra styles for the cancel button */
-#cancelbtnAD: active{
-        box-shadow: 8px 8px 5px #000;
-        
+
+#cancelbtnAD: active {
+    box-shadow: 8px 8px 5px #000;
+
 }
 
-
 /* Center the image and position the close button */
+
 #imgcontainerAD {
     text-align: center;
     margin: 24px 0 12px 0;
@@ -260,28 +259,40 @@ width: 360px;
 
 /* The Modal (background) */
 .modalAD {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
     padding-top: 60px;
 }
 
 /* Modal Content/Box */
+
 .modal-contentAD {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 25%; /* Could be more or less, depending on screen size */
+    width: 25%;
+    /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
+
 .closeAD {
     position: absolute;
     right: 25px;
@@ -298,29 +309,40 @@ width: 360px;
 }
 
 /* Add Zoom Animation */
+
 .animateAD {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
 }
-    
+
 @keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
 }
 
 /* Change styles for span and cancel button on extra small screens */
+
 @media screen and (max-width: 300px) {
     span.pswAD {
-       display: block;
-       float: none;
+        display: block;
+        float: none;
     }
     .cancelbtnAD {
-       width: 100%;
+        width: 100%;
     }
 }
+
 /**** END login modal *****/
