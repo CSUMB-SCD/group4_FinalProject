@@ -37,7 +37,7 @@
       <?php include 'inc/header.php';
           include 'inc/nav.php';
         ?>
-        <div class= "wrapper" style="width: 60% !important">
+        <div class= "wrapper">
         <h4 id="welcome">Welcome </h4>
         <div id="" class="">
         <table width="100%">
@@ -45,13 +45,13 @@
                 <td>
                   <h3><strong>Team G4FP Members:</strong></h3>
                      <ol>
-                         <li><strong>Jessie Dowding</strong> - Project Manager - jdowding@csumb.edu<br> Git: JessDF Slack: jdowding
+                         <li><strong>Jessie Dowding</strong> - Project Manager <br> jdowding@csumb.edu<br> Git: JessDF Slack: jdowding
                          </li>
-                         <li><strong>Regie Daquioag</strong> - System Engineer - rdaquiong@csumb.edu<br> Git: Regie-Daquioag Slack: Regie Daquioag
+                         <li><strong>Regie Daquioag</strong> - System Engineer <br> rdaquiong@csumb.edu<br> Git: Regie-Daquioag Slack: Regie Daquioag
                          </li>
-                         <li><strong>Samba Diallo</strong> - Software Architect - sdiallo@csumb.edu<br>Git: SambaDialloB Slack: shabashiki
+                         <li><strong>Samba Diallo</strong> - Software Architect <br> sdiallo@csumb.edu<br>Git: SambaDialloB Slack: shabashiki
                          </li>
-                         <li><strong>Phillip T. Emmons</strong> - Quality Assurance - pemmons@csumb.edu <br>Git: philemmons Slack: pemmons
+                         <li><strong>Phillip T. Emmons</strong> - Quality Assurance <br> pemmons@csumb.edu <br>Git: philemmons Slack: pemmons
                          </li>
                      </ol>
                  </td>

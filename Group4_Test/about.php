@@ -37,7 +37,7 @@
      <?php include 'inc/header.php';
           include 'inc/nav.php';
         ?>
-        <div class= "wrapper" style="width: 60% !important">
+        <div class= "wrapper" >
         <h4 id="welcome">Welcome </h4>
         <div id="" class=""></div>
             <h3><strong>Our Motivation:</strong></h3>
