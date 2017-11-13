@@ -91,7 +91,7 @@ td, th {
     display: none;
 }
 
-#one {
+#logoutBtn {
     float: right;
     margin-right: 30px;
 }
@@ -186,6 +186,7 @@ td {
 }
 .btn:active{
     text-decoration: none;
+    color: #fff;
 }
 
 .w3-content {

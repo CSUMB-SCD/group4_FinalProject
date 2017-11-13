@@ -10,11 +10,14 @@
     include 'inc/dbConnection.php';
     include 'php/source.php';
     
-    //$dbConn = getDBConnection();
+  $dbConn = getDBConnection(getenv("dKey"));
 
   if(isset($_POST['logout'])){
       session_destroy();
-      header("Location: indexFinal.php");
+      $_SESSION = [];
+      //header("Location: indexFinal.php");
+      //reset values
+      
   }
 ?>
 
@@ -29,13 +32,17 @@
   <body>
     <div class="row">
       <div class="col-sm-11">
-        <h1 class="title">Home</h1>
+        <h1 class="title">Movie Insight</h1>
       </div>
+  <?php
+       echo "<h2>Welcome ". $_SESSION["name"]."</h2>";
 
-    <?php
         include 'inc/nav.php';
     ?>
-<div id="id01" class="">
+      <form method ="get" id="logoutBtn" >
+            <input type="submit" value="Logout" class="btn" name="logout" style="box-shadow: none !important; margin-top: 4px;"/>
+    </form>
+<div id="id02" class="">
   
   <form method="POST" class="" name="loginForm">
 
@@ -56,7 +63,9 @@
    
   </form>
 </div>    
+<div>
 
+</div>
 <?php
             if(isset($_POST['login'])){
               echo "goMain";

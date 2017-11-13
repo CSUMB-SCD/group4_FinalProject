@@ -1,7 +1,7 @@
 <?php
 //include 'inc/dbConnection.php';
 
-$dbConn = getDBConnection();
+//$dbConn = getDBConnection();
 
 /*
 *Form vars - All input converted to lower case.
@@ -184,10 +184,11 @@ function goMain(){
             echo"<span style='color:red'><h3>Wrong username or password.</h3></span>";
         echo"</form>";
      } else {
-         $_SESSION["name"] = $record['name'] . " " . $record['email'];
-         $_SESSION["username"]  = $record['username'];
-         $_SESSION["user"] = "User";
-         echo "Welcome ". $_SESSION["user"]." : ".$_SESSION["username"];
+         //$_SESSION["name"] = $record['name'];
+         //$_SESSION["email"] = $record['email'];
+         //$_SESSION["user"]  = $record['username'];
+         //$_SESSION["user"] = "active";
+         //echo "Welcome ". $_SESSION["user"]." : ".$_SESSION["username"];
          //header("Location: admin.php"); //redirect to some page
      }
 }
