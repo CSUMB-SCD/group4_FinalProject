@@ -57,7 +57,7 @@
               <input type="password" placeholder="Enter Password" name="password" required id="itpAD">
                 
               <input type="submit" name ="login" value="Login" class="btnAD btn" />
-              <div class="btnAD btn"><a href='register.php'>Register</a></div>
+              <a href='register.php'><div class="btnAD btn">Register</div></a>
             </div>
         
           </form>

@@ -1,9 +1,9 @@
 <?php
     echo "<footer>";
       echo "<div id='container'>";
-        echo "<div class='btnAD btn'><a href='about.php'>About Us</a></div>";
-        echo "<div class='btnAD btn'><a href='basic.php'>Deliverables</a></div>";
-        echo "<div class='btnAD btn'><a href='contact.php'>Contact</a></div>";
+        echo "<a href='about.php'><div class='btnAD btn'>About Us</div></a>";
+        echo "<a href='basic.php'><div class='btnAD btn'>Deliverables</div></a>";
+        echo "<a href='contact.php'><div class='btnAD btn'>Contact</div></a>";
       echo "</div>";
     echo "</footer>";
 

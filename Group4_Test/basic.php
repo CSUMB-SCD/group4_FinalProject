@@ -47,12 +47,12 @@
         <div class= "wrapper" style="width: 50% !important">
             <h4 id="welcome">Welcome </h4>
             <div id="" class=""></div>
-            <h3>Deliverables</h3>
+            <h3><strong>Deliverables</strong></h3>
             <p>Our goal is to roll out a motion picture predictability application based on actresses, actors, soundtrack composers, writers, release date, budget, release day of the week, and directors prior work that affects a movie’s triumph or crash. A value will be assigned to film crew and additionally to their past movies they worked on as if it was really bad, or won an Oscar award. Likewise, if the movie was released on Christmas day, it will have a greater mean value than another made available on Labor Day weekend, or just some random day.
             </p>
           <p>Users will have their search results saved to a DB which they will be able to access later to review their previous searches.
             </p>
-            <h3>Extra Features</h3>
+            <h3><strong>Extra Features</strong></h3>
           <ul>
               <li>We will enable a chat feature so that users can discuss movie predictions.
               </li>

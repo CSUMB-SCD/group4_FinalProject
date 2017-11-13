@@ -1,0 +1,29 @@
+You're all set!
+You're ready to start developing with Google Places API Web Service
+YOUR API KEY
+AIzaSyA5AWMrNdIEkdrfPyyF5ANMM0X4zmT18vo
+info
+To improve your app's security, restrict this key's usage in the API Console.
+
+source
+https://developers.google.com/places/web-service/get-api-key?refresh=1
+
+csumb
+36.6529218,-121.7981631
+
+
+ <div id="map" style="width:400px;height:400px; background:yellow">
+                         <script>
+                         function myMap() {
+                            var mapOptions = {
+                                center: new google.maps.LatLng(36.6529218,-121.7981631),
+                                zoom: 10,
+                                mapTypeId: google.maps.MapTypeId.HYBRID
+                            }
+                        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                        }
+                        </script>
+                        
+                        
+                        
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AWMrNdIEkdrfPyyF5ANMM0X4zmT18vo&callback=myMap"; 
