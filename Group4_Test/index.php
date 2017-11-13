@@ -9,12 +9,8 @@
     if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
         $_SESSION["name"] = "Guest";
         //alert("user is not logged in");
-        
-    }else{
-      
-      
     }
-
+    
     if(isset($_POST['logout'])){
         //$_SESSION =[];
         session_destroy();
@@ -23,15 +19,13 @@
     }
     
     if(isset($_POST['login'])){
-        echo "goMain <br>";
+        //echo "goMain <br>";
         goMain();
     }
     
     if(isset($_POST['register'])){
-        echo "goMain <br>";
-        goMain();
+        
     }
-    
 ?>
 
 <!DOCTYPE html>
@@ -44,19 +38,12 @@
   </head>
   <body>
    
-        <header id="title">~ Movie Insight ~
+       
         <?php
-            if(isset($_SESSION['user'])){
-            echo '<form method ="POST" id="logoutBtn" >';
-            echo  '<input type="submit" value="Logout" class="btnAD btn" name="logout"/>';
-            echo '</form>';
-            }
-        ?>
-        </header>
-        
-        <?php
+          include 'inc/header.php';
           include 'inc/nav.php';
         ?>
+        
         <div class= "wrapper" style="width: 50% !important">
         <h4 id="welcome">Welcome </h4>
         <div id="id02" class="">

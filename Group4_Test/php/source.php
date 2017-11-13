@@ -189,7 +189,7 @@ function goMain(){
          //$_SESSION["email"] = $record['email'];
          //$_SESSION["user"]  = $record['username'];
          $_SESSION["user"] = "active";
-         echo "Welcome ". $_SESSION["user"]." : ".$_SESSION["name"]."<br>";
+         //echo "Welcome ". $_SESSION["user"]." : ".$_SESSION["name"]."<br>";
          //header("Location: admin.php"); //redirect to some page
      }
 }

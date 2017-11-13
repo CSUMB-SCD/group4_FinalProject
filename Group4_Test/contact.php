@@ -34,14 +34,7 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-   
-        <header id="title">~ Movie Insight ~
-            <form method ="POST" id="logoutBtn" >
-              <input type="submit" value="Logout" class="btnAD btn" name="logout"/>
-            </form>
-        </header>
-        
-        <?php
+      <?php include 'inc/header.php';
           include 'inc/nav.php';
         ?>
         <div class= "wrapper" style="width: 60% !important">

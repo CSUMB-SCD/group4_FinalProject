@@ -173,9 +173,9 @@ width: 360px;
     color: white;
     border-radius: 28px;
     background-color: red;
-    background-image: linear-gradient(to bottom, #ff0000, #4d0202);
+    background-image: linear-gradient(to bottom, #d6d6d6, #333);
     font-size: 20px;
-  
+    text-shadow: #000 1px 1px 0px;
     text-decoration: none;
     margin: 0 2 0 2;
     width: 150px
@@ -186,7 +186,7 @@ width: 360px;
 
     color:#fff;
     opacity: .8;
-    background-image: linear-gradient(to bottom, #4d0202, #ff0000);
+    background-image: linear-gradient(to bottom, #333, #d6d6d6);
     text-decoration: none;
 }
 .btn, .btn a:active{
