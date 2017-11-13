@@ -4,27 +4,25 @@
     include 'inc/dbConnection.php';
     include 'php/source.php';
      
-    if (!isset($_SESSION["user"])) {  //Check whether the admin has logged in
+    $dbConn = getDBConnection(); 
+     
+    if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
         $_SESSION["name"] = "Guest";
-        alert("user is not logged in");
+        //alert("user is not logged in");
     }
-    
-// }else{
-//     header("Location:index.php");
-// }
-    
-    $dbConn = getDBConnection();
 
     if(isset($_POST['logout'])){
-      //session_unset(); 
+        //$_SESSION =[];
         session_destroy();
-        
-        //$_SESSION = [];
-        //header("Location: indexFinal.php");
-        //reset values
-       alert("logged out");
-        
+        header("Location: index.php");
+        //alert("logged out");
     }
+    
+    if(isset($_POST['login'])){
+        echo "goMain <br>";
+        goMain();
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +38,8 @@
         <div class="col-sm-11">
             <h1 class="title">Movie Insight</h1>
         </div>
-             <h4 id="welcome">Welcome </h4>
-           <?php
+            <h4 id="welcome">Welcome </h4>
+            <?php
               include 'inc/nav.php';
             ?>
         <form method ="POST" id="logoutBtn" >
@@ -65,11 +63,8 @@
         </div>    
     <div>
     <?php
-        if(isset($_POST['login'])){
-          echo "goMain <br>";
-          goMain();
-        }
         include 'inc/footer.php';
     ?>
+     <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
   </body>
 </html>

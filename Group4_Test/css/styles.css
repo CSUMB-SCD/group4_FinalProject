@@ -121,9 +121,6 @@ header {
     padding: 10px;
 }
 
-body {
-    text-transform: capitalize;
-}
 
 #carouselCointainer{
 margin: 0 auto;  /*centers carousel*/
