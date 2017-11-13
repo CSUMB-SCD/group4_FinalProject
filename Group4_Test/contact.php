@@ -29,7 +29,7 @@
 <html>
   <meta charset='utf-8'/>
   <head>
-    <title>Administration</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
@@ -47,7 +47,6 @@
         <div class= "wrapper">
         <h4 id="welcome">Welcome </h4>
         <div id="id02" class="">
-          
           
           
         </div>    
