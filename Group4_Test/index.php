@@ -35,17 +35,16 @@
   </head>
   <body>
     <div class="row">
-        <div class="col-sm-11">
-            <h1 class="title">Movie Insight</h1>
-        </div>
-            <h4 id="welcome">Welcome </h4>
-            <?php
-              include 'inc/nav.php';
-            ?>
-        <form method ="POST" id="logoutBtn" >
-              <input type="submit" value="Logout" class="btn" name="logout" style="box-shadow: none !important; margin-top: 4px;"/>
-        </form>
+        <header id="title">~ Movie Insight ~
+            <form method ="POST" id="logoutBtn" >
+                  <input type="submit" value="Logout" class="btnAD btn" name="logout"/>
+            </form>
+        </header>
+        <?php
+          include 'inc/nav.php';
+        ?>
         
+        <h4 id="welcome">Welcome </h4>
         <div id="id02" class="">
           <form method="POST" class="" name="loginForm">
     

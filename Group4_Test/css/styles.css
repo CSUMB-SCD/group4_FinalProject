@@ -1,10 +1,6 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
+  padding: 3%;
+  font: 1.2em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 /* Add a black background color to the top navigation */
@@ -37,15 +33,16 @@ a {
     color: white;
 }
 
-.title{
-  text-align: center;
-}
 
 footer {
-  vertical-align: bottom;
-  text-align: center;
-  position: relative;
-  top: 100px;
+    display: inline;
+    width: 50%;
+    margin: auto 0;
+    vertical-align: bottom;
+    text-align: center;
+    top: 100px;
+
+
 }
 
 table {
@@ -97,16 +94,17 @@ td, th {
 }
 
 header {
-  text-align: center;
-    padding:30px;
+    text-align: center;
     width:100%;
 }
-.title{
-    border: solid 2px white;
-    /*font-family: iMan;
-    font-size:9.0em;
-    text-shadow: 3px 3px 2px #000;
-    */
+
+#title{
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 5.0em;
+    text-shadow: 3px 3px 2px #888;
+   
 }
 #wrapper{
     background-color: red;
@@ -168,9 +166,10 @@ td {
     border-radius: 28px;
     background-color: red;
     background-image: linear-gradient(to bottom, #ff0000, #4d0202);
-     font-size: 20px;
-     padding: 5px 20px 5px 20px;
-     text-decoration: none;
+    font-size: 20px;
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    margin: 0 2 0 2;
      
 }
 
@@ -178,8 +177,8 @@ td {
 
     color:#fff;
     opacity: .8;
-      background-image: linear-gradient(to bottom, #4d0202, #ff0000);
-  text-decoration: none;
+    background-image: linear-gradient(to bottom, #4d0202, #ff0000);
+    text-decoration: none;
 }
 .btn:active{
     text-decoration: none;
@@ -192,9 +191,6 @@ td {
 
 #mLogin{
     text-align: center;
-}
-a{
-text-transform: lowercase;
 }
 
 .wrapper{
@@ -220,15 +216,14 @@ text-transform: lowercase;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
- border: 4px double black;
+    margin: 8px;
+    border: 4px double black;
     cursor: pointer;
-    width: 100%;
     border-radius: 15px;
 }
 
 .btnAD:hover {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* Extra styles for the cancel button */
