@@ -44,10 +44,20 @@
         <?php
           include 'inc/nav.php';
         ?>
-        <div class= "wrapper">
+        <div class= "wrapper" style="width: 40% !important">
         <h4 id="welcome">Welcome </h4>
-        <div id="id02" class="">
-          
+        <div id="" class="">
+          <h3>Team Members: </h3>
+         <ol>
+             <li>Jessie Dowding - Project Manager - jdowding@csumb.edu Git: JessDF Slack: jdowding
+             </li>
+             <li>Regie Daquioag - System Engineer - rdaquiong@csumb.edu Git: Regie-Daquioag Slack: Regie Daquioag
+             </li>
+             <li>Samba Diallo - Software Architect - sdiallo@csumb.edu Git: SambaDialloB Slack: shabashiki
+             </li>
+             <li>Phillip T. Emmons - Quality Assurance - pemmons@csumb.edu Git: philemmons Slack: pemmons
+             </li>
+         </ol>  
           
         </div>    
         </div>
