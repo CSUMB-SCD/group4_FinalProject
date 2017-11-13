@@ -1,17 +1,24 @@
 <?php
-function getDBConnection($dbname) {
+function getDBConnection() {
     
     // //https://devcenter.heroku.com/articles/jawsdb#using-jawsdb-with-php
 
+    $url = getenv('JAWSDB_URL');
+    $dbparts = parse_url($url);
+    
+    $hostname = $dbparts['host'];
+    //echo $hostname."   ";
+    $username = $dbparts['user'];
+    //echo $username."   ";
+    $password = $dbparts['pass'];
+    //echo $password."   ";
+    $database = ltrim($dbparts['path'],'/');
+    //echo $database."   ";
 
 
-    $host =     getenv("hKey");
-    //$dbname =   process.env.dbKey;
-    $username = getenv("uKey");
-    $password = getenv("pwKey");
     try {
         //Creating database connection
-        $dbConn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        $dbConn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
         // Setting Errorhandling to Exception
         $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
          echo "Connected successfully";
@@ -32,10 +39,11 @@ function getDBConnection($dbname) {
 
 // - OLD 
 // function getDBConnection() {
-//     $host =     process.env.hKey;
-//     $dbname =   process.env.dbKey;
-//     $username = process.env.uKey;
-//     $password = process.env.pwKey;
+
+    // $host =     getenv("hKey");
+    // $dbname =   getenv("dbKey");
+    // $username = getenv("uKey");
+    // $password = getenv("pwKey");
     
 //     try {
 //         //Creating database connection

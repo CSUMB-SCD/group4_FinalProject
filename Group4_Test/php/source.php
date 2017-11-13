@@ -1,4 +1,5 @@
 <?php
+
 //include 'inc/dbConnection.php';
 
 //$dbConn = getDBConnection();
@@ -184,14 +185,20 @@ function goMain(){
             echo"<span style='color:red'><h3>Wrong username or password.</h3></span>";
         echo"</form>";
      } else {
-         //$_SESSION["name"] = $record['name'];
+         $_SESSION["name"] = $record['name'];
          //$_SESSION["email"] = $record['email'];
          //$_SESSION["user"]  = $record['username'];
-         //$_SESSION["user"] = "active";
-         //echo "Welcome ". $_SESSION["user"]." : ".$_SESSION["username"];
+         $_SESSION["user"] = "active";
+         echo "Welcome ". $_SESSION["user"]." : ".$_SESSION["name"]."<br>";
          //header("Location: admin.php"); //redirect to some page
      }
 }
+
+//https://stackoverflow.com/questions/13851528/how-to-pop-an-alert-message-box-using-php
+function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+
 
 //admin.php
 /*
