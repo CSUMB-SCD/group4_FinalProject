@@ -182,17 +182,22 @@ td {
      
 }
 
-.btn:hover {
+.btn:hover, .btn a:hover {
 
     color:#fff;
     opacity: .8;
     background-image: linear-gradient(to bottom, #4d0202, #ff0000);
     text-decoration: none;
 }
-.btn:active{
+.btn, .btn a:active{
     text-decoration: none;
     color: #fff;
 }
+
+.btn a{
+    color: #fff;
+}
+
 
 .w3-content {
     float: left;
@@ -203,9 +208,10 @@ td {
 }
 
 .wrapper{
-    width: 50%;
+    width: 35%;
     margin: auto;
     padding:10px;
+    min-height: 500px
 
 }
 

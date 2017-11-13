@@ -37,8 +37,8 @@
    
         <header id="title">~ Movie Insight ~
             <form method ="POST" id="logoutBtn" >
-                  <input type="submit" value="Logout" class="btnAD btn" name="logout"/>
-        </form>
+              <input type="submit" value="Logout" class="btnAD btn" name="logout"/>
+            </form>
         </header>
         
         <?php
@@ -57,9 +57,11 @@
               <input type="password" placeholder="Enter Password" name="password" required id="itpAD">
                 
               <input type="submit" name ="login" value="Login" class="btnAD btn" />
+              <div class="btnAD btn"><a href='register.php'>Register</a></div>
             </div>
         
           </form>
+          
         </div>    
         </div>
     <?php
