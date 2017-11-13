@@ -57,7 +57,7 @@ footer {
 
 table {
   margin: 0 auto;
-  width: 100%;
+  width: 80%;
 }
 
 td {
@@ -254,9 +254,9 @@ width: 360px;
     position: relative;
 }
 
-.containerAD {
-    padding: 16px;
-}
+/*.containerAD {*/
+/*    padding: 16px;*/
+/*}*/
 
 /* The Modal (background) */
 .modalAD {

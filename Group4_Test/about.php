@@ -19,7 +19,7 @@
     }
     
     if(isset($_POST['login'])){
-        echo "goMain <br>";
+        //echo "goMain <br>";
         goMain();
     }
     
@@ -39,7 +39,7 @@
         ?>
         <div class= "wrapper" >
         <h4 id="welcome">Welcome </h4>
-        <div id="" class=""></div>
+        <div id="" class=""></div> 
             <h3><strong>Our Motivation:</strong></h3>
               <p>This software assists with evaluating new movies and users can straightforwardly make a decision whether to order a tickets in advance or wait until it appears on Netflix.
               </p>
@@ -60,7 +60,7 @@
              </p>
              <p>
              </p>
-             
+            
         </div>
     <?php
         include 'inc/footer.php';

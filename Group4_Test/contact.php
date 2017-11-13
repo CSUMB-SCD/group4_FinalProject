@@ -19,7 +19,7 @@
     }
     
     if(isset($_POST['login'])){
-        echo "goMain <br>";
+        //echo "goMain <br>";
         goMain();
     }
     
