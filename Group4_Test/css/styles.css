@@ -1,24 +1,30 @@
 body {
   padding: 3%;
-  font: 1.2em "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Lucida Grande" , Helvetica, Arial, sans-serif;
 }
 
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
     overflow: hidden;
-    margin: 2%;
+    margin-top: 1%;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    list-style: none;
 }
+
 
 /* Style the links inside the navigation bar */
 .topnav a {
-    float: left;
-    display: block;
+    display: inline-block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    width: 200px;
 }
 
 /* Change the color of links on hover */
@@ -89,13 +95,14 @@ td, th {
 }
 
 #logoutBtn {
-    float: right;
-    margin-right: 30px;
+    position: absolute;
+    right: 0;
 }
 
 header {
-    text-align: center;
-    width:100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 #title{
@@ -104,8 +111,9 @@ header {
     font-weight: bolder;
     font-size: 5.0em;
     text-shadow: 3px 3px 2px #888;
-   
 }
+
+
 #wrapper{
     background-color: red;
     color: white;
@@ -167,9 +175,10 @@ td {
     background-color: red;
     background-image: linear-gradient(to bottom, #ff0000, #4d0202);
     font-size: 20px;
-    padding: 5px 20px 5px 20px;
+  
     text-decoration: none;
     margin: 0 2 0 2;
+    width: 150px
      
 }
 
@@ -215,16 +224,16 @@ td {
 .btnAD {
     background-color: #4CAF50;
     color: white;
-    padding: 14px 20px;
+
     margin: 8px;
     border: 4px double black;
     cursor: pointer;
     border-radius: 15px;
 }
 
-.btnAD:hover {
-    opacity: 0.9;
-}
+/*.btnAD:hover {*/
+/*    opacity: 0.9;*/
+/*}*/
 
 /* Extra styles for the cancel button */
 #cancelbtnAD: active{

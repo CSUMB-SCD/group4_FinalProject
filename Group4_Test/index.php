@@ -34,16 +34,17 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <div class="row">
+   
         <header id="title">~ Movie Insight ~
             <form method ="POST" id="logoutBtn" >
                   <input type="submit" value="Logout" class="btnAD btn" name="logout"/>
-            </form>
+        </form>
         </header>
+        
         <?php
           include 'inc/nav.php';
         ?>
-        
+        <div class= "wrapper">
         <h4 id="welcome">Welcome </h4>
         <div id="id02" class="">
           <form method="POST" class="" name="loginForm">
@@ -60,7 +61,7 @@
         
           </form>
         </div>    
-    <div>
+        </div>
     <?php
         include 'inc/footer.php';
     ?>
