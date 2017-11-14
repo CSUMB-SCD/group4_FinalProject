@@ -1,28 +1,33 @@
-function checkUsername(){
-    var validUser = true
-     $("#usernameError").html("");
-    //alert($("#username").val());
-    $.ajax({
-        type: "get",
-        url: "../php/checkUsername.php",
-        dataType: "json",
-        data: { "username":$("#username").val()  },
-        success: function( data, status ) {
-            if( !data ) {//if (data == false)
-                //alert("username available!");
-                $("#username").css("backgroundColor","");
-                $("#usernameError").css("color", "blue").append("Username available!");
-            }else{
-                //alert("username taken!");
-                displayError("#username","Username unavailable!");
-                validUser = false;
-            }
-          },
-          complete: function(data,status) { //optional, used for debugging purposes
-              //alert(status);
-          }
-   });//AJAX
-   return validUser
+// function checkUsername(){
+//     var validUser = true
+//      $("#usernameError").html("");
+//     //alert($("#username").val());
+//     $.ajax({
+//         type: "get",
+//         url: "../php/checkUsername.php",
+//         dataType: "json",
+//         data: { "username":$("#username").val()  },
+//         success: function( data, status ) {
+//             if( !data ) {//if (data == false)
+//                 //alert("username available!");
+//                 $("#username").css("backgroundColor","");
+//                 $("#usernameError").css("color", "blue").append("Username available!");
+//             }else{
+//                 //alert("username taken!");
+//                 displayError("#username","Username unavailable!");
+//                 validUser = false;
+//             }
+//           },
+//           complete: function(data,status) { //optional, used for debugging purposes
+//               //alert(status);
+//           }
+//   });//AJAX
+//   return validUser
+// }
+
+function displayError(elementId, errorMessage){
+    $(elementId+"Error").css("color","red").append(errorMessage);   //NOTE: +"Error" modifies the element ID!
+    $(elementId).css("backgroundColor","#FFDEDE").focus(); 
 }
 
 function checkEmail(){
@@ -78,21 +83,21 @@ function checkPassword(){
 
 function validateForm(){
     var isValid = false;
-    if( checkPassword() && checkEmail() && checkRetype() && checkUsername() )
+    if( checkPassword() && checkEmail() && checkRetype() )//&& checkUsername() )
         isValid = true;
         
-    //http://stackoverflow.com/questions/2469999/how-to-check-if-form-elements-are-not-empty
-    //http://stackoverflow.com/questions/15002031/get-id-value-of-all-input-elements
-    $(":input").each(function() {
-       if($(this).val() === ""){
-        //alert(this);
-        //alert($(this).attr('id'))
-        var formID = $(this).attr('id');
-        $( "#"+formID+"Error" ).html("");
-        displayError("#"+formID ,"This is a required field.");
-        isValid = false;
-       }
-    });
+    // //http://stackoverflow.com/questions/2469999/how-to-check-if-form-elements-are-not-empty
+    // //http://stackoverflow.com/questions/15002031/get-id-value-of-all-input-elements
+    // $(":input").each(function() {
+    //   if($(this).val() === ""){
+    //     //alert(this);
+    //     //alert($(this).attr('id'))
+    //     var formID = $(this).attr('id');
+    //     $( "#"+formID+"Error" ).html("");
+    //     displayError("#"+formID ,"This is a required field.");
+    //     isValid = false;
+    //   }
+    // });
 }
 
 $(document).ready(function(){
@@ -107,9 +112,4 @@ $(document).ready(function(){
     $("#pwAgain").change( function(){
         checkRetype();
     });
-    
-    // $("#username").change( function(){
-    //     checkUsername("#username");
-    // });
-
 });//documentReady
