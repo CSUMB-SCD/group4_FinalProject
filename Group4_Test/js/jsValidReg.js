@@ -1,3 +1,30 @@
+function checkUsername(){
+    var validUser = true
+     $("#usernameError").html("");
+    //alert($("#username").val());
+    $.ajax({
+        type: "get",
+        url: "../php/checkUsername.php",
+        dataType: "json",
+        data: { "username":$("#username").val()  },
+        success: function( data, status ) {
+            if( !data ) {//if (data == false)
+                //alert("username available!");
+                $("#username").css("backgroundColor","");
+                $("#usernameError").css("color", "blue").append("Username available!");
+            }else{
+                //alert("username taken!");
+                displayError("#username","Username unavailable!");
+                validUser = false;
+            }
+          },
+          complete: function(data,status) { //optional, used for debugging purposes
+              //alert(status);
+          }
+   });//AJAX
+   return validUser
+}
+
 function checkEmail(){
     var validEmail =true;
     var email = $("#email").val();
@@ -51,10 +78,9 @@ function checkPassword(){
 
 function validateForm(){
     var isValid = false;
-    if( checkPassword() && checkEmail() && checkRetype() && checkName("#first") && checkName("#last") && getCity() && checkPhone() && checkUsername() )
+    if( checkPassword() && checkEmail() && checkRetype() && checkUsername() )
         isValid = true;
         
-    
     //http://stackoverflow.com/questions/2469999/how-to-check-if-form-elements-are-not-empty
     //http://stackoverflow.com/questions/15002031/get-id-value-of-all-input-elements
     $(":input").each(function() {
@@ -67,16 +93,10 @@ function validateForm(){
         isValid = false;
        }
     });
-    
-    //alert(checkState());  ***** This is bug - if it is included in the if statement above it does not print to console "this is a required field."
-    if( !checkState() )
-        isValid = false
-    
-    return isValid;
 }
 
 $(document).ready(function(){
-    $("#password").change( function(){
+    $("#pw").change( function(){
         checkPassword();
     });
     
@@ -88,20 +108,8 @@ $(document).ready(function(){
         checkRetype();
     });
     
-    $("#first").change( function(){
-        checkName("#first");
-    });
-    
-    $("#last").change( function(){
-        checkName("#last");
-    });
-    
-    $("#phone").change( function(){
-        checkPhone();
-    });
-    
-    $("#state").change( function(){
-        checkState(); 
-    });
-    
+    // $("#username").change( function(){
+    //     checkUsername("#username");
+    // });
+
 });//documentReady

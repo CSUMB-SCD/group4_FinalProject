@@ -213,8 +213,8 @@ header {
 /**** BEGIN login modal *****   going to add later *****/
 /* Full-width input fields */
 
-#ittAD,
-#itpAD {
+.ittAD,
+.itpAD {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

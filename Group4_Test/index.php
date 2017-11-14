@@ -34,7 +34,17 @@
     <head>
         <title>Index</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        
+         <!--Latest compiled and minified CSS -->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         <!--Latest compiled JavaScript -->
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+        
         <link rel="stylesheet" href="css/styles.css">
+        
+        <script src='js/jsValidReg.js'></script>
     </head>
     <body>
         <?php
@@ -49,31 +59,35 @@
                     <td>
                         <form method="POST" class="" name="loginForm">
                             <label><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="username" required id="ittAD">
+                            <input type="text" placeholder="Enter Username" name="username" required class="ittAD">
                             
                             <label><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="password" required id="itpAD">
+                            <input type="password" placeholder="Enter Password" name="password" required class="itpAD">
                             
                             <input type="submit" name ="login" value="Login" class="btnAD btn sub" />
                         </form>
                     <td>
-                        <form method="POST" class="" name="registerForm">
+                        <form method="POST" name="register" onsubmit="return validateForm()">
                             <label><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="username" required id="ittAD">
+                            <input type="text" placeholder="Enter Username" id="username" required class="ittAD" onchange = "checkUsername()">
+                            <span id="usernameError"></span>
                             
                             <label><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="password1" required id="itpAD">
+                            <input type="password" placeholder="Enter Password" id="pw" required class="itpAD">
+                            <span id="passwordError"></span>
                             
                             <label><b>Retype Password</b></label>
-                            <input type="password" placeholder="Retype Password" name="password2" required id="itpAD">
+                            <input type="password" placeholder="Retype Password" id="pwAgain" required class="itpAD">
+                            <span id="pwAgainError"></span>
                             
                             <label><b>Name</b></label>
-                            <input type="text" placeholder="Enter Name" name="name" required id="ittAD">
+                            <input type="text" placeholder="Your name" id="name" required class="ittAD">
                             
-                            <label><b>eMail</b></label>
-                            <input type="text" placeholder="Enter eMail" name="email" required id="ittAD">
+                            <label><b>Email</b></label>
+                            <input type="text" placeholder="example@google.com" id="email" required class="ittAD">
+                            <span id="emailError"></span>
                             
-                            <input type="submit" name ="register" value="Register" class="btnAD btn sub" />
+                            <input type="submit" id ="register" value="Register" class="btnAD btn sub" />
                         </form>
                     </td>
                     </tr>
