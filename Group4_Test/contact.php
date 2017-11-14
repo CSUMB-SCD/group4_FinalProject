@@ -39,7 +39,7 @@
         <div class= "wrapper">
             <h4 id="welcome">Welcome </h4>
             <div id="" class="">
-                <table width="100%">
+                <table>
                     <tr>
                     <td>
                         <h3><strong>Team G4FP Members:</strong></h3>

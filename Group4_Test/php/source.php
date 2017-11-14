@@ -181,16 +181,16 @@ function goMain(){
     $record = $statement->fetch(PDO::FETCH_ASSOC);
 
      if (empty($record)) { //wrong credentials
-        echo"<form method='POST' action='index.php'>";
-            echo"<span style='color:red'><h3>Wrong username or password.</h3></span>";
-        echo"</form>";
+       echo"<form method='POST' action='index.php'>";
+            echo"<span style='color:red'><h5>Wrong username or password.</h5></span>";
+       echo"</form>";
      } else {
          $_SESSION["name"] = $record['name'];
          //$_SESSION["email"] = $record['email'];
          //$_SESSION["user"]  = $record['username'];
          $_SESSION["user"] = "active";
-         //echo "Welcome ". $_SESSION["user"]." : ".$_SESSION["name"]."<br>";
-         //header("Location: admin.php"); //redirect to some page
+         echo "Welcome ". $_SESSION["user"]."<br>";
+         header("Location: index.php"); //redirect to some page
      }
 }
 
