@@ -35,59 +35,59 @@ function checkUsername(){
 
 
 
-// function checkEmail(){
-//     var validEmail =true;
-//     var email = $("#email").val();
+function checkEmail(){
+    var validEmail =true;
+    var email = $("#email").val();
     
-//     $("#emailError").html("");
-//     if( !/[a-z]+@[a-z]+\.[a-z]{2,4}$/i.test(email) ){
-//         displayError("#email", "  Correct email format: xxxxxx @ xxxxxxx . xxx");
-//         validEmail = false;
-//     }else{
-//         $("#email").css("backgroundColor", "");
-//     }
-//     alert("email "+ validEmail);
-//     return validEmail;
-// }
+    $("#emailError").html("");
+    if( !/[a-z]+@[a-z]+\.[a-z]{2,4}$/i.test(email) ){
+        displayError("#email", "  Correct email format: xxxxxx @ xxxxxxx . xxx");
+        validEmail = false;
+    }else{
+        $("#email").css("backgroundColor", "");
+    }
+    alert("email "+ validEmail);
+    return validEmail;
+}
 
-// function checkRetype(){
-//     var validRetype = true;
-//     var password = $("#pw").val();
-//     var pwAgain = $("#pwAgain").val();
+function checkRetype(){
+    var validRetype = true;
+    var password = $("#pw").val();
+    var pwAgain = $("#pwAgain").val();
     
-//     $("#pwAgainError").html("");
-//     if( password !== pwAgain ){
-//         displayError("#pwAgain", "  Password must match!");
-//         validRetype = false;
-//     }else{
-//         $("#pwAgain").css("backgroundColor","");
-//         //$("#pwAgainError").css("color", "blue").append("  Passwords match!");
-//     }
-//     alert("retype "+ validRetype);
-//     return validRetype;
-// }
+    $("#pwAgainError").html("");
+    if( password !== pwAgain ){
+        displayError("#pwAgain", "  Password must match!");
+        validRetype = false;
+    }else{
+        $("#pwAgain").css("backgroundColor","");
+        //$("#pwAgainError").css("color", "blue").append("  Passwords match!");
+    }
+    alert("retype "+ validRetype);
+    return validRetype;
+}
 
-// function checkPassword(){
-//     var validPassword = true;
-//     var password = $("#pw").val();
+function checkPassword(){
+    var validPassword = true;
+    var password = $("#pw").val();
     
-//     $("#pwError").html("");
-//     $("#pw").css("backgroundColor","");
-//     if( password.length < 6 ){
-//         displayError("#pw", "  Password must be longer than 5 characters!");
-//         validPassword = false;
-//     }
-//     if( !/[0-9]/.test(password) ){
-//         displayError("#pw", "<br>  Password must include at least one digit!");
-//         validPassword = false;
-//     }
-//     if( !/[A-Z]/.test(password) ){
-//         displayError("#pw", "<br>  Password must include at least one uppercase!");
-//         validPassword = false;
-//     }
-//      alert("pw "+ validPassword);
-//     return validPassword;
-// }
+    $("#pwError").html("");
+    $("#pw").css("backgroundColor","");
+    if( password.length < 6 ){
+        displayError("#pw", "  Password must be longer than 5 characters!");
+        validPassword = false;
+    }
+    if( !/[0-9]/.test(password) ){
+        displayError("#pw", "<br>  Password must include at least one digit!");
+        validPassword = false;
+    }
+    if( !/[A-Z]/.test(password) ){
+        displayError("#pw", "<br>  Password must include at least one uppercase!");
+        validPassword = false;
+    }
+     alert("pw "+ validPassword);
+    return validPassword;
+}
 
 function validateForm(){
     var isValid = false;
