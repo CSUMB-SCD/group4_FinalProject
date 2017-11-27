@@ -112,9 +112,24 @@ footer {
 .title{
   text-align: center;
 }
+
 footer {
   vertical-align: bottom;
   text-align: center;
   position: relative;
   top: 100px;
 }
+<<<<<<< HEAD
+
+table {
+  border: 2px solid black;
+  margin: 0 auto;
+  width: 300px;
+}
+
+td, th {
+  border: 2px solid black;
+  text-align: center;
+}
+=======
+>>>>>>> cc6a0d3c6d62cb2120e2f9f31ff6e73907c6ce9a
