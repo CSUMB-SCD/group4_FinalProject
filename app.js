@@ -48,3 +48,8 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+app.listen(process.env.PORT, function() {
+  console.log(process.env.IP + ":" + process.env.PORT)
+  
+})
