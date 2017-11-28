@@ -42,7 +42,7 @@ function checkEmail(){
     }else{
         $("#email").css("backgroundColor", "");
     }
-    alert("email "+ validEmail);
+    //alert("email "+ validEmail);
     return validEmail;
 }
 
@@ -81,7 +81,7 @@ function checkPassword(){
         displayError("#pw", "<br>  Password must include at least one uppercase!");
         validPassword = false;
     }
-     alert("pw "+ validPassword);
+     //alert("pw "+ validPassword);
     return validPassword;
 }
 
@@ -91,7 +91,7 @@ function validateForm(){
    //   if( checkUserName() ){
             isValid = true;
        }
-    alert("vf "+ isValid);
+    //alert("vf "+ isValid);
  
 }
 

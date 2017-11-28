@@ -171,7 +171,7 @@ function goMain(){
     $pwForm = $_POST['password'];
     
     //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
-    $sql = "SELECT * FROM admin WHERE username = :username AND password = :password";
+    $sql = "SELECT * FROM user WHERE username = :username AND password = :password";
     
     $nPara[':username'] = $userForm;
     $nPara[':password'] = $pwForm;
