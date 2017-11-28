@@ -69,7 +69,7 @@
                     <td>
                         <form method="POST" name="register" action="#" onsubmit="return validateForm()">
                             <label><b>Username</b></label> <span id="usernameError"></span>
-                            <input type="text" placeholder="Enter Username" id="username" required class="ittAD" onchange = "checkUsername()">
+                            <input type="text" placeholder="Enter Username" id="username" required class="ittAD" onchange = "checkUserName()">
                            
                             
                             <label><b>Password</b></label><span id="pwError"></span>

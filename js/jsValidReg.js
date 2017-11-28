@@ -1,18 +1,16 @@
 
-
-
 function displayError(elementId, errorMessage){
     $(elementId+"Error").css("color","red").append(errorMessage);   //NOTE: +"Error" modifies the element ID!
     $(elementId).css("backgroundColor","#FFDEDE").focus(); 
 }
 
-function checkUsername(){
+function checkUserName(){
     var validUser = true;
-     $("#usernameError").html("");
+    $("#usernameError").html("");
     alert($("#username").val());
     $.ajax({
-        type: "get",
-        url: "../php/checkUserName.php",
+        type: "GET",
+        url:"../../php/checkUserName.php",
         dataType: "json",
         data: { "username":$("#username").val()  },
         success: function( data, status ) {
@@ -25,14 +23,13 @@ function checkUsername(){
                 displayError("#username","  Username unavailable!");
                 validUser = false;
             }
-          },
-          complete: function(data,status) { //optional, used for debugging purposes
-              //alert(status);
-          }
-  });//AJAX
-  return validUser
+        },
+        complete: function(data,status) { //optional, used for debugging purposes
+        alert(status);
+        }
+    });//AJAX
+    return validUser;
 }
-
 
 
 function checkEmail(){
