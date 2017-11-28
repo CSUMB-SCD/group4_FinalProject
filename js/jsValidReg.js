@@ -7,30 +7,29 @@ function displayError(elementId, errorMessage){
 function checkUserName(){
     var validUser = true;
     $("#usernameError").html("");
-    alert($("#username").val());
+    //alert($("#username").val());
     $.ajax({
         type: "GET",
-        url:"../../php/checkUserName.php",
+        url:"../php/checkUserName.php",
         dataType: "json",
         data: { "username":$("#username").val()  },
         success: function( data, status ) {
             if( !data ) {//if (data == false)
-                alert("username available!");
+                //alert("username available!");
                 $("#username").css("backgroundColor","");
-                $("#usernameError").css("color", "blue").append("  Username available!");
+                $("#usernameError").css("color", "blue").append("<br>  Username available!");
             }else{
-                alert("username taken!");
+                //alert("username taken!");
                 displayError("#username","  Username unavailable!");
                 validUser = false;
             }
         },
         complete: function(data,status) { //optional, used for debugging purposes
-        alert(status);
+        //alert(status);
         }
     });//AJAX
     return validUser;
 }
-
 
 function checkEmail(){
     var validEmail =true;
@@ -38,7 +37,7 @@ function checkEmail(){
     
     $("#emailError").html("");
     if( !/[a-z]+@[a-z]+\.[a-z]{2,4}$/i.test(email) ){
-        displayError("#email", "  Correct email format: xxxxxx @ xxxxxxx . xxx");
+        displayError("#email", "<br>  Correct email format: xxxx @ xxxx . xxx");
         validEmail = false;
     }else{
         $("#email").css("backgroundColor", "");
@@ -54,7 +53,7 @@ function checkRetype(){
     
     $("#pwAgainError").html("");
     if( password !== pwAgain ){
-        displayError("#pwAgain", "  Password must match!");
+        displayError("#pwAgain", "<br>  Passwords must match!");
         validRetype = false;
     }else{
         $("#pwAgain").css("backgroundColor","");
@@ -71,7 +70,7 @@ function checkPassword(){
     $("#pwError").html("");
     $("#pw").css("backgroundColor","");
     if( password.length < 6 ){
-        displayError("#pw", "  Password must be longer than 5 characters!");
+        displayError("#pw", "<br>  Password must be longer than 5 characters!");
         validPassword = false;
     }
     if( !/[0-9]/.test(password) ){
@@ -88,23 +87,12 @@ function checkPassword(){
 
 function validateForm(){
     var isValid = false;
-   //if( checkPassword() && checkEmail() && checkRetype() && checkUsername() )
-       if( checkUsername() ){
+   if( checkPassword() && checkEmail() && checkRetype() ){//&& checkUserName() ){
+   //   if( checkUserName() ){
             isValid = true;
        }
     alert("vf "+ isValid);
-    // //http://stackoverflow.com/questions/2469999/how-to-check-if-form-elements-are-not-empty
-    // //http://stackoverflow.com/questions/15002031/get-id-value-of-all-input-elements
-    // $(":input").each(function() {
-    //   if($(this).val() === ""){
-    //     //alert(this);
-    //     //alert($(this).attr('id'))
-    //     var formID = $(this).attr('id');
-    //     $( "#"+formID+"Error" ).html("");
-    //     displayError("#"+formID ,"This is a required field.");
-    //     isValid = false;
-    //   }
-    // });
+ 
 }
 
 $(document).ready(function(){

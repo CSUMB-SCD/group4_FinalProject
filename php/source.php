@@ -227,37 +227,39 @@ function info(){
 //     return $record;
 // }
 
-//conInsert.php
-// function addCon(){
-//     global $dbConn;
-// if(isset($_GET['submit'])) {  //admin has submitted the "update user" form
-//           $sql = "INSERT INTO convention (
-//                     con_id,  
-//                     conName,   
-//                     city,   
-//                     state,  
-//                     creator,  
-//                     website,  
-//                     turnOut   
-//                 )
-//                 VALUES (
-//                 :con_id,:conName,:city, :state, :creator, :website,:turnOut
-//                 )";
-                  
-//           $nPara = array();        
-//           $nPara[':con_id'] = $_GET['con_id'];       
-//           $nPara[':conName']  = $_GET['conName'];
-//           $nPara[':city'] = $_GET['city'];
-//           $nPara[':state'] = $_GET['state'];
-//           $nPara[':creator'] = $_GET['creator'];
-//           $nPara[':website'] = $_GET['website'];
-//           $nPara[':turnOut'] = $_GET['turnOut'];
-          
-//           $stmt = $dbConn->prepare($sql);
-//           $stmt->execute($nPara);
-//           //clear the value - prevent multiple insertions
-//           $nPara = array();  
-//         }//eof if
-// }
+////conInsert.php
+function addUser(){
+    global $dbConn;
+//alert('in addUser');
+    if(isset($_POST['reg'])) {  //user has submitted the "register" form
+//alert('user submitted');
+        $sql = "INSERT INTO user (
+                username,  
+                password,   
+                name,   
+                email
+            )
+            VALUES (
+            :username, :password, :name, :email
+            )";
+              
+        $nPara = array();        
+        $nPara[':username'] = $_POST['usernameReg'];  
+//alert($_POST['usernameReg']);        
+        $nPara[':password']  = $_POST['pwReg'];
+//alert($_POST['usernameReg']);   
+        $nPara[':name'] = $_POST['nameReg'];
+//alert($_POST['nameReg']);   
+        $nPara[':email'] = $_POST['emailReg'];
+//alert($_POST['emailReg']);   
+
+//alert('named para go');
+        $stmt = $dbConn->prepare($sql);
+        $stmt->execute($nPara);
+        //clear the value - prevent multiple insertions
+        $nPara = array(); 
+alert('insert complete');
+    }//eof if
+}
 
 ?>
