@@ -8,14 +8,14 @@
      
     if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
         $_SESSION["name"] = "Guest";
-        alert("user is not logged in");
+        //alert("user is not logged in");
     }
 
     if(isset($_POST['logout'])){
         //$_SESSION =[];
         session_destroy();
         header("Location: index.php");
-        alert("logged out");
+        //alert("logged out");
     }
     
 ?>
