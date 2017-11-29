@@ -68,7 +68,7 @@
                         echo "</td><td>".$user['email'];
                         echo "</td><td>".$user['admin'];
                         
-                    echo "</td><td><a href='php/userUpdate.php?userId=".$user['userID']."'>
+                    echo "</td><td><a href='userUpdate.php?userID=".$user['userID']."'>
                           <button type=\"button\" class=\"btn-primary btn-sm\">
                           <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> Update
                           </button></a>";

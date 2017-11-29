@@ -35,7 +35,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <link rel="stylesheet" href="css/styles.css">
-        
+        <!-- jQuery dependent!!! -->
         <script src='js/jsValidReg.js'></script>
     </head>
     <body>
@@ -78,7 +78,7 @@
                             
                             
                             <label><b>Name</b></label>
-                            <input type="text" name = 'nameReg' placeholder="Your name" id="name" required class="ittAD">
+                            <input type="text" name= 'nameReg' placeholder="Your name" id="name" required class="ittAD">
                             
                             <label><b>Email</b></label><span id="emailError"></span>
                             <input type="text" name= 'emailReg' placeholder="example@google.com" id="email" required class="ittAD">

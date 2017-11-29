@@ -196,7 +196,8 @@ function goMain(){
          //echo "Welcome ". $_SESSION["user"]."<br>";
          if( $_SESSION["admin"] == '1')
             header("Location: admin.php"); //redirect to some page
-        header('Location: index.php');
+         else
+            header('Location: index.php');
      }
 }
 
@@ -225,17 +226,17 @@ function info(){
         </div>        
 */
 
-//conInsert.php and conUpdate.php
-// function getConInfo($con_id){
-//     global $dbConn;
-//     $sql = "SELECT * FROM convention WHERE con_id = $con_id"; 
-//     $stmt = $dbConn -> prepare ($sql);
-//     $stmt -> execute();
-//     $record = $stmt->fetch(PDO::FETCH_ASSOC);
-//     return $record;
-// }
+//updateuser
+function getUserInfo($userID){
+    global $dbConn;
+    $sql = "SELECT * FROM user WHERE userID = $userID"; 
+    $statement = $dbConn -> prepare ($sql);
+    $statement -> execute();
+    $record = $statement->fetch(PDO::FETCH_ASSOC);
+    return $record;
+}
 
-////conInsert.php
+//register
 function addUser(){
     global $dbConn;
 //alert('in addUser');
@@ -267,6 +268,37 @@ function addUser(){
         //clear the value - prevent multiple insertions
         $nPara = array(); 
 //alert('insert complete');
+    }//eof if
+}
+
+
+function updateUser($userID){
+    global $dbConn;
+    if(isset($_POST['update'])) {  //admin has submitted the "update user" form
+        $sql = "UPDATE user
+                SET username = :username,
+                    password = :password,
+                    name = :name,
+                    email = :email
+                WHERE userID = $userID";
+              
+$nPara = array();        
+        $nPara[':username'] = $_POST['usernameUp'];  
+//alert($_POST['usernameReg']);        
+        $nPara[':password']  = $_POST['pwUp'];
+//alert($_POST['usernameReg']);   
+        $nPara[':name'] = $_POST['nameUp'];
+//alert($_POST['nameReg']);   
+        $nPara[':email'] = $_POST['emailUp'];
+//alert($_POST['emailReg']);   
+
+//alert('named para go');
+        $stmt = $dbConn->prepare($sql);
+        $stmt->execute($nPara);
+        //clear the value - prevent multiple insertions
+        $nPara = array(); 
+//alert('update complete');
+    header('Location: userUpdate.php');
     }//eof if
 }
 

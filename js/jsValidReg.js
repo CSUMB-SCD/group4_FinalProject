@@ -92,7 +92,7 @@ function validateForm(){
             isValid = true;
        }
     //alert("vf "+ isValid);
- 
+    return isValid;
 }
 
 $(document).ready(function(){
