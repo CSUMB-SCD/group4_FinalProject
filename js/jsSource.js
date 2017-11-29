@@ -1,5 +1,11 @@
 // JavaScript File -- careful !!!!  examine url for '?''
 
+
+function displayError(elementId, errorMessage){
+    $(elementId+"Error").css("color","red").append(errorMessage);   //NOTE: +"Error" modifies the element ID!
+    $(elementId).css("backgroundColor","#FFDEDE").focus(); 
+}
+
  function lettersOnly(cs){
     var valid =true;
     var str = $(cs).val();
@@ -46,12 +52,6 @@ function validateUpdate(){
     }
     return isValid;
 }
-
-function displayError(elementId, errorMessage){
-    $(elementId+"Error").css("color","red").append(errorMessage);   //NOTE: +"Error" modifies the element ID!
-    $(elementId).css("backgroundColor","#FFDEDE").focus(); 
-}
-
 
 
 function validateInsert(){

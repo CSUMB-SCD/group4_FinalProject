@@ -2,9 +2,9 @@
 header('Access-Control-Allow-Origin: *');
 include '../inc/dbConnection.php';
 $dbConn = getDBConnection();
-    
+
     $sql = "SELECT username 
-            FROM admin
+            FROM user
             WHERE username = :username";
 
     $statement = $dbConn->prepare($sql);
@@ -13,6 +13,6 @@ $dbConn = getDBConnection();
     $statement->execute( $npara );
     $record = $statement->fetch(PDO::FETCH_ASSOC);
     
-    print_r($record);
+    //print_r($record);
     echo json_encode($record); //jsonp -> "json format with padding"
 ?>

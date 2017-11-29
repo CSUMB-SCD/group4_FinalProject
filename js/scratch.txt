@@ -1,0 +1,20 @@
+function validateForm(){
+    var isValid = false;
+   //if( checkPassword() && checkEmail() && checkRetype() && checkUsername() )
+       if( checkUsername() ){
+            isValid = true;
+       }
+    alert("vf "+ isValid);
+    // //http://stackoverflow.com/questions/2469999/how-to-check-if-form-elements-are-not-empty
+    // //http://stackoverflow.com/questions/15002031/get-id-value-of-all-input-elements
+    // $(":input").each(function() {
+    //   if($(this).val() === ""){
+    //     //alert(this);
+    //     //alert($(this).attr('id'))
+    //     var formID = $(this).attr('id');
+    //     $( "#"+formID+"Error" ).html("");
+    //     displayError("#"+formID ,"This is a required field.");
+    //     isValid = false;
+    //   }
+    // });
+}

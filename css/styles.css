@@ -349,9 +349,29 @@ header {
 
 /**** END login modal *****/
 
+
 .resultsBox {
     height: 20px;
     border: 2px solid black;
     vertical-align: middle;
     padding-bottom: 3px;
+}
+#addUser{
+    color: #00f;
+}
+
+#admin{
+    float:right;
+    border: solid 1px #000;
+    box-shadow: 3px 3px 2px #888;
+    padding: 3px;
+    color: #fff;
+    background-color: #333;
+}
+
+.btn-sm{
+    color: white;
+    border: 4px double black;
+    cursor: pointer;
+    border-radius: 15px;
 }

@@ -6,21 +6,18 @@
      
     $dbConn = getDBConnection(); 
      
-    if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
+    if(!isset($_SESSION["user"])) {  //Check whether the user has logged in
         $_SESSION["name"] = "Guest";
-        alert("user is not logged in");
+        //alert("user is not logged in");
     }
 
     if(isset($_POST['logout'])){
         //$_SESSION =[];
         session_destroy();
         header("Location: index.php");
-        alert("logged out");
+        //alert("logged out");
     }
     
-    if(isset($_POST['register'])){
-        
-    }
 ?>
 
 <!DOCTYPE html>
@@ -69,11 +66,11 @@
                     <td>
                         <form method="POST" name="register" action="#" onsubmit="return validateForm()">
                             <label><b>Username</b></label> <span id="usernameError"></span>
-                            <input type="text" placeholder="Enter Username" id="username" required class="ittAD" onchange = "checkUsername()">
+                            <input type="text" name='usernameReg' placeholder="Enter Username" id="username" required class="ittAD" onchange = "checkUserName()">
                            
                             
                             <label><b>Password</b></label><span id="pwError"></span>
-                            <input type="password" placeholder="Enter Password" id="pw" required class="itpAD">
+                            <input type="password" name= 'pwReg' placeholder="Enter Password" id="pw" required class="itpAD">
                             
                             
                             <label><b>Retype Password</b></label><span id="pwAgainError"></span>
@@ -81,13 +78,19 @@
                             
                             
                             <label><b>Name</b></label>
-                            <input type="text" placeholder="Your name" id="name" required class="ittAD">
+                            <input type="text" name = 'nameReg' placeholder="Your name" id="name" required class="ittAD">
                             
                             <label><b>Email</b></label><span id="emailError"></span>
-                            <input type="text" placeholder="example@google.com" id="email" required class="ittAD">
+                            <input type="text" name= 'emailReg' placeholder="example@google.com" id="email" required class="ittAD">
                             
                             
-                            <input type="submit" id ="register" value="Register" class="btnAD btn sub" />
+                            <input type="submit" name= 'reg' id ="register" value="Register" class="btnAD btn sub" />
+                            <?php
+                                if(isset($_POST['reg'])){// && !isset($_SESSION["user"]) ){
+                                    addUser();
+                                    echo "<h3 id='addUser'>Register Complete.</h3>";
+                                }
+                            ?>
                         </form>
                     </td>
                     </tr>
