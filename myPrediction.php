@@ -9,6 +9,15 @@
     if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
         $_SESSION["name"] = "Guest";
         //alert("user is not logged in");
+        //<!-- The Modal -->
+        echo"<div id='myModal' class='modal in'>";
+          //<!-- Modal content -->
+          echo"<div class='modal-content'>";
+            echo"<span class='close'>&times;</span>";
+            echo"<p>You haven't logged in. Please do so for this feature.</p>";
+            echo"<a href='index.php'>Log in Page</a>";
+          echo"</div>";
+        echo"</div>";
     }
 
     if(isset($_POST['logout'])){
