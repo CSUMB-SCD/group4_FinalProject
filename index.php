@@ -6,7 +6,7 @@
      
     $dbConn = getDBConnection(); 
      
-    if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
+    if(!isset($_SESSION["user"])) {  //Check whether the user has logged in
         $_SESSION["name"] = "Guest";
         //alert("user is not logged in");
     }

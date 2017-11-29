@@ -66,6 +66,8 @@
         ?>
         <script>
         document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>';
+        
+        
         </script>
     </body>
 </html>

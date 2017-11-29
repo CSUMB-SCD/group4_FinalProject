@@ -186,13 +186,20 @@ function goMain(){
        echo"</form>";
      } else {
          $_SESSION["name"] = $record['name'];
-         //$_SESSION["email"] = $record['email'];
-         //$_SESSION["user"]  = $record['username'];
+            //$_SESSION["email"] = $record['email'];
+            //$_SESSION["user"]  = $record['username'];
+         $_SESSION["admin"] = $record['admin'];
+//alert( $_SESSION["admin"]);
+
          $_SESSION["user"] = "active";
-         echo "Welcome ". $_SESSION["user"]."<br>";
-         header("Location: index.php"); //redirect to some page
+         
+         //echo "Welcome ". $_SESSION["user"]."<br>";
+         if( $_SESSION["admin"] == '1')
+            header("Location: admin.php"); //redirect to some page
      }
 }
+
+
 
 //https://stackoverflow.com/questions/13851528/how-to-pop-an-alert-message-box-using-php
 function alert($msg) {
@@ -258,7 +265,7 @@ function addUser(){
         $stmt->execute($nPara);
         //clear the value - prevent multiple insertions
         $nPara = array(); 
-alert('insert complete');
+//alert('insert complete');
     }//eof if
 }
 
