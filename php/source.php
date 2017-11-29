@@ -196,6 +196,7 @@ function goMain(){
          //echo "Welcome ". $_SESSION["user"]."<br>";
          if( $_SESSION["admin"] == '1')
             header("Location: admin.php"); //redirect to some page
+        header('Location: index.php');
      }
 }
 

@@ -39,7 +39,7 @@
             <table>
                 <tr>
                     <td><h4 id="welcome">Welcome Admin, </h4></td>
-                    <td><h4 id= 'admin'> Change/Remove Current Users</h4></td>
+                    <td><h4 id= 'admin'> Update Current Users</h4></td>
                </tr>  
             </table>
             
