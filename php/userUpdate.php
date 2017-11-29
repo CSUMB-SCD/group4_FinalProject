@@ -27,20 +27,9 @@
 <html>
     <meta charset='utf-8'/>
     <head>
-        <title>Administration</title>
+        <title>Update User</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
-        
-<script>
-    function confirmDelete(userName){
-        var confirmDelete = confirm("This is permanent.\n" + userName + " will be deleted.");
-        if (!confirmDelete){
-            return false;
-        }else{
-            return true;
-        }
-    } 
-</script>    
     </head>
     <body>
         <?php include 'inc/header.php';
