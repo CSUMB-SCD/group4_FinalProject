@@ -279,26 +279,21 @@ function updateUser($userID){
                 SET username = :username,
                     password = :password,
                     name = :name,
-                    email = :email
+                    email = :email,
+                    admin = :admin
                 WHERE userID = $userID";
               
-$nPara = array();        
+        $nPara = array();        
         $nPara[':username'] = $_POST['usernameUp'];  
-//alert($_POST['usernameReg']);        
         $nPara[':password']  = $_POST['pwUp'];
-//alert($_POST['usernameReg']);   
         $nPara[':name'] = $_POST['nameUp'];
-//alert($_POST['nameReg']);   
         $nPara[':email'] = $_POST['emailUp'];
-//alert($_POST['emailReg']);   
-
-//alert('named para go');
+        $nPara[':admin'] = $_POST['statusUp'];
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
-        //clear the value - prevent multiple insertions
-        $nPara = array(); 
-//alert('update complete');
-    header('Location: userUpdate.php');
+        $nPara = array(); //clear the value - prevent multiple insertions
+
+    header('Location: userUpdate.php?userID='.$userID);
     }//eof if
 }
 

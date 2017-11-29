@@ -40,7 +40,15 @@
             return true;
         }
     } 
-</script>    
+</script>
+        <style>
+          tr,td{
+            border: solid 1px #000;
+          }
+          th{
+              text-align: center;
+          }
+        </style>
     </head>
     <body>
         <?php include 'inc/header.php';
@@ -55,13 +63,21 @@
             </table>
             
             
-            <table class="table table-striped">
+            <table class="table-striped">
+                <thead>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Admin</th>
+                </thead>
             <?php
             
                 $users = getInfo('user');
                 foreach ($users as $user) {
                     echo"<tr>";
-                        echo "</td><td>".$user['userID'];
+                        echo "<td>".$user['userID'];
                         echo "</td><td>".$user['username'];
                         echo "</td><td>".$user['password'];
                         echo "</td><td>".$user['name'];

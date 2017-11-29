@@ -83,6 +83,13 @@
         
         <label><b>Email</b></label><span id="emailError"></span>
         <input type="text" name= 'emailUp' placeholder="example@google.com" id="email" required class="ittAD">
+        
+        <label><b>Admin Status</b></label><span id="adminError"></span>
+        <!--<input type="text" name= 'admin' placeholder="0 or 1" id="admin" required class="ittAD">-->
+         <select name= 'statusUp' id='status' required class='ittAD'>
+          <option value="0">0</option>
+          <option value="1">1</option>
+        </select> 
      </td>
     </tr>
   <tr>
@@ -104,7 +111,10 @@
     </td>
     </tr>
    <tr >
-    
+    <td>
+      <label><b>Admin Status</b></label><br>
+      <?php echo $user['admin'];?>
+    </td>
   </tr>
   <tr>
     <td>
