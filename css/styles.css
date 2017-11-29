@@ -348,3 +348,10 @@ header {
 }
 
 /**** END login modal *****/
+
+.resultsBox {
+    height: 20px;
+    border: 2px solid black;
+    vertical-align: middle;
+    padding-bottom: 3px;
+}

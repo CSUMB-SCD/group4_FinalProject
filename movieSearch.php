@@ -39,7 +39,7 @@
         <div class= "wrapper">
             <h4 id="welcome">Welcome </h4>
             <div id="id02" class="">
-                <form action="/group4_FinalProject/Group4_Test/movieSearchResult.php">Movie Title: 
+                <form action="movieSearchResult.php">Movie Title: 
                     <input type="text" name="movieTitle"/><br/>Date: 
                     <input type="date" name="movieDate"/><br/>Producers Name: 
                     <input type="text" name="producersName"/><br/>actor/actress: 

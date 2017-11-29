@@ -22,6 +22,17 @@
         //echo "goMain <br>";
         goMain();
     }
+    $GLOBALS['movieTitle'] = $_GET['movieTitle'];
+    $GLOBALS['movieDate'] = $_GET['movieDate'];
+    $GLOBALS['producersName'] = $_GET['producersName'];
+    $GLOBALS['actorActress'] = $_GET['actorActress'];
+    
+    function listMovieDetails(){
+        echo "<em><strong>Movie Title: </strong></em>".$GLOBALS['movieTitle']."<br>";
+        echo "<em><strong>Movie Date: </strong></em>".$GLOBALS['movieDate']."<br>";
+        echo "<em><strong>Producer: </strong></em>".$GLOBALS['producersName']."<br>";
+        echo "<em><strong>Actor/Actress: </strong></em>".$GLOBALS['actorActress']."<br>";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -44,12 +55,8 @@
                 <div class="containerAD">
                     <table>
                         <tr>
-                            <th>Movie Details</th>
-                            <th>Result</th>
-                        </tr>
-                        <tr>
-                            <td>Title</td>
-                            <td>percentage%</td>
+                            <td class="resultsBox"><?php  listMovieDetails() ?></td>
+                            <td class="resultsBox"><em><strong>Percentage: </strong></em>percentage%</td>
                         </tr>
                     </table>
                 </div>
