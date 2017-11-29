@@ -171,7 +171,7 @@ function goMain(){
     $pwForm = $_POST['password'];
     
     //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
-    $sql = "SELECT * FROM admin WHERE username = :username AND password = :password";
+    $sql = "SELECT * FROM user WHERE username = :username AND password = :password";
     
     $nPara[':username'] = $userForm;
     $nPara[':password'] = $pwForm;
@@ -186,13 +186,20 @@ function goMain(){
        echo"</form>";
      } else {
          $_SESSION["name"] = $record['name'];
-         //$_SESSION["email"] = $record['email'];
-         //$_SESSION["user"]  = $record['username'];
+            //$_SESSION["email"] = $record['email'];
+            //$_SESSION["user"]  = $record['username'];
+         $_SESSION["admin"] = $record['admin'];
+//alert( $_SESSION["admin"]);
+
          $_SESSION["user"] = "active";
-         echo "Welcome ". $_SESSION["user"]."<br>";
-         header("Location: index.php"); //redirect to some page
+         
+         //echo "Welcome ". $_SESSION["user"]."<br>";
+         if( $_SESSION["admin"] == '1')
+            header("Location: admin.php"); //redirect to some page
      }
 }
+
+
 
 //https://stackoverflow.com/questions/13851528/how-to-pop-an-alert-message-box-using-php
 function alert($msg) {
@@ -227,37 +234,39 @@ function info(){
 //     return $record;
 // }
 
-//conInsert.php
-// function addCon(){
-//     global $dbConn;
-// if(isset($_GET['submit'])) {  //admin has submitted the "update user" form
-//           $sql = "INSERT INTO convention (
-//                     con_id,  
-//                     conName,   
-//                     city,   
-//                     state,  
-//                     creator,  
-//                     website,  
-//                     turnOut   
-//                 )
-//                 VALUES (
-//                 :con_id,:conName,:city, :state, :creator, :website,:turnOut
-//                 )";
-                  
-//           $nPara = array();        
-//           $nPara[':con_id'] = $_GET['con_id'];       
-//           $nPara[':conName']  = $_GET['conName'];
-//           $nPara[':city'] = $_GET['city'];
-//           $nPara[':state'] = $_GET['state'];
-//           $nPara[':creator'] = $_GET['creator'];
-//           $nPara[':website'] = $_GET['website'];
-//           $nPara[':turnOut'] = $_GET['turnOut'];
-          
-//           $stmt = $dbConn->prepare($sql);
-//           $stmt->execute($nPara);
-//           //clear the value - prevent multiple insertions
-//           $nPara = array();  
-//         }//eof if
-// }
+////conInsert.php
+function addUser(){
+    global $dbConn;
+//alert('in addUser');
+    if(isset($_POST['reg'])) {  //user has submitted the "register" form
+//alert('user submitted');
+        $sql = "INSERT INTO user (
+                username,  
+                password,   
+                name,   
+                email
+            )
+            VALUES (
+            :username, :password, :name, :email
+            )";
+              
+        $nPara = array();        
+        $nPara[':username'] = $_POST['usernameReg'];  
+//alert($_POST['usernameReg']);        
+        $nPara[':password']  = $_POST['pwReg'];
+//alert($_POST['usernameReg']);   
+        $nPara[':name'] = $_POST['nameReg'];
+//alert($_POST['nameReg']);   
+        $nPara[':email'] = $_POST['emailReg'];
+//alert($_POST['emailReg']);   
+
+//alert('named para go');
+        $stmt = $dbConn->prepare($sql);
+        $stmt->execute($nPara);
+        //clear the value - prevent multiple insertions
+        $nPara = array(); 
+//alert('insert complete');
+    }//eof if
+}
 
 ?>
