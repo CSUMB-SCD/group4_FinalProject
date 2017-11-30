@@ -10,9 +10,10 @@
     $dbConn = getDBConnection();
     $sql = "DELETE FROM user
             WHERE userID = " . $_GET['userID'];
-    echo $sql;   
+    //echo $sql;   
     $stmt = $dbConn->prepare($sql);
     $stmt->execute();
     
+    //echo "<script type='text/javascript'>alert('Delete Successful.');</script>";
     header("Location: ../admin.php");
 ?>

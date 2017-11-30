@@ -32,15 +32,23 @@
         <link rel="stylesheet" href="css/styles.css">
         
 <script>
-    function confirmDelete(userFullName){
-        var confirmDelete = confirm("Do you really want to delete: " + userFullName + "");
+    function confirmDelete(userName){
+        var confirmDelete = confirm("This is permanent.\n" + userName + " will be deleted.");
         if (!confirmDelete){
             return false;
         }else{
             return true;
         }
     } 
-</script>    
+</script>
+        <style>
+          tr,td{
+            border: solid 1px #000;
+          }
+          th{
+              text-align: center;
+          }
+        </style>
     </head>
     <body>
         <?php include 'inc/header.php';
@@ -55,19 +63,28 @@
             </table>
             
             
-            <table class="table table-striped">
+            <table class="table-striped">
+                <thead>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Admin</th>
+                </thead>
             <?php
             
                 $users = getInfo('user');
                 foreach ($users as $user) {
                     echo"<tr>";
-                        echo "</td><td>".$user['userID'];
+                        echo "<td>".$user['userID'];
                         echo "</td><td>".$user['username'];
                         echo "</td><td>".$user['password'];
                         echo "</td><td>".$user['name'];
                         echo "</td><td>".$user['email'];
                         echo "</td><td>".$user['admin'];
-                    echo "</td><td><a href='userUpdate.php?userId=".$user['userID']."'>
+                        
+                    echo "</td><td><a href='userUpdate.php?userID=".$user['userID']."'>
                           <button type=\"button\" class=\"btn-primary btn-sm\">
                           <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> Update
                           </button></a>";
