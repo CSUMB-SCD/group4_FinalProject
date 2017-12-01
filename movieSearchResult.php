@@ -30,8 +30,8 @@
     function listMovieDetails(){
         echo "<em><strong>Movie Title: </strong></em>".$GLOBALS['movieTitle']."<br>";
         echo "<em><strong>Movie Date: </strong></em>".$GLOBALS['movieDate']."<br>";
-        echo "<em><strong>Producer: </strong></em>".$GLOBALS['producersName']."<br>";
-        echo "<em><strong>Actor/Actress: </strong></em>".$GLOBALS['actorActress']."<br>";
+        echo "<em><strong>Producer: </strong></em><span id='producerName'>".$GLOBALS['producersName']."</span><br>";
+        echo "<em><strong>Actor/Actress: </strong></em><span id='actorActress'>".$GLOBALS['actorActress']."</span><br>";
     }
 ?>
 
@@ -42,6 +42,7 @@
         <title>Movie Search Results</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     </head>
     <body>
         <?php
@@ -56,9 +57,10 @@
                     <table>
                         <tr>
                             <td class="resultsBox"><?php  listMovieDetails() ?></td>
-                            <td class="resultsBox"><em><strong>Percentage: </strong></em>percentage%</td>
+                            <td class="resultsBox"><em><strong>Percentage: </strong></em><span id="percentage"></span>%</td>
                         </tr>
                     </table>
+                    <script type="text/javascript" src="testAPI.js"></script>
                 </div>
             </div>
         </div>
