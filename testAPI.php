@@ -24,9 +24,10 @@
                     //data.popularity
                     var directorpopularity = 0;
                     var actorpopularity = 0;
+                    var movieapi = "<insert api key>";
                     $.ajax({
                         type: "GET",
-                        url: "https://api.themoviedb.org/3/search/person?api_key=<API>&query=Quentin+Tarantino", 
+                        url: "https://api.themoviedb.org/3/search/person?api_key="+movieapi+"&query=Quentin+Tarantino", 
                         dataType: "json",
                         async: false,
                         data: {}, 
@@ -39,7 +40,7 @@
                     }); //AJAX
                     $.ajax({
                         type: "GET",
-                        url: "https://api.themoviedb.org/3/search/person?api_key=<API>&query=henry+cavill", 
+                        url: "https://api.themoviedb.org/3/search/person?api_key="+movieapi+"&query=henry+cavill", 
                         dataType: "json",
                         async: false,
                         data: {}, 
