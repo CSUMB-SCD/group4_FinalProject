@@ -60,7 +60,7 @@
                             <td class="resultsBox"><em><strong>Percentage: </strong></em><span id="percentage"></span>%</td>
                         </tr>
                     </table>
-                    <script type="text/javascript" src="testAPI.js"></script>
+                    <script type="text/javascript" src="moviepreditions.js"></script>
                 </div>
             </div>
         </div>
