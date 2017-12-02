@@ -60,9 +60,10 @@
                             <td class="resultsBox"><em><strong>Percentage: </strong></em><span id="percentage"></span>%</td>
                         </tr>
                     </table>
-                    <script type="text/javascript" src="moviepreditions.js"></script>
+                    <script type="text/javascript" src="js/moviepreditions.js"></script>
                 </div>
             </div>
+            <div style="text-align:center;"><em>Percentage is based of of "themoviedb" popularity percentage</em></div>
         </div>
         <?php
         include 'inc/footer.php';

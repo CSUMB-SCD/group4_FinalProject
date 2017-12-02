@@ -36,7 +36,7 @@ $.ajax({
 
 
 //what is popularity out of --> for now saying out of 40
-alert("Director: " + directorpopularity + "Actor: " + actorpopularity)
+//alert("Director: " + directorpopularity + "Actor: " + actorpopularity)
 
 //insert into id="percentage"
 //((directorpopularity+actorpopularity)/80) * 100

@@ -31,6 +31,8 @@
         <title>Movie Search</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+        <script src='js/validateSearch.js'></script>
     </head>
     <body>
         <?php include 'inc/header.php';
@@ -39,11 +41,15 @@
         <div class= "wrapper">
             <h4 id="welcome">Welcome </h4>
             <div id="id02" class="">
-                <form action="movieSearchResult.php">Movie Title: 
-                    <input type="text" name="movieTitle"/><br/>Date: 
-                    <input type="date" name="movieDate"/><br/>Producers Name: 
-                    <input type="text" name="producersName"/><br/>actor/actress: 
-                    <input type="text" name="actorActress"/><br/>
+                <form method="GET" id="submitforum" action="movieSearchResult.php" onsubmit="return validateForm()">
+                    Movie Title:<input type="text" name="movieTitle" id="movieTitle"/><br/>
+                    <span id="errormovieTitle"></span>
+                    Date:<input type="date" name="movieDate" id="movieDate"/><br/>
+                    <span id="errormovieDate"></span>
+                    Producers Name:<input type="text" name="producersName" id="producersName"/><br/>
+                    <span id="errorproducersName"></span>
+                    actor/actress:<input type="text" name="actorActress" id="actorActress"/><br/>
+                    <span id="erroractorActress"></span>
                     <input type="submit" value="Submit"/>
                 </form>
             </div>    
