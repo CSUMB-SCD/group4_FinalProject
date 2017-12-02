@@ -22,16 +22,16 @@
         //echo "goMain <br>";
         goMain();
     }
-    $GLOBALS['movieTitle'] = $_GET['movieTitle'];
-    $GLOBALS['movieDate'] = $_GET['movieDate'];
-    $GLOBALS['producersName'] = $_GET['producersName'];
-    $GLOBALS['actorActress'] = $_GET['actorActress'];
+    $_SESSION['movieTitle'] = $_GET['movieTitle'];
+    $_SESSION['movieDate'] = $_GET['movieDate'];
+    $_SESSION['producersName'] = $_GET['producersName'];
+    $_SESSION['actorActress'] = $_GET['actorActress'];
     
     function listMovieDetails(){
-        echo "<em><strong>Movie Title: </strong></em>".$GLOBALS['movieTitle']."<br>";
-        echo "<em><strong>Movie Date: </strong></em>".$GLOBALS['movieDate']."<br>";
-        echo "<em><strong>Producer: </strong></em><span id='producerName'>".$GLOBALS['producersName']."</span><br>";
-        echo "<em><strong>Actor/Actress: </strong></em><span id='actorActress'>".$GLOBALS['actorActress']."</span><br>";
+        echo "<em><strong>Movie Title: </strong></em>".$_SESSION['movieTitle']."<br>";
+        echo "<em><strong>Movie Date: </strong></em>".$_SESSION['movieDate']."<br>";
+        echo "<em><strong>Producer: </strong></em><span id='producerName'>".$_SESSION['producersName']."</span><br>";
+        echo "<em><strong>Actor/Actress: </strong></em><span id='actorActress'>".$_SESSION['actorActress']."</span><br>";
     }
 ?>
 
