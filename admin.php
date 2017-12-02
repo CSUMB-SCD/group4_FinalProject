@@ -27,27 +27,16 @@
 <html>
     <meta charset='utf-8'/>
     <head>
-        <title>Administration</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <title>Admin</title>
+<!--DATA TABLES-->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
         <link rel="stylesheet" href="css/styles.css">
-        
-<script>
-    function confirmDelete(userName){
-        var confirmDelete = confirm("This is permanent.\n" + userName + " will be deleted.");
-        if (!confirmDelete){
-            return false;
-        }else{
-            return true;
-        }
-    } 
-</script>
         <style>
-          tr,td{
-            border: solid 1px #000;
-          }
-          th{
-              text-align: center;
-          }
+            th{
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -57,13 +46,12 @@
         <div class= "wrapper">
             <table>
                 <tr>
-                    <td><h4 id="welcome">Welcome Admin, </h4></td>
-                    <td><h4 id= 'admin'> Change/Remove Current Users</h4></td>
+                    <td><h4 id="welcome">Welcome Admin: </h4>
                </tr>  
             </table>
             
+            <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
             
-            <table class="table-striped">
                 <thead>
                     <th>User ID</th>
                     <th>Username</th>
@@ -71,7 +59,10 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Admin</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </thead>
+                <tbody>
             <?php
             
                 $users = getInfo('user');
@@ -97,6 +88,7 @@
                     
                 }
             ?>
+            </tbody>
             </table>
            
            
@@ -107,16 +99,26 @@
         <?php
         include 'inc/footer.php';
         ?>
-        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
+<!--DATA TABLES-->
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>'
+        
+         function confirmDelete(userName){
+            var confirmDelete = confirm("This is permanent.\n" + userName + " will be deleted.");
+            if (!confirmDelete){
+                return false;
+            }else{
+                return true;
+            }
+        } 
       
-    //https://datatables.net/reference/option
-    $(document).ready(function() {
-        $('#adminDisplay').DataTable({
-            "lengthMenu": [5,10,20],
-            "searching": false,
-            "ordering": false
-        });
-    } );
+        //https://datatables.net/reference/option
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
     </script>
     </body>
 </html>
