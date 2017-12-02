@@ -196,6 +196,8 @@ function goMain(){
          //echo "Welcome ". $_SESSION["user"]."<br>";
          if( $_SESSION["admin"] == '1')
             header("Location: admin.php"); //redirect to some page
+         else
+            header('Location: index.php');
      }
 }
 
@@ -224,17 +226,17 @@ function info(){
         </div>        
 */
 
-//conInsert.php and conUpdate.php
-// function getConInfo($con_id){
-//     global $dbConn;
-//     $sql = "SELECT * FROM convention WHERE con_id = $con_id"; 
-//     $stmt = $dbConn -> prepare ($sql);
-//     $stmt -> execute();
-//     $record = $stmt->fetch(PDO::FETCH_ASSOC);
-//     return $record;
-// }
+//updateuser
+function getUserInfo($userID){
+    global $dbConn;
+    $sql = "SELECT * FROM user WHERE userID = $userID"; 
+    $statement = $dbConn -> prepare ($sql);
+    $statement -> execute();
+    $record = $statement->fetch(PDO::FETCH_ASSOC);
+    return $record;
+}
 
-////conInsert.php
+//register
 function addUser(){
     global $dbConn;
 //alert('in addUser');
@@ -266,6 +268,32 @@ function addUser(){
         //clear the value - prevent multiple insertions
         $nPara = array(); 
 //alert('insert complete');
+    }//eof if
+}
+
+
+function updateUser($userID){
+    global $dbConn;
+    if(isset($_POST['update'])) {  //admin has submitted the "update user" form
+        $sql = "UPDATE user
+                SET username = :username,
+                    password = :password,
+                    name = :name,
+                    email = :email,
+                    admin = :admin
+                WHERE userID = $userID";
+              
+        $nPara = array();        
+        $nPara[':username'] = $_POST['usernameUp'];  
+        $nPara[':password']  = $_POST['pwUp'];
+        $nPara[':name'] = $_POST['nameUp'];
+        $nPara[':email'] = $_POST['emailUp'];
+        $nPara[':admin'] = $_POST['statusUp'];
+        $stmt = $dbConn->prepare($sql);
+        $stmt->execute($nPara);
+        $nPara = array(); //clear the value - prevent multiple insertions
+
+    header('Location: userUpdate.php?userID='.$userID);
     }//eof if
 }
 

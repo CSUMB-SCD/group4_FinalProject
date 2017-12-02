@@ -59,7 +59,7 @@ function checkRetype(){
         $("#pwAgain").css("backgroundColor","");
         //$("#pwAgainError").css("color", "blue").append("  Passwords match!");
     }
-    alert("retype "+ validRetype);
+    //alert("retype "+ validRetype);
     return validRetype;
 }
 
@@ -92,7 +92,7 @@ function validateForm(){
             isValid = true;
        }
     //alert("vf "+ isValid);
- 
+    return isValid;
 }
 
 $(document).ready(function(){
