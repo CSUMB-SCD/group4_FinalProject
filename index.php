@@ -24,7 +24,7 @@
 <html>
     <meta charset='utf-8'/>
     <head>
-        <title>Index</title>
+        <title>Movie Insight</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         
          <!--Latest compiled and minified CSS -->
