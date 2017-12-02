@@ -15,7 +15,6 @@
         //$_SESSION =[];
         session_destroy();
         header("Location: index.php");
-        //alert("logged out");
     }
     
     if(isset($_POST['login'])){
@@ -29,7 +28,7 @@
     <meta charset='utf-8'/>
     <head>
     <title>Deliverables</title></title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
@@ -57,9 +56,7 @@
                 </ul>
             </div>
         </div>
-        <?php
-        include 'inc/footer.php';
-        ?>
+        <?php   include 'inc/footer.php';    ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
     </body>
 </html>
