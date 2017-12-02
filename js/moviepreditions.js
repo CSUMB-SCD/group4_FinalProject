@@ -2,7 +2,7 @@
 //data.popularity
 var directorpopularity = 0;
 var actorpopularity = 0;
-var movieapi = "30b43562eb2b7bb4f4736cbdf5579236";//"<insert api key>";
+var movieapi = "<insert api key>";
 var actorActress = document.getElementById('actorActress').innerText;
 var producerName = document.getElementById('producerName').innerText;
 //Quentin+Tarantino
