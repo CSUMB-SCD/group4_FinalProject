@@ -27,12 +27,6 @@
 <!DOCTYPE html>
 <html>
     <meta charset='utf-8'/>
-    <style>
-        /*div{ border: 5px solid red;}*/
-        .pokemon1 {
-            width: 100% !important;
-        }
-    </style>
     <head>
         <title>Search Prediction</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -44,7 +38,7 @@
         include 'inc/header.php';
         include 'inc/nav.php';
         ?>
-         <div class= "wrapper pokemon1">
+         <div class= "wrapper" style="width: 100% !important;">
             <h4 id="welcome">Welcome </h4>
             <div>
                 <div>
