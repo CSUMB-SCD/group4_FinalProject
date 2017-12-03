@@ -3,6 +3,7 @@
     
     include 'inc/dbConnection.php';
     include 'php/source.php';
+    include 'api/theLock.php';
      
     $dbConn = getDBConnection(); 
      
@@ -60,6 +61,8 @@
                             <td class="resultsBox"><em><strong>Percentage: </strong></em><span id="percentage"></span>%</td>
                         </tr>
                     </table>
+<!-- jQuery library -->
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                     <script type="text/javascript" src="testAPI.js"></script>
                 </div>
             </div>
