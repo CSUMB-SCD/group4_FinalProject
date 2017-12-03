@@ -38,19 +38,30 @@
         ?>
         <div class= "wrapper">
             <h4 id="welcome">Welcome </h4>
-            <div id="id02" class="">
-                <form action="movieSearchResult.php">Movie Title: 
-                    <input type="text" name="movieTitle"/><br/>Date: 
-                    <input type="date" name="movieDate"/><br/>Producers Name: 
-                    <input type="text" name="producersName"/><br/>actor/actress: 
-                    <input type="text" name="actorActress"/><br/>
-                    <input type="submit" value="Submit"/>
+            
+                <form method="POST" name="movieSearch" action="movieSearchResult.php" >
+                    <table>
+                        <tr><td class = "tdIndex">
+                        Movie Title: <br/><input type="text" name="movieTitle" placeholder="Blade Runner" size="35"/>
+                        </td></tr> 
+                        <div id="id01">
+                            <tr><td class = "tdIndex">
+                            Producers Name: <br/> <input type="text" name="producer" placeholder="Ridley Scott"size="35"/>
+                            </td></tr> <tr><td class = "tdIndex">
+                            Actor/Actress: <br/><input type="text" name="actorActress" placeholder="Harrison Ford"size="35"/>
+                            </td></tr>
+                        </div>  
+                         <tr><td class = "tdIndex">
+                           Date: <br/><input type="date" name="movieDate"/>
+                         </td></tr> <tr><td class = "tdIndex">
+                        <input type="submit" value="Submit" class="btnAD btn sub"/>
+                        </td></tr>
+                    </table>
                 </form>
-            </div>    
+             
         </div>
-        <?php
-        include 'inc/footer.php';
-        ?>
-        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
+        <?php   include 'inc/footer.php';    ?>
+        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
+        </script>
     </body>
 </html>

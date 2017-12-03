@@ -357,10 +357,9 @@ header {
 
 
 .resultsBox {
-    height: 20px;
     border: 2px solid black;
     vertical-align: middle;
-    padding-bottom: 3px;
+    padding: 7px;
 }
 #addUser{
     color: #00f;
