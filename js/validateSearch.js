@@ -9,6 +9,7 @@ function checkmovieTitle() {
 
     return valid;
 }
+module.exports.checkmovieTitle = checkmovieTitle;
 
 function checkmovieDate() {
     var valid = true;
@@ -21,6 +22,7 @@ function checkmovieDate() {
 
     return valid;
 }
+//module.exports.checkmovieDate = checkmovieDate;
 
 function checkproducersName() {
     var valid = true;
@@ -33,6 +35,7 @@ function checkproducersName() {
 
     return valid;
 }
+//module.exports.checkproducersName = checkproducersName;
 
 function checkactorActress() {
     var valid = true;
@@ -45,6 +48,7 @@ function checkactorActress() {
 
     return valid;
 }
+//module.exports.checkactorActress = checkactorActress;
 
 function validateForm() {
     var isValid = 0;
