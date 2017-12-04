@@ -5,4 +5,7 @@
         echo "<a href='movieSearch.php'>Movie Search</a>";
         echo "<a href='myPrediction.php'>myPrediction</a>";
     echo "</div>";
+    
+    echo '<div id=bgRight></div>';
+    echo '<div id=bgLeft></div>';
 ?>

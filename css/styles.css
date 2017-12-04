@@ -84,27 +84,27 @@ th{
 /*    src: url('../font/iMan.ttf');*/
 /*}*/
 
-/*#bgLeft {*/
-/*    position: absolute;*/
-/*    background-image: url("../img/bg1.jpg");*/
-/*    left: 0;*/
-/*    top: 0;*/
-/*    width: 17%;*/
-/*    height: 130%;*/
-/*    opacity: .7;*/
-/*    z-index: -1;*/
-/*}*/
+#bgLeft {
+    position: absolute;
+    background-image: url("../img/bg1.jpg");
+    left: 0;
+    top: 0;
+    width: 19%;
+    height: 100%;
+    opacity: .7;
+    z-index: -1;
+}
 
-/*#bgRight {*/
-/*    position: absolute;*/
-/*    background-image: url("../img/bg2.jpg");*/
-/*    right: 0;*/
-/*    top: 0;*/
-/*    width: 17%;*/
-/*    height: 130%;*/
-/*    opacity: .7;*/
-/*    z-index: -1;*/
-/*}*/
+#bgRight {
+    position: absolute;
+    background-image: url("../img/bg2.jpg");
+    right: 0;
+    top: 0;
+    width: 19%;
+    height: 100%;
+    opacity: .7;
+    z-index: -1;
+}
 
 /*.mySlides {*/
 /*    display: none;*/
