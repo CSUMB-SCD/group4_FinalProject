@@ -22,17 +22,6 @@
         //echo "goMain <br>";
         goMain();
     }
-    $GLOBALS['movieTitle'] = $_GET['movieTitle'];
-    $GLOBALS['movieDate'] = $_GET['movieDate'];
-    $GLOBALS['producersName'] = $_GET['producersName'];
-    $GLOBALS['actorActress'] = $_GET['actorActress'];
-    
-    function listMovieDetails(){
-        echo "<em><strong>Movie Title: </strong></em>".$GLOBALS['movieTitle']."<br>";
-        echo "<em><strong>Movie Date: </strong></em>".$GLOBALS['movieDate']."<br>";
-        echo "<em><strong>Producer: </strong></em><span id='producerName'>".$GLOBALS['producersName']."</span><br>";
-        echo "<em><strong>Actor/Actress: </strong></em><span id='actorActress'>".$GLOBALS['actorActress']."</span><br>";
-    }
 ?>
 
 <!DOCTYPE html>
@@ -42,31 +31,37 @@
         <title>Movie Search Results</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     </head>
     <body>
-        <?php
-        include 'inc/header.php';
-        include 'inc/nav.php';
+        <?php   
+            include 'inc/header.php';
+            include 'inc/nav.php';
         ?>
         <div class= "wrapper" style="width: 50% !important">
             <h4 id="welcome">Welcome </h4>
-            <div id="id02" class="">
                 <h1 class="title">Movie Search Results</h1>
                 <div class="containerAD">
                     <table>
                         <tr>
-                            <td class="resultsBox"><?php  listMovieDetails() ?></td>
-                            <td class="resultsBox"><em><strong>Percentage: </strong></em><span id="percentage"></span>%</td>
+                            <td class="resultsBox">
+                                <em><strong>Movie Title: </strong></em><?php echo $_POST['movieTitle']; ?>
+                                    <br><em><strong>Producer: </strong></em><span id='producerName'><?php echo $_POST['producer']; ?></span>
+                                    <br><em><strong>Actor/Actress: </strong></em><span id='actorActress'><?php echo $_POST['actorOne']; ?></span>
+                                    <br><em><strong>Actor/Actress: </strong></em><span id='actorActress'><?php echo $_POST['actorTwo']; ?></span>
+                                <br><em><strong>Movie Date: </strong></em><?php echo $_POST['movieDate']; ?>
+                            </td>
+                            <td class="resultsBox" id="percentage"><em><strong>Percentage:<br></strong></em></td>
                         </tr>
                     </table>
-                    <script type="text/javascript" src="testAPI.js"></script>
                 </div>
-            </div>
         </div>
         <?php
         include 'inc/footer.php';
         ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
+<!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="testAPI.js"></script>
     </body>
 </html>

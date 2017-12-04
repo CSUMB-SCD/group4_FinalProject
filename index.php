@@ -44,8 +44,8 @@
                                     echo '<input type="password" placeholder="Enter Password" name="password" required class="itpAD">';
                                     echo '<input type="submit" name ="login" value="Login" class="btnAD btn sub" />';
                                   }else{
-                                      echo '<h1>Enjoy</h1>';
                                       echo '<img src="img/ticket.png" alt="A pair of generic movie theatre tickets." height="325" width="392">';
+                                      echo '<em><h1>Enjoy</h1></em>';
                                   }
                                 if(isset($_POST['login'])){
                                     goMain();
