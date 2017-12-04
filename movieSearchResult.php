@@ -3,6 +3,7 @@
     
     include 'inc/dbConnection.php';
     include 'php/source.php';
+    include 'php/movieSearchSource.php';
      
     $dbConn = getDBConnection(); 
      
