@@ -21,8 +21,10 @@
 <html>
     <meta charset='utf-8'/>
     <head>
-        <title>Index</title>
-<!--Latest compiled and minified CSS -->
+        <title>Movie Insight</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+         <!--Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
     </head>
