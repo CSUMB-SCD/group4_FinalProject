@@ -59,5 +59,3 @@ alert(rating);
 alert(ratingSum);
 document.getElementById('individRating').innerHTML = rating;/// SEMICOLON HELL!!!!
 document.getElementById('overall').innerHTML = ((ratingSum/(45*count))*100);
-
-dir/45
