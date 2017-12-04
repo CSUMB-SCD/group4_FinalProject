@@ -1,0 +1,210 @@
+/*data tables*/
+
+
+/*li {*/
+/*    padding: 2px;*/
+/*    font-size: 1.2em;*/
+/*}*/
+
+/*------custom font example-------*/
+/*@font-face {*/
+/*    font-family: iMan;*/
+/*    src: url('../font/iMan.ttf');*/
+/*}*/
+
+
+/*.mySlides {*/
+/*    display: none;*/
+/*}*/
+
+
+/*#wrapper {*/
+/*    background-color: red;*/
+/*    color: white;*/
+/*    border: solid 2px black;*/
+/*    font-family: cursive;*/
+/*    font-size: 1.1em;*/
+/*    box-shadow: 10px 10px 3px gray;*/
+/*    margin: auto 0;*/
+/*    display: inline-block;*/
+/*    padding: 10px;*/
+/*}*/
+
+/*#carouselCointainer {*/
+/*    margin: 0 auto;*/
+    /*centers carousel*/
+/*    width: 360px;*/
+/*}*/
+
+/*#myCarousel {*/
+/*    margin-top: 30px;*/
+/*}*/
+
+
+/*#textArea {*/
+/*    border: solid 2px black;*/
+/*    background-color: #ededed;*/
+/*    width: 55%;*/
+/*    height: 325px;*/
+/*    display: inline-block;*/
+/*    box-shadow: 15px 15px 7px #656565;*/
+/*    padding: 5px;*/
+/*}*/
+
+
+/*.sub {*/
+/*    float: left !important;*/
+/*}*/
+
+/* Extra styles for the cancel button */
+
+/*#cancelbtnAD: active {*/
+/*    box-shadow: 8px 8px 5px #000;*/
+
+/*}*/
+
+/* Center the image and position the close button */
+
+/*#imgcontainerAD {*/
+/*    text-align: center;*/
+/*    margin: 24px 0 12px 0;*/
+/*    position: relative;*/
+/*}*/
+
+/*.containerAD {*/
+/*    padding: 16px;*/
+/*}*/
+
+/* The Modal (background) */
+/*.modalAD {*/
+/*    display: none;*/
+    /* Hidden by default */
+/*    position: fixed;*/
+    /* Stay in place */
+/*    z-index: 1;*/
+    /* Sit on top */
+/*    left: 0;*/
+/*    top: 0;*/
+/*    width: 100%;*/
+    /* Full width */
+/*    height: 100%;*/
+    /* Full height */
+/*    overflow: auto;*/
+    /* Enable scroll if needed */
+/*    background-color: rgb(0, 0, 0);*/
+    /* Fallback color */
+/*    background-color: rgba(0, 0, 0, 0.4);*/
+    /* Black w/ opacity */
+/*    padding-top: 60px;*/
+/*}*/
+
+/* Modal Content/Box */
+
+/*.modal-contentAD {*/
+/*    background-color: #fefefe;*/
+/*    margin: 5% auto 15% auto;*/
+    /* 5% from the top, 15% from the bottom and centered */
+/*    border: 1px solid #888;*/
+/*    width: 25%;*/
+    /* Could be more or less, depending on screen size */
+/*}*/
+
+/* The Close Button (x) */
+
+/*.closeAD {*/
+/*    position: absolute;*/
+/*    right: 25px;*/
+/*    top: 0;*/
+/*    color: #000;*/
+/*    font-size: 35px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.closeAD:hover,*/
+/*.closeAD:focus {*/
+/*    color: red;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/* Add Zoom Animation */
+
+/*.animateAD {*/
+/*    -webkit-animation: animatezoom 0.6s;*/
+/*    animation: animatezoom 0.6s*/
+/*}*/
+
+/*@-webkit-keyframes animatezoom {*/
+/*    from {*/
+/*        -webkit-transform: scale(0)*/
+/*    }*/
+/*    to {*/
+/*        -webkit-transform: scale(1)*/
+/*    }*/
+/*}*/
+
+/*@keyframes animatezoom {*/
+/*    from {*/
+/*        transform: scale(0)*/
+/*    }*/
+/*    to {*/
+/*        transform: scale(1)*/
+/*    }*/
+/*}*/
+
+/* Change styles for span and cancel button on extra small screens */
+
+/*@media screen and (max-width: 300px) {*/
+/*    span.pswAD {*/
+/*        display: block;*/
+/*        float: none;*/
+/*    }*/
+/*    .cancelbtnAD {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
+
+/**** END login modal *****/
+
+/*Modal*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal.in {
+   display:block;
+   text-align: center;
+}
+/*End Modal*/
