@@ -180,25 +180,25 @@ function goMain(){
     $statement->execute($nPara);
     $record = $statement->fetch(PDO::FETCH_ASSOC);
 
-     if (empty($record)) { //wrong credentials
-       echo"<form method='POST' action='index.php'>";
-            echo"<span style='color:red'><h5>Wrong username or password.</h5></span>";
-       echo"</form>";
-     } else {
-         $_SESSION["name"] = $record['name'];
-            //$_SESSION["email"] = $record['email'];
-            //$_SESSION["user"]  = $record['username'];
-         $_SESSION["admin"] = $record['admin'];
-//alert( $_SESSION["admin"]);
-
-         $_SESSION["user"] = "active";
-         
-         //echo "Welcome ". $_SESSION["user"]."<br>";
-         if( $_SESSION["admin"] == '1')
-            header("Location: admin.php"); //redirect to some page
-         else
-            header('Location: index.php');
-     }
+    if (empty($record)) { //wrong credentials
+        echo"<form method='POST' action='index.php'>";
+        echo"<span style='color:red'><h5>Wrong username or password.</h5></span>";
+        echo"</form>";
+    } else {
+        $_SESSION["name"] = $record['name'];
+        $_SESSION["email"] = $record['email'];
+        $_SESSION["username"]  = $record['username'];
+        $_SESSION["admin"] = $record['admin'];
+        $_SESSION["joinDate"] = $record['joinDate'];
+        
+        $_SESSION["user"] = "active";
+        
+        //echo "Welcome ". $_SESSION["user"]."<br>";
+    if( $_SESSION["admin"] == '1')
+        header("Location: admin.php"); //redirect to some page
+    else
+        header('Location: index.php');
+}
 }
 
 

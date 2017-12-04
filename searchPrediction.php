@@ -45,9 +45,7 @@
                 </div>
             </div>    
         </div>
-        <?php
-        include 'inc/footer.php';
-        ?>
+        <?php   include 'inc/footer.php';    ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
     </body>
 </html>

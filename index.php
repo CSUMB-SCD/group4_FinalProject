@@ -44,6 +44,7 @@
                                   }else{
                                       echo '<img src="img/ticket.png" alt="A pair of generic movie theatre tickets." height="325" width="392">';
                                       echo '<em><h1>Enjoy</h1></em>';
+                                      echo "<a href='profile.php'><div class='btnAD btn'>Profile</div></a>";
                                   }
                                 if(isset($_POST['login'])){
                                     goMain();
