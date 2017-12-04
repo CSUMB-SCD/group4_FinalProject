@@ -40,12 +40,13 @@
             <h4 id="welcome">Welcome </h4>
             <div id="id02" class="">
                 <div class="containerAD">
-                    <iframe src="https://hw5-group4-chatapp.herokuapp.com/" height="600px" width="100%"></iframe>
-            
+                     <iframe class="pokemon3" src="https://hw5-group4-chatapp.herokuapp.com/" height="500px" width="50%" align="right"></iframe>
                 </div>
             </div>    
         </div>
-        <?php   include 'inc/footer.php';    ?>
+        <?php
+        include 'inc/footer.php';
+        ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
     </body>
 </html>
