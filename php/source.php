@@ -173,6 +173,7 @@ function goMain(){
     //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
     $sql = "SELECT * FROM user WHERE username = :username AND password = :password";
     
+    $nPara = array(); 
     $nPara[':username'] = $userForm;
     $nPara[':password'] = $pwForm;
     
@@ -190,6 +191,7 @@ function goMain(){
         $_SESSION["username"]  = $record['username'];
         $_SESSION["admin"] = $record['admin'];
         $_SESSION["joinDate"] = $record['joinDate'];
+        $_SESSION["userID"] = $record['userID'];
         
         $_SESSION["user"] = "active";
         
@@ -236,7 +238,7 @@ function getUserInfo($userID){
     return $record;
 }
 
-//register
+//New member registers
 function addUser(){
     global $dbConn;
 //alert('in addUser');
@@ -265,13 +267,13 @@ function addUser(){
 //alert('named para go');
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
-        //clear the value - prevent multiple insertions
-        $nPara = array(); 
+      
+   
 //alert('insert complete');
     }//eof if
 }
 
-
+//admin updates current member
 function updateUser($userID){
     global $dbConn;
     if(isset($_POST['update'])) {  //admin has submitted the "update user" form
@@ -291,12 +293,97 @@ function updateUser($userID){
         $nPara[':admin'] = $_POST['statusUp'];
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
-        $nPara = array(); //clear the value - prevent multiple insertions
-
+  
+        
     header('Location: userUpdate.php?userID='.$userID);
     }//eof if
 }
 
+ //PREVENT SQL INJECTION
+function searchMoviePerson($person, $role){
+alert("searching for person");
+    global $dbConn;
+    
+    $sql = "SELECT * FROM movie_people WHERE name = :name AND roleID = :roleID";
+    
+    $nPara = array(); 
+    $nPara[':name'] = $person;
+    $nPara[':roleID'] = $role;
+    $statement = $dbConn->prepare($sql);
+    $statement->execute($nPara);
+    $record = $statement->fetch(PDO::FETCH_ASSOC);
+//print_r($record);
+    return $record;
+}
 
+function insertNewPerson($person, $role){
+    global $dbConn;
+    alert("no record found");
+        $sql = "INSERT INTO movie_people (
+                name,  
+                roleID,
+                searchCount
+            )
+            VALUES (
+            :name, :roleID, :searchCount
+            )";
+            
+        $nPara = array();        
+        $nPara[':name'] = $person;
+        $nPara[':roleID']  = $role;
+        $nPara[':searchCount'] = '1';
+alert('named para go');
+        $stmt = $dbConn->prepare($sql);
+        $stmt->execute($nPara);
+ 
+alert('insert complete');
+}
 
+function updatePerson($person, $role){
+alert('record exist');
+    global $dbConn;
+    
+    $sql = "SELECT searchCount 
+            FROM movie_people 
+            WHERE name = :name 
+            AND roleID = :roleID";
+    
+    $nPara = array();
+    $nPara[':name'] = $person;
+    $nPara[':roleID'] = $role;
+    $statement = $dbConn->prepare($sql);
+    $statement->execute($nPara);
+    $record = $statement->fetch(PDO::FETCH_ASSOC);
+    
+alert('increase search count');    
+    $searchCount = $record['searchCount'];
+alert('before increase: ' + $searchCount);
+    $searchCount++;
+alert('after increase: ' + $searchCount);    
+    
+    $sql = "UPDATE movie_people
+            SET searchCount = :searchCount
+            WHERE name = :name
+            AND roleID = :roleID";
+                
+    $nPara = array();
+    $nPara[':name'] = $person;
+    $nPara[':roleID'] = $role;        
+    $nPara[':searchCount'] = $searchCount;
+    $statement = $dbConn->prepare($sql);
+    $statement->execute($nPara);
+    
+alert('update searchCount');
+}
+   
+
+function addMoviePerson($person, $role){
+//alert('in addDir');
+    //in the database...maybe
+    
+    if (empty( searchMoviePerson($person, $role) )) 
+        insertNewPerson($person, $role);
+    else
+        updatePerson($person, $role);
+    }
 ?>

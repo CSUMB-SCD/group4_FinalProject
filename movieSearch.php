@@ -45,7 +45,7 @@
                         Movie Title: <br/><input type="text" name="movieTitle" placeholder="Stranger Things" size="40"/>
                         </td></tr> 
                             <tr><td class = "tdIndex">
-                            Producers Name: <br/> <input type="text" name="producer" placeholder="George Lucas" size="40"/>
+                            Director Name: <br/> <input type="text" name="director" placeholder="George Lucas" size="40"/>
                             </td></tr> <tr><td class = "tdIndex">
                             Actor/Actress: <br/><input type="text" name="actorOne" placeholder=" Scarlett Johansson"size="40"/>
                             </td></tr><tr><td class = "tdIndex">
