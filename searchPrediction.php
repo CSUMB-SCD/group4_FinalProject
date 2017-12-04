@@ -104,15 +104,10 @@
                     <?php  fakeTable(); ?>
                 </table>
             </div>
-            
         </div>
-    
-    </body>
-    <footer>
         <?php
         include 'inc/footer.php';
         ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
-    </footer>
-    
+    </body>
 </html>
