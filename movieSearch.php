@@ -52,7 +52,7 @@
                             Actor/Actress: <br/><input type="text" name="actorTwo" placeholder="Harrison Ford"size="40"/>
                             </td></tr>
                          <tr><td class = "tdIndex">
-                           Date: <br/><input type="date" name="movieDate"/>
+                           Date: <br/><input type="date" name="movieDate" required/>
                          </td></tr> <tr><td class = "tdIndex">
                         <input type="submit" value="Submit" class="btnAD btn sub"/>
                         </td></tr>

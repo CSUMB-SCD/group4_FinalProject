@@ -66,14 +66,16 @@
         <?php //print_r($_POST); // could use  foreach....still need if() to check director vs actor...
             if( $_POST['director'] != ''){
                 addMoviePerson($_POST['director'], 1);
-            }if( $_POST['actorOne'] != ''){
+            }
+            if( $_POST['actorOne'] != ''){
                 addMoviePerson($_POST['actorOne'], 2);
-            }if( $_POST['actorTwo'] != ''){
+            }
+            if( $_POST['actorTwo'] != ''){
                 addMoviePerson($_POST['actorTwo'], 2);
             }
-            // addMoviePerson($_POST['director'], 1);
-            // addMoviePerson($_POST['actorOne'], 2);
-            // addMoviePerson($_POST['actorTwo'], 2);
+            if( $_POST['movieTitle'] !=""){
+                addMovieSearch($_POST['movieTitle'],$_POST['movieDate'] );
+            }
         ?>
     </body>
 </html>
