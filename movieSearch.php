@@ -42,15 +42,15 @@
                 <form method="POST" name="movieSearch" action="movieSearchResult.php" >
                     <table>
                         <tr><td class = "tdIndex">
-                        Movie Title: <br/><input type="text" name="movieTitle" placeholder="Blade Runner" size="35"/>
+                        Movie Title: <br/><input type="text" name="movieTitle" placeholder="Stranger Things" size="40"/>
                         </td></tr> 
-                        <div id="id01">
                             <tr><td class = "tdIndex">
-                            Producers Name: <br/> <input type="text" name="producer" placeholder="Ridley Scott"size="35"/>
+                            Producers Name: <br/> <input type="text" name="producer" placeholder="George Lucas" size="40"/>
                             </td></tr> <tr><td class = "tdIndex">
-                            Actor/Actress: <br/><input type="text" name="actorActress" placeholder="Harrison Ford"size="35"/>
+                            Actor/Actress: <br/><input type="text" name="actorOne" placeholder=" Scarlett Johansson"size="40"/>
+                            </td></tr><tr><td class = "tdIndex">
+                            Actor/Actress: <br/><input type="text" name="actorTwo" placeholder="Harrison Ford"size="40"/>
                             </td></tr>
-                        </div>  
                          <tr><td class = "tdIndex">
                            Date: <br/><input type="date" name="movieDate"/>
                          </td></tr> <tr><td class = "tdIndex">

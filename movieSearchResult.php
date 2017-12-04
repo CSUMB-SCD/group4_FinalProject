@@ -40,22 +40,21 @@
         ?>
         <div class= "wrapper" style="width: 50% !important">
             <h4 id="welcome">Welcome </h4>
-            <div id="id02" class="">
                 <h1 class="title">Movie Search Results</h1>
                 <div class="containerAD">
                     <table>
                         <tr>
                             <td class="resultsBox">
                                 <em><strong>Movie Title: </strong></em><?php echo $_POST['movieTitle']; ?>
+                                    <br><em><strong>Producer: </strong></em><span id='producerName'><?php echo $_POST['producer']; ?></span>
+                                    <br><em><strong>Actor/Actress: </strong></em><span id='actorActress'><?php echo $_POST['actorOne']; ?></span>
+                                    <br><em><strong>Actor/Actress: </strong></em><span id='actorActress'><?php echo $_POST['actorTwo']; ?></span>
                                 <br><em><strong>Movie Date: </strong></em><?php echo $_POST['movieDate']; ?>
-                                <br><em><strong>Producer: </strong></em><span id='producerName'><?php echo $_POST['producer']; ?></span>
-                                <br><em><strong>Actor/Actress: </strong></em><span id='actorActress'><?php echo $_POST['actorActress']; ?></span>
                             </td>
-                            <td class="resultsBox"><em><strong>Percentage: </strong></em><span id="percentage"></span>%</td>
+                            <td class="resultsBox" id="percentage"><em><strong>Percentage:<br></strong></em></td>
                         </tr>
                     </table>
                 </div>
-            </div>
         </div>
         <?php
         include 'inc/footer.php';

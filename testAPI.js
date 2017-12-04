@@ -1,44 +1,28 @@
 //https://api.themoviedb.org/3/person/{person_id}?api_key=<<api_key>>&language=en-US
 //data.popularity
-var rating = 0;
-var person = document.getElementById('actorActress').innerText;
 
+//var rating = 0;//numerical
+var rating ="";//literal
+var person = "";
+var count = 0;
 
-alert("js:" +document.getElementById('actorActress').innerText);
-alert("var: " +person);
+//var myAPI = process.env.SOME_VAR;
+//could store these in a database and call the db.....
+var a = "540de08";
+var b = "8224c98";
+var c = "930553e";
+var d = "46419db";
+var last = "f3fb";
+var myAPI = a+b+c+d+last;
 
- //var myAPI = process.env.SOME_VAR;
- //could store these in a database and call the db.
-  var one = "540de08";
-  var two = "8224c98";
-  var three = "930553e";
-  var four = "46419db";
-  var last = "f3fb";
-  
-  var myAPI = one+two+three+four+last;
-  getData(person);
-  
-// $('#1').find('input').each(function () {
-//     alert(this.value);
-// });
- //alert('key:' + myAPI);
+$('span').each(function () {
+    person = $(this).text();
+    if( person !== ''){
+         getData(person);
+         count++;
+    }
+})  
 
-//var producerName = document.getElementById('producerName').innerText;
-//Quentin+Tarantino
-//henry+cavill
-// $.ajax({
-//     type: "GET",
-//     url: "https://api.themoviedb.org/3/search/person?api_key=" + movieapi + "&query=" + producerName,
-//     dataType: "json",
-//     async: false,
-//     data: {},
-//     success: function(data, status) {
-//         directorpopularity = data.results[0].popularity;
-//     },
-//     complete: function(data, status) { //optional, used for debugging purposes
-//         //alert(data);
-//     }
-// }); //AJAX
 function getData(person){
     $.ajax({
         type: "GET",
@@ -49,26 +33,24 @@ function getData(person){
         data: { "api_key" : myAPI ,
                 //"api_key" : "540de088224c98930553e46419dbf3fb",
                 "query": person,
-                //"query": "george lucas",
         },
         success: function(data, status) {
-            alert('success');
+            //alert('success');
             if(!data)
-                alert("nope");
+                //rating += 0;
+                rating += 0 + '<br>';
             else
-            alert(data.results[0]);
-            rating = data.results[0].popularity;
+                //rating += data.results[0].popularity;
+                rating += data.results[0].popularity +'<br>';
         },
         complete: function(data, status) { //optional, used for debugging purposes
-            alert('status: ' + status);
+            //alert('status: ' + status);
         }
     }); //AJAX
 }
-
 //what is popularity out of --> for now saying out of 40
-//alert("Director: " + directorpopularity + "Actor: " + actorpopularity)
-
 //insert into id="percentage"
 //((directorpopularity+actorpopularity)/80) * 100
-document.getElementById('percentage').innerHTML = rating;/// SEMICOLON HELL!!!!
 
+//document.getElementById('percentage').innerHTML += (rating/count) *1.25;/// SEMICOLON HELL!!!!
+document.getElementById('percentage').innerHTML += rating;/// SEMICOLON HELL!!!!
