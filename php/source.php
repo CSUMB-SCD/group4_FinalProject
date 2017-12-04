@@ -385,7 +385,7 @@ function addMoviePerson($person, $role){
     else
         updatePerson($person, $role);
     }
-
+//============================================
 function searchMovieSearch($title){
     alert("searching for movie");
     global $dbConn;
@@ -469,5 +469,6 @@ function addMovieSearch($title, $date){
         insertNewMovie($title, $date);
     else
         updateMovie($title,$date);
-}    
+}
+//============================================
 ?>
