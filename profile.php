@@ -61,7 +61,8 @@
                                     else echo "Negative";    ?></td>
                     </tr><tr class="ittAD">
                         <td><label><b>Join Date: </b></label></td>
-                        <td><?php echo "{$_SESSION['joinDate']}"; ?></td>
+                        <td><?php $datetime = explode(" ",$_SESSION['joinDate']);
+                                  echo $datetime[0]; ?></td>
                     </tr>
                 </table>
             </div>
