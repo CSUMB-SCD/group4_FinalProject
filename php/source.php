@@ -173,6 +173,7 @@ function goMain(){
     //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
     $sql = "SELECT * FROM user WHERE username = :username AND password = :password";
     
+    $nPara = array(); 
     $nPara[':username'] = $userForm;
     $nPara[':password'] = $pwForm;
     
@@ -180,25 +181,26 @@ function goMain(){
     $statement->execute($nPara);
     $record = $statement->fetch(PDO::FETCH_ASSOC);
 
-     if (empty($record)) { //wrong credentials
-       echo"<form method='POST' action='index.php'>";
-            echo"<span style='color:red'><h5>Wrong username or password.</h5></span>";
-       echo"</form>";
-     } else {
-         $_SESSION["name"] = $record['name'];
-            //$_SESSION["email"] = $record['email'];
-            //$_SESSION["user"]  = $record['username'];
-         $_SESSION["admin"] = $record['admin'];
-//alert( $_SESSION["admin"]);
-
-         $_SESSION["user"] = "active";
-         
-         //echo "Welcome ". $_SESSION["user"]."<br>";
-         if( $_SESSION["admin"] == '1')
-            header("Location: admin.php"); //redirect to some page
-         else
-            header('Location: index.php');
-     }
+    if (empty($record)) { //wrong credentials
+        echo"<form method='POST' action='index.php'>";
+        echo"<span style='color:red'><h5>Wrong username or password.</h5></span>";
+        echo"</form>";
+    } else {
+        $_SESSION["name"] = $record['name'];
+        $_SESSION["email"] = $record['email'];
+        $_SESSION["username"]  = $record['username'];
+        $_SESSION["admin"] = $record['admin'];
+        $_SESSION["joinDate"] = $record['joinDate'];
+        $_SESSION["userID"] = $record['userID'];
+        
+        $_SESSION["user"] = "active";
+        
+        //echo "Welcome ". $_SESSION["user"]."<br>";
+    if( $_SESSION["admin"] == '1')
+        header("Location: admin.php"); //redirect to some page
+    else
+        header('Location: index.php');
+}
 }
 
 
@@ -236,7 +238,7 @@ function getUserInfo($userID){
     return $record;
 }
 
-//register
+//New member registers
 function addUser(){
     global $dbConn;
 //alert('in addUser');
@@ -265,13 +267,13 @@ function addUser(){
 //alert('named para go');
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
-        //clear the value - prevent multiple insertions
-        $nPara = array(); 
+      
+   
 //alert('insert complete');
     }//eof if
 }
 
-
+//admin updates current member
 function updateUser($userID){
     global $dbConn;
     if(isset($_POST['update'])) {  //admin has submitted the "update user" form
@@ -291,12 +293,10 @@ function updateUser($userID){
         $nPara[':admin'] = $_POST['statusUp'];
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
-        $nPara = array(); //clear the value - prevent multiple insertions
-
+  
+        
     header('Location: userUpdate.php?userID='.$userID);
     }//eof if
 }
-
-
 
 ?>
