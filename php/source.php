@@ -53,6 +53,27 @@ function getInfo( $table ) {
     return preExeFetNOPARA($sql);
 }
 
+// this function is used for the table in the search predictions page
+function predictionTable(){
+    //  $predictions = getInfo('my_prediction');
+     $searches = getInfo('movie_search');
+     foreach($searches as $search) {
+        echo"<tr>";
+            echo "<td>".$search['movieTitle']."</td>";
+            echo "<td>".$search['dateSearch']."</td>";
+            echo "<td>".$search['searchCount']."</td>";
+         echo "</tr>";
+    }
+    
+}
+// you will use function when you combine the search bar with the table of predictions
+function getInfoWithMovieTitle($table, $movietTitle){
+    $sql = "
+        SELECT * FROM  ".$table.
+        "WHERE ".$table.".name like '%$movietTitle%'";
+    return preExeFetNOPARA($sql);
+}
+
 /*
 *@input: form input by user: partial device name, dropdown device type, order by price or name and statusablity
 *@output: returns a table based on the query including a device count. a-e letters allow for different output order.
