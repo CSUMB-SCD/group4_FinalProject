@@ -25,7 +25,7 @@
     
     function fakeTable(){
         echo"
-        <tr>
+          <tr>
             <td>Fake Movie 1 </td>
             <td>90% </td>
           </tr>
@@ -99,9 +99,10 @@
                 <table id="predictions" style="width: 100%;">
                     <tr>
                         <th>Movie Title</th>
+                        <th>Date</th>
                         <th>Prediction </th>
                     </tr>
-                    <?php  fakeTable(); ?>
+                    <?php predictionTable(); ?>
                 </table>
             </div>
         </div>
