@@ -58,4 +58,25 @@ function getData(person){
 alert(rating);
 alert(ratingSum);
 document.getElementById('individRating').innerHTML = rating;/// SEMICOLON HELL!!!!
-document.getElementById('overall').innerHTML = ((ratingSum/(45*count))*100);
+ratingSum = (ratingSum/(20*count))*100;
+if(ratingSum > 100)
+{
+    document.getElementById('overall').innerHTML = "BLOCK BUSTERRRRRR!!";
+    document.getElementById("overall").style.color = "blue";
+    document.getElementById("overall").style.fontFamily = "Arial";
+    document.getElementById("overall").style.fontSize = "larger";
+}
+else if(ratingSum > 60)
+{
+    document.getElementById('overall').innerHTML = ratingSum;
+    document.getElementById("overall").style.color = "yellow";
+    document.getElementById("overall").style.fontFamily = "Arial";
+    document.getElementById("overall").style.fontSize = "larger";
+}
+else
+{
+    document.getElementById('overall').innerHTML = ratingSum;
+    document.getElementById("overall").style.color = "red";
+    document.getElementById("overall").style.fontFamily = "Arial";
+    document.getElementById("overall").style.fontSize = "larger";
+}
