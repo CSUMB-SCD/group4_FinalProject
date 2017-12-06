@@ -10,7 +10,6 @@
         $_SESSION["name"] = "Guest";
         //alert("user is not logged in");
     }
-
     if(isset($_POST['logout'])){
         //$_SESSION =[];
         session_destroy();
@@ -25,7 +24,7 @@
     
     function fakeTable(){
         echo"
-        <tr>
+          <tr>
             <td>Fake Movie 1 </td>
             <td>90% </td>
           </tr>
@@ -96,12 +95,13 @@
                     <input type="text" name="search" placeholder="Search..">
                 </form> <br>
                 
-                <table id="predictions" style="width: 100%;">
+                <table class="predictions" style="width: 100%;">
                     <tr>
                         <th>Movie Title</th>
+                        <th>Date</th>
                         <th>Prediction </th>
                     </tr>
-                    <?php  fakeTable(); ?>
+                    <?php predictionTable(); ?>
                 </table>
             </div>
         </div>
