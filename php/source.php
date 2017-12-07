@@ -1,11 +1,4 @@
 <?php
-
-$q = intval($_GET['q']);
-
-
-
-
-
 function preExeFet($sql){
     global $dbConn, $nPara;
     
@@ -39,18 +32,18 @@ function predictionTable(){
             echo "<td>".$search['movieTitle']."</td>";
             echo "<td>".$search['searchCount']."</td>";
             echo "<td></td>";
-
          echo "</tr>";
     }
     
 }
 // you will use function when you combine the search bar with the table of predictions
-function getInfoWithMovieTitle($movietTitle){
+function getInfoWithMovieTitle($table, $movietTitle){
     $sql = "
-        SELECT * FROM  movie_search".
+        SELECT * FROM  ".$table.
         "WHERE ".$table.".name like '%$movietTitle%'";
     return preExeFetNOPARA($sql);
 }
+
 /*
 *@input: form input by user: partial device name, dropdown device type, order by price or name and statusablity
 *@output: returns a table based on the query including a device count. a-e letters allow for different output order.

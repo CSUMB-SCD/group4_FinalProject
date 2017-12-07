@@ -91,22 +91,23 @@
             </div>
             
             <div style="float:left; width: 45%;">
-                <form>
-                    <input type="text" id="myInput" onkeyup="TableSearch()" placeholder="Search..">
-                    <br><br><br>
-                    <table id="myTable" style="width: 100%;" class="predictions">
-                      <tr>
+                <input type="text" id="myInput" onkeyup="TableSearch()" placeholder="Search..">
+                <br><br>
+                <table id="myTable" style="width:100%;" class="predictions">
+                    <thead>
+                         <tr>
                             <th>Movie Title</th>
                             <th>Prediction </th>
                             <th>Likes</th>
-                      </tr>
-                      <tr>
-                          <?php predictionTable();?>
-                      </tr>
-                    
-                    </table>
-                </form>
+                        </tr>
+                    </thead>
+                 <tbody>
+                    <tr>
+                         <?php predictionTable();?>
+                     </tr>     
+                 </tbody>
                 
+                </table>
             </div>
         </div>
         <?php

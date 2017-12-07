@@ -16,6 +16,7 @@ function searchMoviePerson($person, $role){
 //print_r($record);
     return $record;
 }
+
 function insertNewPerson($person, $role){
     global $dbConn;
     //alert("no record found");
