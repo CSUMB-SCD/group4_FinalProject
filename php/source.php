@@ -1,25 +1,11 @@
 <?php
-//include 'inc/dbConnection.php';
-//$dbConn = getDBConnection();
-/*
-*Form vars - All input converted to lower case.
-*/
-// $title= strtolower( $_POST['title']);// User input deviceName
-// $creator= strtolower( $_POST['creator']);// User input deviceName
-// $pub= strtolower( $_POST['publisher']);// User selected deviceType
-// $year = $_POST['year'];// Selection display type
-// $issue = $_POST['issue'];//User input item statusable selection
-// $sortBy = $_POST['sortBy'];
-//$creator, $sortBy - from above
-// $city = strtolower( $_POST['city']);
-// $conName= strtolower( $_POST['conName']);
-// $state= strtoupper( $_POST['state']);
-// $turnOut=  $_POST['turnOut'];
-// $website= $_POST['website'];
-/*
-*@input: sql string to be processed
-*@output: table from the sql query
-*/
+
+$q = intval($_GET['q']);
+
+
+
+
+
 function preExeFet($sql){
     global $dbConn, $nPara;
     
@@ -51,16 +37,17 @@ function predictionTable(){
      foreach($searches as $search) {
         echo"<tr>";
             echo "<td>".$search['movieTitle']."</td>";
-            echo "<td>".$search['dateSearch']."</td>";
             echo "<td>".$search['searchCount']."</td>";
+            echo "<td></td>";
+
          echo "</tr>";
     }
     
 }
 // you will use function when you combine the search bar with the table of predictions
-function getInfoWithMovieTitle($table, $movietTitle){
+function getInfoWithMovieTitle($movietTitle){
     $sql = "
-        SELECT * FROM  ".$table.
+        SELECT * FROM  movie_search".
         "WHERE ".$table.".name like '%$movietTitle%'";
     return preExeFetNOPARA($sql);
 }

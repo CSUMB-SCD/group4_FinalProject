@@ -91,45 +91,50 @@
             </div>
             
             <div style="float:left; width: 45%;">
-                <!--<form>-->
-                    <input type="text" name="search" placeholder="Search..">
-                    <input type="submit" value="Enter" class="btn-success"/>
-
-                    <br> <br>
-                    <table class="predictions" style="width: 100%;">
-                        <tr>
+                <form>
+                    <input type="text" id="myInput" onkeyup="TableSearch()" placeholder="Search..">
+                    <br><br><br>
+                    <table id="myTable" style="width: 100%;" class="predictions">
+                      <tr>
                             <th>Movie Title</th>
-                            <th>Date</t>
                             <th>Prediction </th>
-                        </tr>
-                        <?php predictionTable(); ?>
+                            <th>Likes</th>
+                      </tr>
+                      <tr>
+                          <?php predictionTable();?>
+                      </tr>
+                    
                     </table>
-                <!--</form> -->
+                </form>
                 
             </div>
         </div>
         <?php
         include 'inc/footer.php';
         ?>
-        <script>
-            document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
-            
-            $( document ).ready(function() {
-                $.ajax({
-                    url: 'students.json',
-                    type: 'get',
-                    dataType: 'json',
-                    error: function(data){
-                    },
-                    success: function(data){
-                        var tr = $('<tr>');
-                        tr.append('<td>' + data.movieTitle + '<td>');
-                        tr.append('<td>' + data.dataSearch + '<td>');
-                        tr.append('<td>' + data.searchCount + '<td>');
-                        $('#table').append(tr);           
-                    }
-                });
-            });
-            </script>
     </body>
+    <script>
+        document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
+    
+        function TableSearch() {
+            let input = document.getElementById("myInput");
+            let filter = input.value;
+            let table = document.getElementById("myTable");
+            let tr = table.getElementsByTagName("tr");
+            let td;
+        
+            for(let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } 
+                    else {
+                        tr[i].style.display = "none";
+                    }
+                }       
+            }
+        }        
+    </script>
 </html>
+
