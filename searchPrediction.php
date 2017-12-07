@@ -91,23 +91,45 @@
             </div>
             
             <div style="float:left; width: 45%;">
-                <form>
+                <!--<form>-->
                     <input type="text" name="search" placeholder="Search..">
-                </form> <br>
+                    <input type="submit" value="Enter" class="btn-success"/>
+
+                    <br> <br>
+                    <table class="predictions" style="width: 100%;">
+                        <tr>
+                            <th>Movie Title</th>
+                            <th>Date</t>
+                            <th>Prediction </th>
+                        </tr>
+                        <?php predictionTable(); ?>
+                    </table>
+                <!--</form> -->
                 
-                <table class="predictions" style="width: 100%;">
-                    <tr>
-                        <th>Movie Title</th>
-                        <th>Date</th>
-                        <th>Prediction </th>
-                    </tr>
-                    <?php predictionTable(); ?>
-                </table>
             </div>
         </div>
         <?php
         include 'inc/footer.php';
         ?>
-        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
+        <script>
+            document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
+            
+            $( document ).ready(function() {
+                $.ajax({
+                    url: 'students.json',
+                    type: 'get',
+                    dataType: 'json',
+                    error: function(data){
+                    },
+                    success: function(data){
+                        var tr = $('<tr>');
+                        tr.append('<td>' + data.movieTitle + '<td>');
+                        tr.append('<td>' + data.dataSearch + '<td>');
+                        tr.append('<td>' + data.searchCount + '<td>');
+                        $('#table').append(tr);           
+                    }
+                });
+            });
+            </script>
     </body>
 </html>
