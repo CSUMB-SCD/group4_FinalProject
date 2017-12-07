@@ -85,7 +85,7 @@
                           <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span> Delete
                           </button></a>";               
                     echo "</td></tr>";
-                    
+
                 }
             ?>
             </tbody>
