@@ -44,109 +44,10 @@ function getInfoWithMovieTitle($table, $movietTitle){
     return preExeFetNOPARA($sql);
 }
 
-/*
-*@input: form input by user: partial device name, dropdown device type, order by price or name and statusablity
-*@output: returns a table based on the query including a device count. a-e letters allow for different output order.
-*/    
-// function goSQLcomic($table){
-//     global $title, $creator, $pub, $year, $issue, $sortBy, $nPara;
-//     $needle = "WHERE";//If the 'where' keyword is used  then 'and 'is added to the string in place of.
-    
-//     $sql = "SELECT title, creator, publisher, year, issue FROM ".$table;
-    
-//     if( $title ){
-//         //Prevents SQL injection by using a named parameter.
-//         $nPara[':dTitle'] = '%'.$title.'%';
-//         $sql .= " WHERE title LIKE :dTitle ";
-//     }
-//     if( $creator ){
-//         if (strlen(stristr($sql,$needle))>0) { //String search for 'where': stristr returns the partial string up to 'where'.
-//         // Needle Found                     compare lenth>0 means the keyword was found.  http://www.maxi-pedia.com/string+contains+substring+php
-//             $sql .= " AND ";
-//         }else{
-//             $sql .= " WHERE ";
-//         }
-//         //Prevents SQL injection by using a named parameter.
-//         $nPara[':dCreator'] = '%'.$creator.'%';
-//         $sql .= " creator LIKE :dCreator ";
-        
-//     }
-//     if( $pub ){
-//         if (strlen(stristr($sql,$needle))>0) { //String search for 'where': stristr returns the partial string up to 'where'.
-//         // Needle Found                     compare lenth>0 means the keyword was found.  http://www.maxi-pedia.com/string+contains+substring+php
-//             $sql .= " AND ";
-//         }else{
-//             $sql .= " WHERE ";
-//         }
-//         //Prevents SQL injection by using a named parameter.
-//         $nPara[':dPub'] = '%'.$pub.'%';
-//         $sql .= " publisher LIKE :dPub ";
-        
-//     }
-//     if( isset($_POST['allIn']) ){ // Added due to user submitting a blank form.
-//       $sql.= " ";
-//     }
-    
-//     if( $sortBy ){ // Name or price
-//         $sql .=" ORDER BY ".$sortBy ;
-//     }
-//     //echo $sql;
-//     return preExeFet($sql);
-// }
 function get($table, $column){
     $sql = "SELECT DISTINCT ".$column." FROM ".$table;
     return preExeFetNOPARA($sql);
 }
-// function goSQLcon($table){
-//     global $city, $creator, $conName, $state, $turnOut, $website, $sortBy, $nPara;
-//     $needle = "WHERE";//If the 'where' keyword is used  then 'and 'is added to the string in place of.
-    
-//     $sql = "SELECT conName, city, state, turnOut, creator, website FROM ".$table;
-    
-//     if( $conName ){
-//         //Prevents SQL injection by using a named parameter.
-//         $nPara[':dConName'] = '%'.$conName.'%';
-//         $sql .= " WHERE conName LIKE :dConName ";
-//     }
-//     if( $creator ){
-//         if (strlen(stristr($sql,$needle))>0) { //String search for 'where': stristr returns the partial string up to 'where'.
-//         // Needle Found                     compare lenth>0 means the keyword was found.  http://www.maxi-pedia.com/string+contains+substring+php
-//             $sql .= " AND ";
-//         }else{
-//             $sql .= " WHERE ";
-//         }
-//         //Prevents SQL injection by using a named parameter.
-//         $nPara[':dCreator'] = '%'.$creator.'%';
-//         $sql .= " creator LIKE :dCreator ";
-        
-//     }
-//     if( $state ){
-//         if (strlen(stristr($sql,$needle))>0) { //String search for 'where': stristr returns the partial string up to 'where'.
-//         // Needle Found                     compare lenth>0 means the keyword was found.  http://www.maxi-pedia.com/string+contains+substring+php
-//             $sql .= " AND ";
-//         }else{
-//             $sql .= " WHERE ";
-//         }
-//         //Prevents SQL injection by using a named parameter.
-//         $nPara[':dState'] = '%'.$state.'%';
-//         $sql .= " state LIKE :dState ";
-        
-//     }
-//     if( isset($_POST['allIn']) ){ // Added due to user submitting a blank form.
-//       $sql.= " ";
-//     }
-    
-//     if( $sortBy ){ // Name or price
-//         $sql .=" ORDER BY ".$sortBy ;
-//     }
-//     //echo $sql;
-//     return preExeFet($sql);
-// }
-//login.php
-/*
-*@input: login process accesssed by login.php with user input
-*@output: successful login  directs user to index.php
-*/
 function goMain(){
     global $dbConn;
     
@@ -189,21 +90,7 @@ function goMain(){
 function alert($msg) {
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }
-//admin.php
-/*
-function info(){
-    //global $userData;
-    //http://php.net/manual/en/function.explode.php
-    //$data = $_GET['$userData'];
-    $pie = explode(",", $_GET['con_Id']);
-    foreach($pie as $slice){
-        echo"<br>".$slice;
-    }
-}
-<div id="iframecss">
-            <iframe src="" width="300" height="300" name="userInfoFrame"></iframe>
-        </div>        
-*/
+
 //updateuser
 function getUserInfo($userID){
     global $dbConn;
