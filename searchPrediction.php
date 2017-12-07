@@ -106,7 +106,6 @@
                          <?php predictionTable();?>
                      </tr>     
                  </tbody>
-                
                 </table>
             </div>
         </div>
