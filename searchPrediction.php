@@ -10,7 +10,6 @@
         $_SESSION["name"] = "Guest";
         //alert("user is not logged in");
     }
-
     if(isset($_POST['logout'])){
         //$_SESSION =[];
         session_destroy();
@@ -93,22 +92,48 @@
             
             <div style="float:left; width: 45%;">
                 <form>
-                    <input type="text" name="search" placeholder="Search..">
-                </form> <br>
-                
-                <table class="predictions" style="width: 100%;">
-                    <tr>
-                        <th>Movie Title</th>
-                        <th>Prediction </th>
-                        <th>Likes</th>
-                    </tr>
-                    <?php predictionTable(); ?>
-                </table>
+                    <input type="text" id="myInput" onkeyup="TableSearch()" placeholder="Search..">
+                    <br><br><br>
+                    <table id="myTable" style="width: 100%;" class="predictions">
+                      <tr>
+                            <th>Movie Title</th>
+                            <th>Prediction </th>
+                            <th>Likes</th>
+                      </tr>
+                      <tr>
+                          <?php predictionTable();?>
+                      </tr>
+                    
+                    </table>
+                </form>
             </div>
         </div>
         <?php
         include 'inc/footer.php';
         ?>
-        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
     </body>
+    <script>
+        document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
+    
+        function TableSearch() {
+            let input = document.getElementById("myInput");
+            let filter = input.value;
+            let table = document.getElementById("myTable");
+            let tr = table.getElementsByTagName("tr");
+            let td;
+        
+            for(let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } 
+                    else {
+                        tr[i].style.display = "none";
+                    }
+                }       
+            }
+        }        
+    </script>
 </html>
+

@@ -1,32 +1,4 @@
 <?php
-
-//include 'inc/dbConnection.php';
-
-//$dbConn = getDBConnection();
-
-/*
-*Form vars - All input converted to lower case.
-*/
-// $title= strtolower( $_POST['title']);// User input deviceName
-// $creator= strtolower( $_POST['creator']);// User input deviceName
-// $pub= strtolower( $_POST['publisher']);// User selected deviceType
-// $year = $_POST['year'];// Selection display type
-// $issue = $_POST['issue'];//User input item statusable selection
-// $sortBy = $_POST['sortBy'];
-
-//$creator, $sortBy - from above
-
-// $city = strtolower( $_POST['city']);
-// $conName= strtolower( $_POST['conName']);
-// $state= strtoupper( $_POST['state']);
-// $turnOut=  $_POST['turnOut'];
-// $website= $_POST['website'];
-
-
-/*
-*@input: sql string to be processed
-*@output: table from the sql query
-*/
 function preExeFet($sql){
     global $dbConn, $nPara;
     
@@ -43,7 +15,6 @@ function preExeFetNOPARA($sql){
     $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $records;
 }
-
 /*
 *@input: 
 *@output: all contents of device table for the user in alphebetical order
@@ -52,22 +23,15 @@ function getInfo( $table ) {
     $sql = "SELECT * FROM ".$table;
     return preExeFetNOPARA($sql);
 }
-
-function getInfoNaturalJoin( $table1, $table2 ) {
-    $sql = "SELECT * FROM ".$table1." NATURAL JOIN ".$table2;
-    return preExeFetNOPARA($sql);
-}
-
 // this function is used for the table in the search predictions page
 function predictionTable(){
-    //  $searches = getInfoNaturalJoin('movie_search', 'my_prediction'); // use this function when my_prediction has values inside of it
+    //  $predictions = getInfo('my_prediction');
      $searches = getInfo('movie_search');
      foreach($searches as $search) {
         echo"<tr>";
             echo "<td>".$search['movieTitle']."</td>";
             echo "<td>".$search['searchCount']."</td>";
-            echo "<td>"."</td>";
-
+            echo "<td></td>";
          echo "</tr>";
     }
     
@@ -94,7 +58,6 @@ function getInfoWithMovieTitle($table, $movietTitle){
 //         //Prevents SQL injection by using a named parameter.
 //         $nPara[':dTitle'] = '%'.$title.'%';
 //         $sql .= " WHERE title LIKE :dTitle ";
-
 //     }
 //     if( $creator ){
 //         if (strlen(stristr($sql,$needle))>0) { //String search for 'where': stristr returns the partial string up to 'where'.
@@ -120,7 +83,6 @@ function getInfoWithMovieTitle($table, $movietTitle){
 //         $sql .= " publisher LIKE :dPub ";
         
 //     }
-
 //     if( isset($_POST['allIn']) ){ // Added due to user submitting a blank form.
 //       $sql.= " ";
 //     }
@@ -131,12 +93,10 @@ function getInfoWithMovieTitle($table, $movietTitle){
 //     //echo $sql;
 //     return preExeFet($sql);
 // }
-
 function get($table, $column){
     $sql = "SELECT DISTINCT ".$column." FROM ".$table;
     return preExeFetNOPARA($sql);
 }
-
 // function goSQLcon($table){
 //     global $city, $creator, $conName, $state, $turnOut, $website, $sortBy, $nPara;
 //     $needle = "WHERE";//If the 'where' keyword is used  then 'and 'is added to the string in place of.
@@ -147,7 +107,6 @@ function get($table, $column){
 //         //Prevents SQL injection by using a named parameter.
 //         $nPara[':dConName'] = '%'.$conName.'%';
 //         $sql .= " WHERE conName LIKE :dConName ";
-
 //     }
 //     if( $creator ){
 //         if (strlen(stristr($sql,$needle))>0) { //String search for 'where': stristr returns the partial string up to 'where'.
@@ -173,7 +132,6 @@ function get($table, $column){
 //         $sql .= " state LIKE :dState ";
         
 //     }
-
 //     if( isset($_POST['allIn']) ){ // Added due to user submitting a blank form.
 //       $sql.= " ";
 //     }
@@ -184,7 +142,6 @@ function get($table, $column){
 //     //echo $sql;
 //     return preExeFet($sql);
 // }
-
 //login.php
 /*
 *@input: login process accesssed by login.php with user input
@@ -207,7 +164,6 @@ function goMain(){
     $statement = $dbConn->prepare($sql);
     $statement->execute($nPara);
     $record = $statement->fetch(PDO::FETCH_ASSOC);
-
     if (empty($record)) { //wrong credentials
         echo"<form method='POST' action='index.php'>";
         echo"<span style='color:red'><h5>Wrong username or password.</h5></span>";
@@ -229,15 +185,10 @@ function goMain(){
         header('Location: index.php');
 }
 }
-
-
-
 //https://stackoverflow.com/questions/13851528/how-to-pop-an-alert-message-box-using-php
 function alert($msg) {
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }
-
-
 //admin.php
 /*
 function info(){
@@ -249,12 +200,10 @@ function info(){
         echo"<br>".$slice;
     }
 }
-
 <div id="iframecss">
             <iframe src="" width="300" height="300" name="userInfoFrame"></iframe>
         </div>        
 */
-
 //updateuser
 function getUserInfo($userID){
     global $dbConn;
@@ -264,7 +213,6 @@ function getUserInfo($userID){
     $record = $statement->fetch(PDO::FETCH_ASSOC);
     return $record;
 }
-
 //New member registers
 function addUser(){
     global $dbConn;
@@ -290,7 +238,6 @@ function addUser(){
 //alert($_POST['nameReg']);   
         $nPara[':email'] = $_POST['emailReg'];
 //alert($_POST['emailReg']);   
-
 //alert('named para go');
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
@@ -299,7 +246,6 @@ function addUser(){
 //alert('insert complete');
     }//eof if
 }
-
 //admin updates current member
 function updateUser($userID){
     global $dbConn;
@@ -325,5 +271,4 @@ function updateUser($userID){
     header('Location: userUpdate.php?userID='.$userID);
     }//eof if
 }
-
 ?>
