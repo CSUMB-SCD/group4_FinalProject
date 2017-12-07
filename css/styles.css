@@ -241,16 +241,16 @@ header {
 /*End Modal*/
 
 /*The css for the prediction table*/
-#predictions td, #predictions th {
+.predictions td, .predictions th {
     border: 1px solid #ddd;
     padding: 8px;
     word-break: keep-all;
 
 }
-#predictions th {
+.predictions th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #808080;
+    background-color: #808080 !important;
     color: white;
 }

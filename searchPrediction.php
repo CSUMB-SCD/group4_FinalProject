@@ -96,11 +96,11 @@
                     <input type="text" name="search" placeholder="Search..">
                 </form> <br>
                 
-                <table id="predictions" style="width: 100%;">
+                <table class="predictions" style="width: 100%;">
                     <tr>
                         <th>Movie Title</th>
-                        <th>Date</th>
                         <th>Prediction </th>
+                        <th>Likes</th>
                     </tr>
                     <?php predictionTable(); ?>
                 </table>

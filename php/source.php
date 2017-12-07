@@ -60,8 +60,9 @@ function predictionTable(){
      foreach($searches as $search) {
         echo"<tr>";
             echo "<td>".$search['movieTitle']."</td>";
-            echo "<td>".$search['dateSearch']."</td>";
             echo "<td>".$search['searchCount']."</td>";
+            echo "<td>"."</td>";
+
          echo "</tr>";
     }
     
