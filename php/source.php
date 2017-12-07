@@ -53,9 +53,14 @@ function getInfo( $table ) {
     return preExeFetNOPARA($sql);
 }
 
+function getInfoNaturalJoin( $table1, $table2 ) {
+    $sql = "SELECT * FROM ".$table1." NATURAL JOIN ".$table2;
+    return preExeFetNOPARA($sql);
+}
+
 // this function is used for the table in the search predictions page
 function predictionTable(){
-    //  $predictions = getInfo('my_prediction');
+    //  $searches = getInfoNaturalJoin('movie_search', 'my_prediction'); // use this function when my_prediction has values inside of it
      $searches = getInfo('movie_search');
      foreach($searches as $search) {
         echo"<tr>";
