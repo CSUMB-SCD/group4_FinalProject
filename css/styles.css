@@ -244,7 +244,8 @@ header {
 .predictions td, .predictions th {
     border: 1px solid #ddd;
     padding: 8px;
-    word-break: keep-all;
+    word-break: keep-all !important;
+    /*font-size: 60%;*/
 
 }
 .predictions th {
@@ -259,6 +260,19 @@ header {
  table.predictions {
     height: 410px;
     overflow-y: auto;
+    overflow-x: hidden;
     display: inline-block;
+
+}
+
+.adminTable td{
+    word-break: break-all !important;
+
+}
+
+.adminTable th {
+    background-color: #808080 !important;
+    color: white;
+    word-break: keep-all !important;
 
 }
