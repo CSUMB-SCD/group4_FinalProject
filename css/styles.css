@@ -257,7 +257,7 @@ header {
 }
 
  table.predictions {
-    height: 430px;
+    height: 410px;
     overflow-y: auto;
     display: inline-block;
 

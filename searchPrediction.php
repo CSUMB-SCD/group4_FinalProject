@@ -103,7 +103,7 @@
                     </thead>
                  <tbody>
                     <tr>
-                         <?php predictionTable();?>
+                         <?php predictionTable(1);?>
                      </tr>     
                  </tbody>
                 </table>
