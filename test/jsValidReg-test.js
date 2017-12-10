@@ -9,8 +9,7 @@ global.$ = require('jquery')(window);
 
 describe("Error Message", function($) {
    it("should print error message", function(done){
-       expect(displayError("#email","error message")).to.equal("error message");
-       //expect(add(2,4)).to.equal(3);
+       expect(displayError("#email","error message")).to.not.be.empty;
        done();
    });
 });

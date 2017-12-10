@@ -1,3 +1,7 @@
+var jsdom = require('jsdom');
+var document = jsdom.jsdom("");
+var window = document.defaultView;
+global.$ = require('jquery')(window);
 
 function displayError(elementId, errorMessage){
     $(elementId+"Error").css("color","red").append(errorMessage);   //NOTE: +"Error" modifies the element ID!
@@ -95,7 +99,7 @@ function validateForm(){
  
 }
 
-/*$(document).ready(function(){
+$(document).ready(function(){
     $("#pw").change( function(){
         checkPassword();
     });
@@ -108,4 +112,4 @@ function validateForm(){
         checkRetype();
     });
     
-});//documentReady*/
+});//documentReady
