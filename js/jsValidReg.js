@@ -3,7 +3,7 @@ function displayError(elementId, errorMessage){
     $(elementId+"Error").css("color","red").append(errorMessage);   //NOTE: +"Error" modifies the element ID!
     $(elementId).css("backgroundColor","#FFDEDE").focus(); 
 }
-
+module.exports.displayError = displayError;
 function checkUserName(){
     var validUser = true;
     $("#usernameError").html("");
@@ -95,7 +95,7 @@ function validateForm(){
  
 }
 
-$(document).ready(function(){
+/*$(document).ready(function(){
     $("#pw").change( function(){
         checkPassword();
     });
@@ -108,4 +108,4 @@ $(document).ready(function(){
         checkRetype();
     });
     
-});//documentReady
+});//documentReady*/
