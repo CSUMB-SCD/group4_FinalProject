@@ -20,8 +20,8 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <head>
@@ -79,7 +79,7 @@
                           </button></a>";
                    
                     echo "</td><td><a href='php/deleteUser.php?userID=".$user['userID']."' onclick= 'return confirmDelete(\"".$user['username']."\")' >
-                          <button type=\"button\" class=\"btn-danger btn-sm\">
+                          <button type=\"button\" class=\"btn-danger btn-sm\" >
                           <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span> Delete
                           </button></a>";               
                     echo "</td></tr>";
@@ -88,10 +88,9 @@
             ?>
             </tbody>
             </table>
-           
-           
-    
         </div>
+
+        
         <?php
         include 'inc/footer.php';
         ?>
