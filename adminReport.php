@@ -32,9 +32,15 @@
         <style>
             .adminReport{
                 width: 50%;
-                margin-top: 2.0em
-                
-                
+                margin-top: 2.0em;
+                font-size: 1.5em;
+            }
+            .title{
+                text-align:right;
+            }
+            td{
+
+                width: 50%;
             }
         </style>
     </head>
@@ -53,19 +59,19 @@
                     <th colspan ='2'>Admin Report</th>
                     <tr>
                         <!--https://stackoverflow.com/questions/1921421/get-the-first-element-of-an-array-->
-                        <td>Number Users:</td><td><?php echo reset( numUser() ); ?></td>
+                        <td class='title'>Number Users:</td><td><?php echo reset( numUser() ); ?></td>
                     </tr><tr>
-                        <td>Number Admins:</td><td><?php echo reset( numAdmin() ); ?></td>
+                        <td class='title'>Number Admins:</td><td><?php echo reset( numAdmin() ); ?></td>
                     </tr><tr>
-                        <td>Most Login User:</td><td><?php echo reset( mostUser() ); ?></td>
+                        <td class='title'>Most Login User:</td><td><?php echo reset( mostUser() ); ?></td>
                     </tr><tr>
-                        <td>Most Login Admin:</td><td><?php echo reset( mostAdmin() ); ?></td>
+                        <td class='title'>Most Login Admin:</td><td><?php echo reset( mostAdmin() ); ?></td>
                     </tr><tr>
-                        <td>Most Searched Director:</td><td><?php echo reset( mostDir() ); ?></td>
+                        <td class='title'>Most Searched Director:</td><td><?php echo reset( mostDir() ); ?></td>
                     </tr><tr>
-                        <td>Most Searched Actor:</td><td><?php echo reset( mostAct() ); ?></td>
+                        <td class='title'>Most Searched Actor:</td><td><?php echo reset( mostAct() ); ?></td>
                     </tr><tr>
-                        <td>Most Searched Movie:</td><td><?php echo reset( mostMovie() ); ?></td>
+                        <td class='title'>Most Searched Movie:</td><td><?php echo reset( mostMovie() ); ?></td>
                     </tr>
                 </table> 
             

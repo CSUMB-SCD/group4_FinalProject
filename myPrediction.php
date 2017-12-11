@@ -49,7 +49,7 @@
             }
             
             input[type=text]:focus {
-                width: 100%;
+                width: 60%;
             }
             
         </style>
@@ -60,12 +60,12 @@
         ?>
         <div class= "wrapper">
             <h4 id="welcome">Welcome </h4>
-            <div id="id02" class="">
+            
                 <div class="containerAD">
                     <div style="float:left; width: 47%;">
-                         <h1 style="font-size:32px;">My Predictions </h1>
+                         <h2>My Predictions 
                         <input type="text" id="myInput" onkeyup="TableSearch()" placeholder="Search..">
-                        <br><br>
+                        </h2>
                         <table id="myTable" style="width:100%;" class="predictions">
                             <thead>
                                  <tr>
@@ -83,8 +83,7 @@
                     </div>
                     
                     <div style="float:right; width: 47%;">
-                        <br><br><br>
-                        <h1 style="font-size:32px;">Top Predictions </h1>
+                        <h2 style='padding-bottom:.35em'>Top Predictions </h2>
                         <table style="width:100%;" class="predictions">
                             <thead>
                                  <tr>
@@ -100,7 +99,7 @@
                          </tbody>
                         </table>
                     </div>
-                </div>
+            
             </div>    
         </div>
         <?php

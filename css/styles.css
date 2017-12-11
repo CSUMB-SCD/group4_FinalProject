@@ -72,7 +72,7 @@ th{
     left: 0;
     top: 0;
     width: 19%;
-    height: 120%;
+    min-height: 100%;
     opacity: .7;
     z-index: -1;
 
@@ -83,7 +83,7 @@ th{
     right: 0;
     top: 0;
     width: 19%;
-    height: 120%;
+    min-height: 100%;
     opacity: .7;
     z-index: -1;
 
