@@ -8,12 +8,10 @@
      
     if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
         $_SESSION["name"] = "Guest";
-        //alert("user is not logged in");
         //<!-- The Modal -->
         echo"<div id='myModal' class='modal in'>";
           //<!-- Modal content -->
           echo"<div class='modal-content'>";
-            //echo"<span class='close'>&times;</span>";
             echo"<p>You haven't logged in. Please do so for this feature.</p>";
             echo"<a href='index.php'>Log in Page</a>";
           echo"</div>";
@@ -24,18 +22,17 @@
         //$_SESSION =[];
         session_destroy();
         header("Location: index.php");
-        //alert("logged out");
     }
     
     if(isset($_POST['login'])){
-        //echo "goMain <br>";
         goMain();
     }
 ?>
 
-<!DOCTYPE html>
-<html>
-    <meta charset='utf-8'/>
+<!doctype html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <head>
         <title>myPrediction</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -103,7 +100,6 @@
                          </tbody>
                         </table>
                     </div>
-    
                 </div>
             </div>    
         </div>

@@ -11,21 +11,19 @@
     }
 
     if(isset($_POST['logout'])){
-        //$_SESSION =[];
         session_destroy();
         header("Location: index.php");
-        //alert("logged out");
     }
     
     if(isset($_POST['login'])){
-        //echo "goMain <br>";
         goMain();
     }
 ?>
 
-<!DOCTYPE html>
-<html>
-    <meta charset='utf-8'/>
+<!doctype html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <head>
         <title>Admin</title>
 <!--DATA TABLES-->
@@ -80,7 +78,7 @@
                           </button></a>";
                    
                     echo "</td><td><a href='php/deleteUser.php?userID=".$user['userID']."' onclick= 'return confirmDelete(\"".$user['username']."\")' >
-                          <button type=\"button\" class=\"btn-danger btn-sm\">
+                          <button type=\"button\" class=\"btn-danger btn-sm\" >
                           <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span> Delete
                           </button></a>";               
                     echo "</td></tr>";
@@ -89,12 +87,9 @@
             ?>
             </tbody>
             </table>
-           
-           
-    
-            
-            
         </div>
+
+        
         <?php
         include 'inc/footer.php';
         ?>
@@ -117,6 +112,7 @@
         //https://datatables.net/reference/option
         $(document).ready(function() {
             $('#example').DataTable();
+             scrollCollapse: true
         } );
     </script>
     </body>

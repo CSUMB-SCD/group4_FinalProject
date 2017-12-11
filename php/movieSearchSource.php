@@ -19,7 +19,7 @@ function searchMoviePerson($person, $role){
 
 function insertNewPerson($person, $role){
     global $dbConn;
-    //alert("no record found");
+//alert("no record found");
         $sql = "INSERT INTO movie_people (
                 name,  
                 roleID,
@@ -88,7 +88,7 @@ function addMoviePerson($person, $role){
     }
 //============================================
 function searchMovieSearch($title){
-    alert("searching for movie");
+//alert("searching for movie");
     global $dbConn;
     
     $sql = "SELECT * 
@@ -130,7 +130,7 @@ function insertNewMovie($title,$date){
 }
     
 function  updateMovie($title,$date){
-    alert('movie record exist');
+//alert('movie record exist');
     global $dbConn;
     
     $sql = "SELECT searchCount 

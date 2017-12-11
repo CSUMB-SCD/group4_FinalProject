@@ -29,15 +29,12 @@ function getData(person){
     $.ajax({
         type: "GET",
         url: "https://api.themoviedb.org/3/search/person",
-        //    url: "https://api.themoviedb.org/3/search/person?api_key=540de088224c98930553e46419dbf3fb&query='George Lucas",
         async: false,
         dataType: "json",//or jsonp
         data: { "api_key" : myAPI ,
-                //"api_key" : "540de088224c98930553e46419dbf3fb",
                 "query": person,
         },
         success: function(data, status) {
-            //alert('success');
             if(!data)
                 //rating += 0;
                 rating += 0 + '<br>';
@@ -47,9 +44,8 @@ function getData(person){
                 ratingSum += data.results[0].popularity
         },
         complete: function(data, status) { //optional, used for debugging purposes
-            //alert('status: ' + status);
         }
-    }); //AJAX
+    }); //END AJAX
 }
 //what is popularity out of --> for now saying out of 45
 //insert into id="percentage"

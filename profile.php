@@ -22,9 +22,10 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html>
-    <meta charset='utf-8'/>
+<!doctype html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <head>
         <title>Profile</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
