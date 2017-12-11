@@ -2,7 +2,7 @@
 
  //PREVENT SQL INJECTION
 function searchMoviePerson($person, $role){
-alert("searching for person");
+//alert("searching for person");
     global $dbConn;
     
     $sql = "SELECT * FROM movie_people WHERE name = :name AND roleID = :roleID";
@@ -19,7 +19,7 @@ alert("searching for person");
 
 function insertNewPerson($person, $role){
     global $dbConn;
-    alert("no record found");
+//alert("no record found");
         $sql = "INSERT INTO movie_people (
                 name,  
                 roleID,
@@ -33,15 +33,15 @@ function insertNewPerson($person, $role){
         $nPara[':name'] = $person;
         $nPara[':roleID']  = $role;
         $nPara[':searchCount'] = '1';
-alert('named para go');
+//alert('named para go');
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
  
-alert('insert complete');
+//alert('insert complete');
 }
 
 function updatePerson($person, $role){
-alert('record exist');
+//alert('record exist');
     global $dbConn;
     
     $sql = "SELECT searchCount 
@@ -56,11 +56,11 @@ alert('record exist');
     $statement->execute($nPara);
     $record = $statement->fetch(PDO::FETCH_ASSOC);
     
-alert('increase search count');    
+//alert('increase search count');    
     $searchCount = $record['searchCount'];
-alert('before increase: ' + $searchCount);
+//alert('before increase: ' + $searchCount);
     $searchCount++;
-alert('after increase: ' + $searchCount);    
+//alert('after increase: ' + $searchCount);    
     
     $sql = "UPDATE movie_people
             SET searchCount = :searchCount
@@ -74,7 +74,7 @@ alert('after increase: ' + $searchCount);
     $statement = $dbConn->prepare($sql);
     $statement->execute($nPara);
     
-alert('update searchCount');
+//alert('update searchCount');
 }
 
 function addMoviePerson($person, $role){
@@ -88,7 +88,7 @@ function addMoviePerson($person, $role){
     }
 //============================================
 function searchMovieSearch($title){
-    alert("searching for movie");
+//alert("searching for movie");
     global $dbConn;
     
     $sql = "SELECT * 
@@ -106,9 +106,9 @@ function searchMovieSearch($title){
 
 function insertNewMovie($title,$date){
     global $dbConn;
-alert("no movie record found");
-alert($title);
-alert($date);
+//alert("no movie record found");
+//alert($title);
+//alert($date);
     $sql = "INSERT INTO movie_search (
                 movieTitle,  
                 dateSearch,
@@ -122,15 +122,15 @@ alert($date);
         $nPara[':movieTitle'] = $title;
         $nPara[':dateSearch'] = $date;
         $nPara[':searchCount'] = '1';
-alert('movie - named para go');
+//alert('movie - named para go');
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
  
-alert('movie - insert complete');
+//alert('movie - insert complete');
 }
     
 function  updateMovie($title,$date){
-    alert('movie record exist');
+//alert('movie record exist');
     global $dbConn;
     
     $sql = "SELECT searchCount 
@@ -143,11 +143,11 @@ function  updateMovie($title,$date){
     $statement->execute($nPara);
     $record = $statement->fetch(PDO::FETCH_ASSOC);
     
-alert('increase search count');    
+//alert('increase search count');    
     $searchCount = $record['searchCount'];
-alert('before increase: ' + $searchCount);
+//alert('before increase: ' + $searchCount);
     $searchCount++;
-alert('after increase: ' + $searchCount);    
+//alert('after increase: ' + $searchCount);    
     
     $sql = "UPDATE movie_search
             SET searchCount = :searchCount,
@@ -161,7 +161,7 @@ alert('after increase: ' + $searchCount);
     $statement = $dbConn->prepare($sql);
     $statement->execute($nPara);
     
-alert('update movie searchCount');
+//alert('update movie searchCount');
 }
 
 function addMovieSearch($title, $date){

@@ -1,28 +1,9 @@
 <?php
 
-//include 'inc/dbConnection.php';
-
-//$dbConn = getDBConnection();
-
 /*
-*Form vars - All input converted to lower case.
+*@input: 
+*@output: all contents of device table for the user in alphebetical order
 */
-// $title= strtolower( $_POST['title']);// User input deviceName
-// $creator= strtolower( $_POST['creator']);// User input deviceName
-// $pub= strtolower( $_POST['publisher']);// User selected deviceType
-// $year = $_POST['year'];// Selection display type
-// $issue = $_POST['issue'];//User input item statusable selection
-// $sortBy = $_POST['sortBy'];
-
-//$creator, $sortBy - from above
-
-// $city = strtolower( $_POST['city']);
-// $conName= strtolower( $_POST['conName']);
-// $state= strtoupper( $_POST['state']);
-// $turnOut=  $_POST['turnOut'];
-// $website= $_POST['website'];
-
-
 /*
 *@input: sql string to be processed
 *@output: table from the sql query
@@ -43,11 +24,6 @@ function preExeFetNOPARA($sql){
     $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $records;
 }
-
-/*
-*@input: 
-*@output: all contents of device table for the user in alphebetical order
-*/
 function getInfo( $table ) {
     $sql = "SELECT * FROM ".$table;
     return preExeFetNOPARA($sql);
@@ -186,13 +162,14 @@ function goMain(){
         echo"<span style='color:red'><h5>Wrong username or password.</h5></span>";
         echo"</form>";
     } else {
+        
         $_SESSION["name"] = $record['name'];
         $_SESSION["email"] = $record['email'];
         $_SESSION["username"]  = $record['username'];
         $_SESSION["admin"] = $record['admin'];
         $_SESSION["joinDate"] = $record['joinDate'];
         $_SESSION["userID"] = $record['userID'];
-        
+        loginCount($_SESSION["userID"]);
         $_SESSION["user"] = "active";
         
         //echo "Welcome ". $_SESSION["user"]."<br>";
@@ -205,12 +182,45 @@ function goMain(){
 
 
 
+
+
 //https://stackoverflow.com/questions/13851528/how-to-pop-an-alert-message-box-using-php
 function alert($msg) {
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }
 
-
+function loginCount($userID){
+    global $dbConn;
+//alert('in login count');    
+    $sql = "SELECT loginCount 
+            FROM user
+            WHERE userID = :userID";
+    
+    $nPara = array();
+    $nPara[':userID'] = $userID;
+    $statement = $dbConn->prepare($sql);
+    $statement->execute($nPara);
+    $record = $statement->fetch(PDO::FETCH_ASSOC);
+    
+//alert('increase login count');    
+    $loginCount = $record['loginCount'];
+//alert('before increase: ' + $loginCount);
+    $loginCount++;
+//alert('after increase: ' + $loginCount);    
+    
+    $sql = "UPDATE user
+            SET loginCount = :loginCount
+            WHERE userID = :userID";
+                
+    $nPara = array();
+    $nPara[':loginCount'] = $loginCount;
+    $nPara[':userID'] = $userID;
+    
+    $statement = $dbConn->prepare($sql);
+    $statement->execute($nPara);
+    
+//alert('update user loginCount');
+}
 //admin.php
 /*
 function info(){
