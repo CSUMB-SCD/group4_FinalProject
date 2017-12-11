@@ -27,15 +27,12 @@ function getData(person){
     $.ajax({
         type: "GET",
         url: "https://api.themoviedb.org/3/search/person",
-        //    url: "https://api.themoviedb.org/3/search/person?api_key=540de088224c98930553e46419dbf3fb&query='George Lucas",
         async: false,
         dataType: "json",//or jsonp
         data: { "api_key" : myAPI ,
-                //"api_key" : "540de088224c98930553e46419dbf3fb",
                 "query": person,
         },
         success: function(data, status) {
-            //alert('success');
             if(!data)
                 //rating += 0;
                 rating += 0 + '<br>';
@@ -44,13 +41,8 @@ function getData(person){
                 rating += data.results[0].popularity +'<br>';
         },
         complete: function(data, status) { //optional, used for debugging purposes
-            //alert('status: ' + status);
         }
-    }); //AJAX
+    }); //END AJAX
 }
-//what is popularity out of --> for now saying out of 40
-//insert into id="percentage"
-//((directorpopularity+actorpopularity)/80) * 100
-
 //document.getElementById('percentage').innerHTML += (rating/count) *1.25;/// SEMICOLON HELL!!!!
 document.getElementById('percentage').innerHTML += rating;/// SEMICOLON HELL!!!!

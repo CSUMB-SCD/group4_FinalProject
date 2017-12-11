@@ -72,20 +72,21 @@ th{
     left: 0;
     top: 0;
     width: 19%;
-    height: 100%;
+    height: 120%;
     opacity: .7;
     z-index: -1;
-}
 
+}
 #bgRight {
     position: absolute;
     background-image: url("../img/bg2.jpg");
     right: 0;
     top: 0;
     width: 19%;
-    height: 100%;
+    height: 120%;
     opacity: .7;
     z-index: -1;
+
 }
 
 #logoutBtn {

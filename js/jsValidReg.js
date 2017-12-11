@@ -7,7 +7,6 @@ function displayError(elementId, errorMessage){
 function checkUserName(){
     var validUser = true;
     $("#usernameError").html("");
-    //alert($("#username").val());
     $.ajax({
         type: "GET",
         url:"../php/checkUserName.php",
@@ -15,17 +14,14 @@ function checkUserName(){
         data: { "username":$("#username").val()  },
         success: function( data, status ) {
             if( !data ) {//if (data == false)
-                //alert("username available!");
                 $("#username").css("backgroundColor","");
                 $("#usernameError").css("color", "blue").append("<br>  Username available!");
             }else{
-                //alert("username taken!");
                 displayError("#username","  Username unavailable!");
                 validUser = false;
             }
         },
         complete: function(data,status) { //optional, used for debugging purposes
-        //alert(status);
         }
     });//AJAX
     return validUser;
@@ -42,7 +38,6 @@ function checkEmail(){
     }else{
         $("#email").css("backgroundColor", "");
     }
-    //alert("email "+ validEmail);
     return validEmail;
 }
 
@@ -81,7 +76,6 @@ function checkPassword(){
         displayError("#pw", "<br>  Password must include at least one uppercase!");
         validPassword = false;
     }
-     //alert("pw "+ validPassword);
     return validPassword;
 }
 
@@ -91,7 +85,7 @@ function validateForm(){
    //   if( checkUserName() ){
             isValid = true;
        }
-    //alert("vf "+ isValid);
+
  
 }
 

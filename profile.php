@@ -24,7 +24,7 @@
 
 <!DOCTYPE html>
 <html>
-    <meta charset='utf-8'/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <head>
         <title>Profile</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

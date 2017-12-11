@@ -8,24 +8,21 @@
      
     if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
         $_SESSION["name"] = "Guest";
-        //alert("user is not logged in");
     }
 
     if(isset($_POST['logout'])){
-        //$_SESSION =[];
         session_destroy();
         header("Location: index.php");
     }
     
     if(isset($_POST['login'])){
-        //echo "goMain <br>";
         goMain();
     }
 ?>
 
 <!DOCTYPE html>
 <html>
-    <meta charset='utf-8'/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <head>
     <title>Deliverables</title></title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

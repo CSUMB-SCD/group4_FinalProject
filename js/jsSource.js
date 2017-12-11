@@ -43,7 +43,6 @@ function validateUpdate(){
         $('#modal-content').on('shown.bs.modal', function () {
         $("#txtname").focus();
        });
-
         // show the modal onload
         $('#modal-content').modal({
        show: true
@@ -53,14 +52,10 @@ function validateUpdate(){
     return isValid;
 }
 
-
 function validateInsert(){
     var isValid =true;
-      //alert(isValid);
     $(":input[type=text]").each(function() {
        if($(this).val() == ""){
-        //alert(this.val());
-        //alert($(this).attr('id'))
         var formID = $(this).attr('id');
         $( "#"+formID+"Error" ).html("");
         displayError("#"+formID ,"This is a required field.");
@@ -69,7 +64,7 @@ function validateInsert(){
        }
     });
     
-    //alert(isValid);
+
     return isValid;
 }
 
@@ -77,16 +72,13 @@ function validateInsert(){
     $("#city").change( function(){
         lettersOnly("#city");
     });
-    
     $("#state").change( function(){
         lettersOnly("#state");
     });
-    
 });//documentReady
 
 function resetFields(){
      $(":input").each(function() {
-       
         var formID = $(this).attr('id');
         $( "#"+formID+"Error" ).html("");
          $( "#"+formID ).css("backgroundColor","");
