@@ -255,3 +255,11 @@ header {
     background-color: #808080;
     color: white;
 }
+
+.myframe{
+    height:500px;
+    width: 500px;
+    float: right;
+    border:none;
+    
+}

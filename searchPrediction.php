@@ -84,7 +84,7 @@
             <h4 id="welcome">Welcome </h4>
             
             <div>
-                <iframe src="https://hw5-group4-chatapp.herokuapp.com/" height="500px" width="50%" align="right"></iframe>
+                <iframe src="https://hw5-group4-chatapp.herokuapp.com/" class='myframe'></iframe>
             </div>
             
             <div style="float:left; width: 45%;">
