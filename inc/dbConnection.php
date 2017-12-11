@@ -30,6 +30,13 @@ function getDBConnection(){
     
 }
 
+function getDataBySQL($sql)
+{
+    $conn = getDBConnection();
+    $result = $conn->query($sql);
+    return $result;
+}
+
 
 
 

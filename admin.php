@@ -47,8 +47,7 @@
                     <td><h4 id="welcome">Welcome Admin: </h4>
                </tr>  
             </table>
-            
-            <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
+             <table id="example" class="table table-striped table-bordered adminTable" width="100%" style="table-layout: fixed;" cellspacing="0">
             
                 <thead>
                     <th>User ID</th>
@@ -83,7 +82,7 @@
                           <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span> Delete
                           </button></a>";               
                     echo "</td></tr>";
-                    
+
                 }
             ?>
             </tbody>

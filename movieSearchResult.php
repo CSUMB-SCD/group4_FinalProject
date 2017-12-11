@@ -50,7 +50,11 @@
                                     <br><em><strong>Actor/Actress: </strong></em><span id='actorActress'><?php echo $_POST['actorTwo']; ?></span>
                                 <br><em><strong>Movie Date: </strong></em><?php echo $_POST['movieDate']; ?>
                             </td>
-                            <td class="resultsBox" id="percentage"><em><strong>Percentage:<br></strong></em></td>
+                            <br>
+                            <td class="resultsBox">
+                                <em><strong>Person:<br></strong><span id='individRating'></span></em>
+                                <em><strong>Expected Movie:<br></strong><span id='overall'></span></em>
+                            </td>
                         </tr>
                     </table>
                 </div>

@@ -9,7 +9,6 @@
     if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
         $_SESSION["name"] = "Guest";
     }
-
     if(isset($_POST['logout'])){
         session_destroy();
         header("Location: index.php");
@@ -21,7 +20,7 @@
     
     function fakeTable(){
         echo"
-        <tr>
+          <tr>
             <td>Fake Movie 1 </td>
             <td>90% </td>
           </tr>
@@ -88,22 +87,50 @@
             </div>
             
             <div style="float:left; width: 45%;">
-                <form>
-                    <input type="text" name="search" placeholder="Search..">
-                </form> <br>
-                
-                <table id="predictions" style="width: 100%;">
+                <input type="text" id="myInput" onkeyup="TableSearch()" placeholder="Search..">
+                <br><br>
+                <table id="myTable" style="width:100%;" class="predictions">
+                    <thead>
+                         <tr>
+                            <th>Movie Title</th>
+                            <th>Prediction </th>
+                            <th>Likes</th>
+                        </tr>
+                    </thead>
+                 <tbody>
                     <tr>
-                        <th>Movie Title</th>
-                        <th>Prediction </th>
-                    </tr>
-                    <?php  fakeTable(); ?>
+                         <?php predictionTable(1);?>
+                     </tr>     
+                 </tbody>
                 </table>
             </div>
         </div>
         <?php
         include 'inc/footer.php';
         ?>
-        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
     </body>
+    <script>
+        document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
+    
+        function TableSearch() {
+            let input = document.getElementById("myInput");
+            let filter = input.value;
+            let table = document.getElementById("myTable");
+            let tr = table.getElementsByTagName("tr");
+            let td;
+        
+            for(let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } 
+                    else {
+                        tr[i].style.display = "none";
+                    }
+                }       
+            }
+        }        
+    </script>
 </html>
+
