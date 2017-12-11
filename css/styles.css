@@ -258,6 +258,13 @@ header {
     color: white;
 }
 
+.myframe{
+    height:500px;
+    width: 500px;
+    float: right;
+    border:none;
+}
+
  table.predictions {
     height: 410px;
     overflow-y: auto;
@@ -275,5 +282,4 @@ header {
     background-color: #808080 !important;
     color: white;
     word-break: keep-all !important;
-
 }
