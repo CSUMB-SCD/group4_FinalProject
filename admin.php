@@ -32,7 +32,7 @@
 
         <link rel="stylesheet" href="css/styles.css">
         <style>
-            th{
+            .colBtn, th{
                 text-align: center;
             }
         </style>
@@ -47,7 +47,8 @@
                     <td><h4 id="welcome">Welcome Admin: </h4>
                </tr>  
             </table>
-             <table id="example" class="table table-striped table-bordered adminTable" width="100%" style="table-layout: fixed;" cellspacing="0">
+            
+            <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
             
                 <thead>
                     <th>User ID</th>
@@ -65,24 +66,24 @@
                 $users = getInfo('user');
                 foreach ($users as $user) {
                     echo"<tr>";
-                        echo "<td>".$user['userID'];
+                        echo "<td class='colBtn'>".$user['userID'];
                         echo "</td><td>".$user['username'];
                         echo "</td><td>".$user['password'];
                         echo "</td><td>".$user['name'];
                         echo "</td><td>".$user['email'];
-                        echo "</td><td>".$user['admin'];
+                        echo "</td><td class='colBtn'>".$user['admin'];
                         
-                    echo "</td><td><a href='userUpdate.php?userID=".$user['userID']."'>
+                    echo "</td><td class='colBtn'><a href='userUpdate.php?userID=".$user['userID']."'>
                           <button type=\"button\" class=\"btn-primary btn-sm\">
                           <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> Update
                           </button></a>";
                    
-                    echo "</td><td><a href='php/deleteUser.php?userID=".$user['userID']."' onclick= 'return confirmDelete(\"".$user['username']."\")' >
+                    echo "</td><td class='colBtn'><a href='php/deleteUser.php?userID=".$user['userID']."' onclick= 'return confirmDelete(\"".$user['username']."\")' >
                           <button type=\"button\" class=\"btn-danger btn-sm\" >
                           <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span> Delete
                           </button></a>";               
                     echo "</td></tr>";
-
+                    
                 }
             ?>
             </tbody>
