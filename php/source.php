@@ -16,6 +16,7 @@ function preExeFet($sql){
     $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $records;
 }
+
 function preExeFetNOPARA($sql){
     global $dbConn;
     

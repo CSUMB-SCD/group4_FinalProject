@@ -4,27 +4,27 @@
 *@input: sql string to be processed
 *@output: table from the sql query
 */
-function preExeFetNOPARA($sql){
+function preExeFetSQL($sql){
     global $dbConn;
     
-    $stmt = $dbConn -> prepare ($sql);
-    $stmt -> execute();
-    $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $records;
+    $statement = $dbConn -> prepare ($sql);
+    $statement -> execute();
+    $record = $statement->fetch(PDO::FETCH_ASSOC);
+    return $record;
 }
 
 function numUser(){
     $sql = "SELECT  count(*)
             FROM    user
             WHERE   admin = 0";
-    return preExeFetNOPARA($sql);
+    return preExeFetSQL($sql);
 }
 
 function numAdmin(){
     $sql = "SELECT  count(*)
             FROM    user
             WHERE   admin = 1";
-    return preExeFetNOPARA($sql);
+    return preExeFetSQL($sql);
 }    
     
 function mostUser(){
@@ -34,7 +34,7 @@ function mostUser(){
             GROUP BY username
             ORDER BY loginCount 
             DESC LIMIT 1";
-    return preExeFetNOPARA($sql);
+    return preExeFetSQL($sql);
 }   
     
 function mostAdmin(){
@@ -44,7 +44,7 @@ function mostAdmin(){
             GROUP BY username
             ORDER BY loginCount 
             DESC LIMIT 1";
-    return preExeFetNOPARA($sql);
+    return preExeFetSQL($sql);
 }    
    
 function mostDir(){
@@ -54,7 +54,7 @@ function mostDir(){
             GROUP BY name
             ORDER BY searchCount 
             DESC LIMIT 1";
-    return preExeFetNOPARA($sql);
+    return preExeFetSQL($sql);
 }    
     
 function mostAct(){
@@ -64,7 +64,7 @@ function mostAct(){
             GROUP BY name
             ORDER BY searchCount 
             DESC LIMIT 1";
-    return preExeFetNOPARA($sql);
+    return preExeFetSQL($sql);
 }    
 
 function mostMovie(){
@@ -72,7 +72,7 @@ function mostMovie(){
             FROM    movie_search
             ORDER BY searchCount 
             DESC LIMIT 1";
-    return preExeFetNOPARA($sql);
+    return preExeFetSQL($sql);
 }
 
 ?>

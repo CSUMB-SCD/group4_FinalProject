@@ -33,6 +33,7 @@
                 width: 50%;
                 margin-top: 2.0em
                 
+                
             }
         </style>
     </head>
@@ -47,22 +48,23 @@
                </tr>  
             </table>
            
-                <table class="table table-striped table-bordered adminReport">
+                <table class="table table-striped adminReport">
                     <th colspan ='2'>Admin Report</th>
                     <tr>
-                        <td>Number Users:</td><td><?php numUser(); ?></td>
+                        <!--https://stackoverflow.com/questions/1921421/get-the-first-element-of-an-array-->
+                        <td>Number Users:</td><td><?php echo reset( numUser() ); ?></td>
                     </tr><tr>
-                        <td>Number Admins:</td><td><?php numAdmin(); ?></td>
+                        <td>Number Admins:</td><td><?php echo reset( numAdmin() ); ?></td>
                     </tr><tr>
-                        <td>Most Login User:</td><td><?php mostUser(); ?></td>
+                        <td>Most Login User:</td><td><?php echo reset( mostUser() ); ?></td>
                     </tr><tr>
-                        <td>Most Login Admin:</td><td><?php mostAdmin(); ?></td>
+                        <td>Most Login Admin:</td><td><?php echo reset( mostAdmin() ); ?></td>
                     </tr><tr>
-                        <td>Most Searched Director:</td><td><?php mostDir(); ?></td>
+                        <td>Most Searched Director:</td><td><?php echo reset( mostDir() ); ?></td>
                     </tr><tr>
-                        <td>Most Searched Actor:</td><td><?php mostAct(); ?></td>
+                        <td>Most Searched Actor:</td><td><?php echo reset( mostAct() ); ?></td>
                     </tr><tr>
-                        <td>Most Searched Movie:</td><td><?php mostMovie(); ?></td>
+                        <td>Most Searched Movie:</td><td><?php echo reset( mostMovie() ); ?></td>
                     </tr>
                 </table> 
             
