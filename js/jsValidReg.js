@@ -30,7 +30,6 @@ function checkUserName(){
 function checkEmail(){
     var validEmail =true;
     var email = $("#email").val();
-    
     $("#emailError").html("");
     if( !/[a-z]+@[a-z]+\.[a-z]{2,4}$/i.test(email) ){
         displayError("#email", "<br>  Correct email format: xxxx @ xxxx . xxx");
@@ -81,12 +80,9 @@ function checkPassword(){
 
 function validateForm(){
     var isValid = false;
-   if( checkPassword() && checkEmail() && checkRetype() ){//&& checkUserName() ){
-   //   if( checkUserName() ){
+   if( checkPassword() && checkEmail() && checkRetype() ){
             isValid = true;
        }
-
- 
 }
 
 $(document).ready(function(){
@@ -102,4 +98,4 @@ $(document).ready(function(){
         checkRetype();
     });
     
-});//documentReady
+});

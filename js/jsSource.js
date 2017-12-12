@@ -1,6 +1,5 @@
 // JavaScript File -- careful !!!!  examine url for '?''
 
-
 function displayError(elementId, errorMessage){
     $(elementId+"Error").css("color","red").append(errorMessage);   //NOTE: +"Error" modifies the element ID!
     $(elementId).css("backgroundColor","#FFDEDE").focus(); 
@@ -34,12 +33,12 @@ function notBlank(field){
 
 function validateUpdate(){
     var isValid = false;
-        if(  lettersOnly("#city") &&  lettersOnly("#state") &&  notBlank("#conName") ){
-        isValid = true;
-        
-        //javascript - Bootstrap modal show event - Stack Overflow
-        //http://jsfiddle.net/BeL2V/1233/
-        // set focus when modal is opened
+    
+    if(  lettersOnly("#city") &&  lettersOnly("#state") &&  notBlank("#conName") ){
+            isValid = true;
+            //javascript - Bootstrap modal show event - Stack Overflow
+            //http://jsfiddle.net/BeL2V/1233/
+            // set focus when modal is opened
         $('#modal-content').on('shown.bs.modal', function () {
         $("#txtname").focus();
        });
@@ -60,11 +59,8 @@ function validateInsert(){
         $( "#"+formID+"Error" ).html("");
         displayError("#"+formID ,"This is a required field.");
         isValid= false;
-       
        }
     });
-    
-
     return isValid;
 }
 

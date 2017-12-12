@@ -1,9 +1,5 @@
-<?php
+<?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 
-/*
-*@input: sql string to be processed
-*@output: table from the sql query
-*/
 function preExeFetSQL($sql){
     global $dbConn;
     
@@ -74,5 +70,4 @@ function mostMovie(){
             DESC LIMIT 1";
     return preExeFetSQL($sql);
 }
-
 ?>

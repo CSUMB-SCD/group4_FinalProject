@@ -1,4 +1,4 @@
-<?php
+<?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 header('Access-Control-Allow-Origin: *');
 include '../inc/dbConnection.php';
 $dbConn = getDBConnection();

@@ -43,26 +43,15 @@
         ?>
         <div class= "wrapper">
             <table>
-                <tr>
-                    <td><h4 id="welcome">Welcome Admin: </h4>
-               </tr>  
+                <tr><td><h4 id="welcome">Welcome Admin: </h4></tr>  
             </table>
-            
             <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
-            
                 <thead>
-                    <th>User ID</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Admin</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+                    <th>User ID</th><th>Username</th><th>Password</th>
+                    <th>Name</th><th>Email</th><th>Admin</th><th>Update</th><th>Delete</th>
                 </thead>
                 <tbody>
             <?php
-            
                 $users = getInfo('user');
                 foreach ($users as $user) {
                     echo"<tr>";
@@ -89,11 +78,7 @@
             </tbody>
             </table>
         </div>
-
-        
-        <?php
-        include 'inc/footer.php';
-        ?>
+        <?php   include 'inc/footer.php';    ?>
 <!--DATA TABLES-->
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -101,7 +86,7 @@
     <script>
         document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>'
         
-         function confirmDelete(userName){
+        function confirmDelete(userName){
             var confirmDelete = confirm("This is permanent.\n" + userName + " will be deleted.");
             if (!confirmDelete){
                 return false;
@@ -109,8 +94,7 @@
                 return true;
             }
         } 
-      
-        //https://datatables.net/reference/option
+//https://datatables.net/reference/option
         $(document).ready(function() {
             $('#example').DataTable();
              scrollCollapse: true

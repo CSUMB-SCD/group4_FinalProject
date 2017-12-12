@@ -1,5 +1,4 @@
-<?php
-
+<?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 // this make the string of * depending on the size of the word found
 function censorship($swearWord){
     $censor = "";
@@ -35,4 +34,3 @@ function findSwearwords($message){
     return $message;
 }
 ?>
-

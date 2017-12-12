@@ -74,44 +74,37 @@
         </style>
     </head>
     <body>
-        <?php 
-        include 'inc/header.php';
-        include 'inc/nav.php';
+        <?php   include 'inc/header.php';
+                include 'inc/nav.php';
         ?>
          <div class= "wrapper">
-             
-            <h4 id="welcome">Welcome </h4>
+            <h4 id="welcome">Welcome</h4>
             <div>
                 <iframe src="https://hw5-group4-chatapp.herokuapp.com/" class='myframe'></iframe>
             </div>
             
             <div style="float:left; width: 45%;">
-                <input type="text" id="myInput" onkeyup="TableSearch()" placeholder="Search..">
+                <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Search..">
                 <br><br>
                 <table id="myTable" style="width:100%;" class="predictions">
-                    <thead>
-                         <tr>
+                    <thead><tr>
                             <th>Movie Title</th>
                             <th>Prediction </th>
                             <th>Likes</th>
-                        </tr>
-                    </thead>
+                    </tr></thead>
                  <tbody>
-                    <tr>
-                         <?php predictionTable(1);?>
-                     </tr>     
+                    <tr><?php     predictionTable(1);    ?>
+                    </tr>     
                  </tbody>
                 </table>
             </div>
         </div>
-        <?php
-        include 'inc/footer.php';
-        ?>
+        <?php   include 'inc/footer.php';    ?>
     </body>
     <script>
         document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
     
-        function TableSearch() {
+        function tableSearch() {
             let input = document.getElementById("myInput");
             let filter = input.value;
             let table = document.getElementById("myTable");

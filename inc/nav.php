@@ -8,7 +8,6 @@
         echo "<a href='admin.php'>Admin</a>";
         }
     echo "</div>";
-    
     echo '<div id=bgRight></div>';
     echo '<div id=bgLeft></div>';
 ?>

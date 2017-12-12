@@ -1,17 +1,16 @@
 <?php
-    session_start();  //start or resume an existing session
+    session_start();  
     
     include 'inc/dbConnection.php';
     include 'php/source.php';
      
     $dbConn = getDBConnection(); 
      
-    if(!isset($_SESSION["user"])) {  //Check whether the user has logged in
+    if(!isset($_SESSION["user"])) {  
         $_SESSION["name"] = "Guest";
     }
 
     if(isset($_POST['logout'])){
-        //$_SESSION =[];
         session_destroy();
         header("Location: index.php");
     }
@@ -31,12 +30,12 @@
     </head>
     <body>
         <?php   include 'inc/header.php';
-                include 'inc/nav.php';    ?>
+                include 'inc/nav.php';    
+        ?>
         <div class= "wrapper">
             <h4 id="welcome">Welcome </h4>
                 <table>
-                    <tr>
-                    <td class = "tdIndex">
+                    <tr><td class = "tdIndex">
                         <form method="POST" class="" name="loginForm">
                             <?php if( !isset($_SESSION["user"]) ){
                                     echo '<label><b>Username</b></label>';
@@ -79,8 +78,7 @@
                                 }
                             ?>
                         </form>
-                    </td>
-                    </tr>
+                    </td></tr>
                 </table>
         </div>
         <?php   include 'inc/footer.php';    ?>

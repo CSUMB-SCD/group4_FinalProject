@@ -33,13 +33,12 @@
             .adminReport{
                 width: 50%;
                 margin-top: 2.0em;
-                font-size: 1.5em;
+                font-size: 1.1em;
             }
             .title{
                 text-align:right;
             }
             td{
-
                 width: 50%;
             }
         </style>
@@ -50,11 +49,8 @@
         ?>
         <div class= "wrapper">
             <table>
-                <tr>
-                    <td><h4 id="welcome">Welcome Admin: </h4>
-               </tr>  
+                <tr><td><h4 id="welcome">Welcome Admin: </h4></tr>  
             </table>
-           
                 <table class="table table-striped adminReport">
                     <th colspan ='2'>Admin Report</th>
                     <tr>
@@ -74,11 +70,8 @@
                         <td class='title'>Most Searched Movie:</td><td><?php echo reset( mostMovie() ); ?></td>
                     </tr>
                 </table> 
-            
         </div>
-        <?php
-        include 'inc/footer.php';
-        ?>
+        <?php   include 'inc/footer.php';    ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
     </body>
 </html>
