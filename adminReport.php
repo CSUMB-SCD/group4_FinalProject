@@ -33,7 +33,7 @@
             .adminReport{
                 width: 50%;
                 margin-top: 2.0em;
-                font-size: 1.5em;
+                font-size: 1.1em;
             }
             .title{
                 text-align:right;

@@ -63,9 +63,9 @@
             
                 <div class="containerAD">
                     <div style="float:left; width: 47%;">
-                         <h2>My Predictions 
+                         <h3>My Predictions 
                         <input type="text" id="myInput" onkeyup="TableSearch()" placeholder="Search..">
-                        </h2>
+                        </h3>
                         <table id="myTable" style="width:100%;" class="predictions">
                             <thead>
                                  <tr>
@@ -83,7 +83,7 @@
                     </div>
                     
                     <div style="float:right; width: 47%;">
-                        <h2 style='padding-bottom:.35em'>Top Predictions </h2>
+                        <h3 style='padding-bottom:.48em'>Top Predictions </h3>
                         <table style="width:100%;" class="predictions">
                             <thead>
                                  <tr>
