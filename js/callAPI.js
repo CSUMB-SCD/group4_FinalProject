@@ -20,9 +20,8 @@ $('span').each(function () {
 
 var rating ="";
 var ratingSum = 0;
-//ajax call to and datat location
 //https://api.themoviedb.org/3/person/{person_id}?api_key=<<api_key>>&language=en-US
-//data.popularity
+//xml tree branch - data.popularity
 function getData(person){
     $.ajax({
         type: "GET",
