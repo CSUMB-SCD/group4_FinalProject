@@ -1,6 +1,4 @@
-<?php 
-
-// $this is a special self-referencing variable. You use $this to access properties and to call other methods of the current class.
+<?php // DB CLASSES
 
 class person 
 	{	protected $userID;
@@ -19,7 +17,7 @@ class person
 			$this->password = $password;
 			$this->name = $name;
 			$this->email = $email;
-			$this->joinDate = date(date("Y-m-d",time() );
+			$this->joinDate = date("Y-m-d",time() );
 			$this->loginCount = 1;
 		}
 				 

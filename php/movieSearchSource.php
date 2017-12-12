@@ -1,6 +1,5 @@
-<?php
+<?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 
- //PREVENT SQL INJECTION
 function searchMoviePerson($person, $role){
 //alert("searching for person");
     global $dbConn;
@@ -20,23 +19,20 @@ function searchMoviePerson($person, $role){
 function insertNewPerson($person, $role){
     global $dbConn;
 //alert("no record found");
-        $sql = "INSERT INTO movie_people (
-                name,  
-                roleID,
-                searchCount
-            )
+    $sql = "INSERT INTO movie_people (
+            name,  
+            roleID,
+            searchCount )
             VALUES (
-            :name, :roleID, :searchCount
-            )";
+            :name, :roleID, :searchCount )";
             
-        $nPara = array();        
-        $nPara[':name'] = $person;
-        $nPara[':roleID']  = $role;
-        $nPara[':searchCount'] = '1';
+    $nPara = array();        
+    $nPara[':name'] = $person;
+    $nPara[':roleID']  = $role;
+    $nPara[':searchCount'] = '1';
 //alert('named para go');
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
- 
 //alert('insert complete');
 }
 
@@ -55,7 +51,6 @@ function updatePerson($person, $role){
     $statement = $dbConn->prepare($sql);
     $statement->execute($nPara);
     $record = $statement->fetch(PDO::FETCH_ASSOC);
-    
 //alert('increase search count');    
     $searchCount = $record['searchCount'];
 //alert('before increase: ' + $searchCount);
@@ -66,27 +61,25 @@ function updatePerson($person, $role){
             SET searchCount = :searchCount
             WHERE name = :name
             AND roleID = :roleID";
-                
+     
     $nPara = array();
     $nPara[':name'] = $person;
     $nPara[':roleID'] = $role;        
     $nPara[':searchCount'] = $searchCount;
     $statement = $dbConn->prepare($sql);
     $statement->execute($nPara);
-    
 //alert('update searchCount');
 }
 
 function addMoviePerson($person, $role){
 //alert('in addDir');
-    //in the database...maybe
     $person = strtolower($person);
     if (empty( searchMoviePerson($person, $role) )) 
         insertNewPerson($person, $role);
     else
         updatePerson($person, $role);
     }
-//============================================
+
 function searchMovieSearch($title){
 //alert("searching for movie");
     global $dbConn;
@@ -94,7 +87,6 @@ function searchMovieSearch($title){
     $sql = "SELECT * 
             FROM movie_search 
             WHERE movieTitle = :movieTitle";
-    
     $nPara = array(); 
     $nPara[':movieTitle'] = $title;
     $statement = $dbConn->prepare($sql);
@@ -112,20 +104,17 @@ function insertNewMovie($title,$date){
     $sql = "INSERT INTO movie_search (
                 movieTitle,  
                 dateSearch,
-                searchCount
-            )
-            VALUES (
-            :movieTitle, :dateSearch, :searchCount
-            )";
+                searchCount )
+                VALUES (
+                :movieTitle, :dateSearch, :searchCount )";
             
-        $nPara = array();        
-        $nPara[':movieTitle'] = $title;
-        $nPara[':dateSearch'] = $date;
-        $nPara[':searchCount'] = '1';
+    $nPara = array();        
+    $nPara[':movieTitle'] = $title;
+    $nPara[':dateSearch'] = $date;
+    $nPara[':searchCount'] = '1';
 //alert('movie - named para go');
-        $stmt = $dbConn->prepare($sql);
-        $stmt->execute($nPara);
- 
+    $stmt = $dbConn->prepare($sql);
+    $stmt->execute($nPara);
 //alert('movie - insert complete');
 }
     
@@ -142,7 +131,6 @@ function  updateMovie($title,$date){
     $statement = $dbConn->prepare($sql);
     $statement->execute($nPara);
     $record = $statement->fetch(PDO::FETCH_ASSOC);
-    
 //alert('increase search count');    
     $searchCount = $record['searchCount'];
 //alert('before increase: ' + $searchCount);
@@ -160,7 +148,6 @@ function  updateMovie($title,$date){
     $nPara[':searchCount'] = $searchCount;
     $statement = $dbConn->prepare($sql);
     $statement->execute($nPara);
-    
 //alert('update movie searchCount');
 }
 
@@ -171,5 +158,5 @@ function addMovieSearch($title, $date){
     else
         updateMovie($title,$date);
 }
-//============================================
+
 ?>

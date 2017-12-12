@@ -38,11 +38,10 @@
     </head>
     <body>
         <?php include 'inc/header.php';
-        include 'inc/nav.php';
+              include 'inc/nav.php';
         ?>
         <div class= "wrapper">
             <h4 id="welcome">Welcome </h4>
-            
                 <form method="POST" name="movieSearch" action="movieSearchResult.php" >
                     <table>
                         <tr><td class = "tdIndex">

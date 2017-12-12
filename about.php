@@ -56,9 +56,7 @@
                 <p><em>User Login:</em> Create account (Username, password). Once created, it will be stored in our database. When people log in, their username/password will be verified and checked that it’s in our database.
             </div>
         </div>
-        <?php
-        include 'inc/footer.php';
-        ?>
+        <?php   include 'inc/footer.php';    ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
     </body>
 </html>

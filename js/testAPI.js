@@ -8,14 +8,13 @@ var count = 0;
 var ratingSum = 0;
 
 //var myAPI = process.env.SOME_VAR;
-//could store these in a database and call the db.....
+//could store these in a database and call the db.
 var a = "540de08";
 var b = "8224c98";
 var c = "930553e";
 var d = "46419db";
 var last = "f3fb";
 var myAPI = a+b+c+d+last;
-
 
 $('span').each(function () {
     person = $(this).text();
@@ -47,32 +46,24 @@ function getData(person){
         }
     }); //END AJAX
 }
-//what is popularity out of --> for now saying out of 45
-//insert into id="percentage"
-//(sum) / (45* count) * 100
-//document.getElementById('percentage').innerHTML += (rating/count) *1.25;/// SEMICOLON HELL!!!!
-alert(rating);
-alert(ratingSum);
-document.getElementById('individRating').innerHTML = rating;/// SEMICOLON HELL!!!!
-ratingSum = (ratingSum/(20*count))*100;
+
+//document.getElementById('percentage').innerHTML += (rating/count) *1.25;
+//alert(rating);
+//alert(ratingSum);
+document.getElementById('individRating').innerHTML = rating;
+ratingSum = Math.round( (ratingSum/20*count)*10000)/100;
 if(ratingSum > 100)
 {
     document.getElementById('overall').innerHTML = "BLOCK BUSTERRRRRR!!";
-    document.getElementById("overall").style.color = "blue";
-    document.getElementById("overall").style.fontFamily = "Arial";
-    document.getElementById("overall").style.fontSize = "larger";
+    document.getElementById("overall").style.color = "#000080";
 }
 else if(ratingSum > 60)
 {
     document.getElementById('overall').innerHTML = ratingSum;
-    document.getElementById("overall").style.color = "yellow";
-    document.getElementById("overall").style.fontFamily = "Arial";
-    document.getElementById("overall").style.fontSize = "larger";
+    document.getElementById("overall").style.color = "#006400";
 }
 else
 {
     document.getElementById('overall').innerHTML = ratingSum;
-    document.getElementById("overall").style.color = "red";
-    document.getElementById("overall").style.fontFamily = "Arial";
-    document.getElementById("overall").style.fontSize = "larger";
+    document.getElementById("overall").style.color = "#f00";
 }

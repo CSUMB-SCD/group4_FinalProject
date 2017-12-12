@@ -31,7 +31,7 @@
     </head>
     <body>
         <?php include 'inc/header.php';
-        include 'inc/nav.php';
+              include 'inc/nav.php';
         ?>
         <div class= "wrapper" style="width: 40% !important">
             <h4 id="welcome">Welcome </h4>

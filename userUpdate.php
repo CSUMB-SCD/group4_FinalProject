@@ -11,7 +11,6 @@
     }
 
     if(isset($_POST['logout'])){
-        //$_SESSION =[];
         session_destroy();
         header("Location: index.php");
     }
@@ -30,7 +29,6 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
         
-        
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- jQuery dependent!!! -->
@@ -38,15 +36,14 @@
     </head>
     <body>
         <?php include 'inc/header.php';
-            include 'inc/nav.php';
+              include 'inc/nav.php';
         ?>
         <div class= "wrapper">
             <h4 id="welcome">Welcome Admin, </h4>
             <form method="POST" name="updateUser" action="#" onsubmit="return validateForm()">
                 <table>
-
-                        <th><h4>Current Info</h4></th>
-                        <th><h4>New Info</h4></th>
+                    <th><h4>Current Info</h4></th>
+                    <th><h4>New Info</h4></th>
                     <tr>
                         <td class= "tdUserUpdate"><label><b>Username:  </b></label>
                             <?php echo $user['username'];?><br>

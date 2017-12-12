@@ -19,7 +19,6 @@
         goMain();
     }
 ?>
-
 <!doctype html>
 <html lang="en">
     <meta charset="utf-8">
@@ -31,14 +30,13 @@
     </head>
     <body>
         <?php include 'inc/header.php';
-        include 'inc/nav.php';
+              include 'inc/nav.php';
         ?>
         <div class= "wrapper">
             <h4 id="welcome">Welcome </h4>
             <div id="" class="">
                 <table>
-                    <tr>
-                    <td>
+                    <tr><td>
                         <h3><strong>Team G4FP Members:</strong></h3>
                         <ol>
                             <li><strong>Jessie Dowding</strong> - Project Manager <br> jdowding@csumb.edu<br> Git: JessDF<br> Slack: jdowding
@@ -50,19 +48,14 @@
                             <li><strong>Phillip T. Emmons</strong> - Quality Assurance <br> pemmons@csumb.edu <br>Git: philemmons<br> Slack: pemmons
                             </li>
                         </ol>
-                    </td>
-                    <td>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12803.589104219938!2d-121.7981631!3d36.6529218!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcdbf437897f231fd!2sCalifornia+State+University%2C+Monterey+Bay!5e0!3m2!1sen!2sus!4v1510567069926" width="450" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    </td>
-                    </tr>  
+                    </td><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12803.589104219938!2d-121.7981631!3d36.6529218!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcdbf437897f231fd!2sCalifornia+State+University%2C+Monterey+Bay!5e0!3m2!1sen!2sus!4v1510567069926" width="450" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </td></tr>  
                 </table>  
             </div>    
         </div>
-        <?php
-        include 'inc/footer.php';
-        ?>
+        <?php   include 'inc/footer.php';    ?>
         <script>
-        document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>';
+            document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>';
         </script>
     </body>
 </html>
