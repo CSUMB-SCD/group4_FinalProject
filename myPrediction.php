@@ -61,7 +61,7 @@
                 <div class="containerAD">
                     <div style="float:left; width: 47%;">
                         <h3>My Predictions 
-                            <input type="text" id="myInput" onkeyup="TableSearch()" placeholder="Search..">
+                            <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Search..">
                         </h3>
                         <table id="myTable" style="width:100%;" class="predictions">
                             <thead>
@@ -101,7 +101,7 @@
     </body>
     <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
         <script>
-        function TableSearch() {
+        function tableSearch() {
             let input = document.getElementById("myInput");
             let filter = input.value;
             let table = document.getElementById("myTable");

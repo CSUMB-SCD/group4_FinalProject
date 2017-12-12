@@ -166,4 +166,25 @@ function updateUser($userID){
     header('Location: userUpdate.php?userID='.$userID);
     }//eof if
 }
+function predictionTable($number){
+    //  $predictions = getInfo('my_prediction');
+    if($number == 1){
+        $searches = getInfo('movie_search');
+    }else if($number == 2){
+        $searches = getInfo('movie_search');
+
+    }else if($number == 3){
+        $sql = "SELECT * FROM movie_search ORDER BY searchCount desc LIMIT 10";
+        $searches = preExeFetNOPARA($sql);
+    }
+    //$searches = getInfo('movie_search');
+     foreach($searches as $search) {
+        echo"<tr>";
+            echo "<td>".$search['movieTitle']."</td>";
+            echo "<td>".$search['searchCount']."</td>";
+            echo "<td></td>";
+         echo "</tr>";
+    }
+}
+
 ?>
