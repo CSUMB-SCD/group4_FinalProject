@@ -79,10 +79,25 @@ function getData(person){
 function addPrediction(){
     $.ajax({
             type: "GET",
-            url:"../php/newPrediction.php",
+            url:"../php/newPredictions.php",
             data: { "rating":ratingSum, "uID":userID,"a1ID":actor1ID,"a2ID":actor2ID,"dID":directorID, "mID":movieID},
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('An error occurred... Look at the console (F12 or Ctrl+Shift+I, Console tab) for more information!');
+
+                console.log('jqXHR:');
+                console.log(jqXHR);
+                console.log('textStatus:');
+                console.log(textStatus);
+                console.log('errorThrown:');
+                console.log(errorThrown);
+            },
             success: function( data, status ) {
-                alert("got back from php file")
+                if( !data ) {//if (data == false)
+                    $("#username").css("backgroundColor","");
+                    $("#usernameError").css("color", "blue").append("<br>  Username available!");
+                }else{
+                    alert()
+            }
             },
             complete: function(data,status) { //optional, used for debugging purposes
             alert(status);

@@ -1,28 +1,31 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
-
-    global $dbConn;
+    //header('Access-Control-Allow-Origin: *');
+    include '../inc/dbConnection.php';
+    $dbConn = getDBConnection();
     //alert("no record found");
     $sql = "INSERT INTO my_prediction (
             userID,  
-            actorID,
-            actressID,
+            actor1ID,
+            actor2ID,
             directorID,
             movieID,
-            rating
+            pred_result
         )
         VALUES (
-        :uID, :aID, :asID,dID, mID,r
+        :uID, :aID, :asID,:dID, :mID,:r
         )";
         
     $nPara = array();        
-    $nPara[':uID'] = $_POST['uID'];
-    $nPara[':aID'] = $_POST['a1ID'];
-    $nPara[':asID'] = $_POST['a2ID'];
-    $nPara[':dID'] = $_POST['dID'];
-    $nPara[':mID'] = $_POST['mID'];
-    $nPara[':r'] = $_POST['rating'];
+    $nPara[':uID'] = $_GET['uID'];
+    $nPara[':aID'] = $_GET['a1ID'];
+    $nPara[':asID'] = $_GET['a2ID'];
+    $nPara[':dID'] = $_GET['dID'];
+    $nPara[':mID'] = $_GET['mID'];
+    $nPara[':r'] = $_GET['rating'];
     
-//alert('named para go');
+    
+    //$message = "wrong answer";
+    //echo "<script type='text/javascript'>alert('$message');</script>";
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
 //alert('insert complete');
