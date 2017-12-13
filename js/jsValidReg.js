@@ -1,6 +1,6 @@
-
+//NOTE: +"Error" modifies the element ID!
 function displayError(elementId, errorMessage){
-    $(elementId+"Error").css("color","red").append(errorMessage);   //NOTE: +"Error" modifies the element ID!
+    $(elementId+"Error").css("color","red").append(errorMessage);   
     $(elementId).css("backgroundColor","#FFDEDE").focus(); 
 }
 
