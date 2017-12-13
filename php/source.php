@@ -169,19 +169,19 @@ function updateUser($userID){
 function predictionTable($number){
     //  $predictions = getInfo('my_prediction');
     if($number == 1){
-        $searches = getInfo('movie_search');
+        $sql = "SELECT * FROM my_prediction NATURAL JOIN movie_search";
+        $searches = preExeFetNOPARA($sql);
     }else if($number == 2){
         $searches = getInfo('movie_search');
 
     }else if($number == 3){
-        $sql = "SELECT * FROM movie_search ORDER BY searchCount desc LIMIT 10";
+        $sql = "SELECT * FROM my_prediction NATURAL JOIN movie_search ORDER BY searchCount desc LIMIT 10";
         $searches = preExeFetNOPARA($sql);
     }
-    //$searches = getInfo('movie_search');
      foreach($searches as $search) {
         echo"<tr>";
             echo "<td>".$search['movieTitle']."</td>";
-            echo "<td>".$search['searchCount']."</td>";
+            echo "<td>".$search['pred_result']."</td>";
             echo "<td></td>";
          echo "</tr>";
     }

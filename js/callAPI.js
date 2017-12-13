@@ -44,18 +44,13 @@ function getData(person){
         }
     }); //END AJAX
 }
+
 document.getElementById('individRating').innerHTML = rating;
-document.getElementById('overall').innerHTML = ratingSum;
 ratingSum = Math.round( (ratingSum/20*count)*10000)/100;
+document.getElementById('overall').innerHTML = ratingSum;
 if(ratingSum > 100)
-{
     document.getElementById("overall").style.color = "#000080";
-}
 else if(ratingSum > 60)
-{
     document.getElementById("overall").style.color = "#006400";
-}
 else
-{
     document.getElementById("overall").style.color = "#f00";
-}
