@@ -39,7 +39,7 @@ function getData(person){
                 rating += 0 + '<br>';
             }else{
                 rating += data.results[0].popularity +'<br>';
-                alert('rating '+rating);
+//alert('rating '+rating);
             }
                 ratingSum += data.results[0].popularity;
 //alert('ratingSum '+ ratingSum);
