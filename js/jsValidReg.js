@@ -80,9 +80,10 @@ function checkPassword(){
 
 function validateForm(){
     var isValid = false;
-   if( checkPassword() && checkEmail() && checkRetype() ){
-            isValid = true;
-       }
+    if( checkPassword() && checkEmail() && checkRetype() ){
+        isValid = true;
+    }
+    return isValid;
 }
 
 $(document).ready(function(){
