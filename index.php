@@ -72,7 +72,7 @@
                             
                             <input type="submit" name= 'reg' id ="register" value="Register" class="btnAD btn sub" />
                             <?php
-                                if(isset($_POST['reg'])){// && !isset($_SESSION["user"]) ){
+                                if( isset($_POST['reg']) ){
                                     addUser();
                                     echo "<h3 id='addUser'>Register Complete.</h3>";
                                 }
