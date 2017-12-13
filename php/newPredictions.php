@@ -8,21 +8,20 @@
             actressID,
             directorID,
             movieID,
-            dateSearch,
             rating
         )
         VALUES (
-        :uID, :aID, :asID,dID, mID,dS,r
+        :uID, :aID, :asID,dID, mID,r
         )";
         
     $nPara = array();        
     $nPara[':uID'] = $_POST['uID'];
-    $nPara[':aID'] = $_POST['uID'];
-    $nPara[':asID'] = $_POST['uID'];
+    $nPara[':aID'] = $_POST['a1ID'];
+    $nPara[':asID'] = $_POST['a2ID'];
     $nPara[':dID'] = $_POST['dID'];
     $nPara[':mID'] = $_POST['mID'];
-    $nPara[':dS'] = $_POST['dS'];
-    $nPara[':r'] = $_POST['r'];
+    $nPara[':r'] = $_POST['rating'];
+    
 //alert('named para go');
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);

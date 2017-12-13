@@ -65,7 +65,10 @@
                     </table>
                 </form>
         </div>
-        <?php   include 'inc/footer.php';    ?>
+        <?php   
+            include 'inc/footer.php';
+            $_SESSION['peeps'] = 0;
+        ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
         </script>
     </body>

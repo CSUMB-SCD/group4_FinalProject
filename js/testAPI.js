@@ -6,6 +6,11 @@ var rating ="";//literal
 var person = "";
 var count = 0;
 var ratingSum = 0;
+var userID = "<?php echo $_SESSION['userID']; ?>";
+var actor1ID = "<?php echo $_SESSION['actor1']; ?>";
+var actor2ID = "<?php echo $_SESSION['actor2']; ?>";
+var directorID = "<?php echo $_SESSION['directorID']; ?>";
+var movieID = "<?php echo $_SESSION['movieID']; ?>";
 
 //var myAPI = process.env.SOME_VAR;
 //could store these in a database and call the db.
@@ -24,6 +29,31 @@ $('span').each(function () {
     }
 })  
 
+
+//document.getElementById('percentage').innerHTML += (rating/count) *1.25;
+//alert(rating);
+//alert(ratingSum);
+document.getElementById('individRating').innerHTML = rating;
+ratingSum = Math.round((ratingSum/20*count)*5);
+if(ratingSum > 100)
+{
+    document.getElementById('overall').innerHTML = "BLOCK BUSTERRRRRR!!";
+    document.getElementById("overall").style.color = "#000080";
+}
+else if(ratingSum > 60)
+{
+    document.getElementById('overall').innerHTML = ratingSum;
+    document.getElementById("overall").style.color = "#006400";
+}
+else
+{
+    document.getElementById('overall').innerHTML = ratingSum;
+    document.getElementById("overall").style.color = "#f00";
+}
+alert(ratingSum);
+alert(userID);
+alert(actor1ID,actor2ID,directorID,movieID);
+addPrediction();
 function getData(person){
     $.ajax({
         type: "GET",
@@ -46,24 +76,16 @@ function getData(person){
         }
     }); //END AJAX
 }
-
-//document.getElementById('percentage').innerHTML += (rating/count) *1.25;
-//alert(rating);
-//alert(ratingSum);
-document.getElementById('individRating').innerHTML = rating;
-ratingSum = Math.round( (ratingSum/20*count)*10000)/100;
-if(ratingSum > 100)
-{
-    document.getElementById('overall').innerHTML = "BLOCK BUSTERRRRRR!!";
-    document.getElementById("overall").style.color = "#000080";
-}
-else if(ratingSum > 60)
-{
-    document.getElementById('overall').innerHTML = ratingSum;
-    document.getElementById("overall").style.color = "#006400";
-}
-else
-{
-    document.getElementById('overall').innerHTML = ratingSum;
-    document.getElementById("overall").style.color = "#f00";
+function addPrediction(){
+    $.ajax({
+            type: "GET",
+            url:"../php/newPrediction.php",
+            data: { "rating":ratingSum, "uID":userID,"a1ID":actor1ID,"a2ID":actor2ID,"dID":directorID, "mID":movieID},
+            success: function( data, status ) {
+                alert("got back from php file")
+            },
+            complete: function(data,status) { //optional, used for debugging purposes
+            alert(status);
+            }
+        });//AJAX
 }
