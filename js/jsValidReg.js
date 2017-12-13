@@ -34,7 +34,7 @@ function checkUserName(){
     });//AJAX
     return validUser;
 }
-
+module.exports.checkUserName = checkUserName;
 function checkEmail(){
     var validEmail =true;
     var email = $("#email").val();
@@ -49,6 +49,7 @@ function checkEmail(){
     //alert("email "+ validEmail);
     return validEmail;
 }
+module.exports.checkEmail = checkEmail;
 
 function checkRetype(){
     var validRetype = true;
@@ -63,9 +64,10 @@ function checkRetype(){
         $("#pwAgain").css("backgroundColor","");
         //$("#pwAgainError").css("color", "blue").append("  Passwords match!");
     }
-    alert("retype "+ validRetype);
+    //alert("retype "+ validRetype);
     return validRetype;
 }
+module.exports.checkRetype = checkRetype;
 
 function checkPassword(){
     var validPassword = true;
@@ -88,6 +90,7 @@ function checkPassword(){
      //alert("pw "+ validPassword);
     return validPassword;
 }
+module.exports.checkPassword = checkPassword;
 
 function validateForm(){
     var isValid = false;
@@ -98,6 +101,7 @@ function validateForm(){
     //alert("vf "+ isValid);
  
 }
+module.exports.validateForm = validateForm;
 
 $(document).ready(function(){
     $("#pw").change( function(){
