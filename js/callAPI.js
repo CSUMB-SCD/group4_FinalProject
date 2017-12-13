@@ -1,12 +1,3 @@
-//https://api.themoviedb.org/3/person/{person_id}?api_key=<<api_key>>&language=en-US
-//data.popularity
-
-//var rating = 0;//numerical
-var rating ="";//literal
-var person = "";
-var count = 0;
-var ratingSum = 0;
-
 //var myAPI = process.env.SOME_VAR;
 //could store these in a database and call the db.
 var a = "540de08";
@@ -16,6 +7,9 @@ var d = "46419db";
 var last = "f3fb";
 var myAPI = a+b+c+d+last;
 
+var person = "";
+var count = 0;
+
 $('span').each(function () {
     person = $(this).text();
     if( person !== ''){
@@ -24,6 +18,10 @@ $('span').each(function () {
     }
 })  
 
+var rating ="";
+var ratingSum = 0;
+//https://api.themoviedb.org/3/person/{person_id}?api_key=<<api_key>>&language=en-US
+//xml tree branch - data.popularity
 function getData(person){
     $.ajax({
         type: "GET",
@@ -46,11 +44,8 @@ function getData(person){
         }
     }); //END AJAX
 }
-
-//document.getElementById('percentage').innerHTML += (rating/count) *1.25;
-//alert(rating);
-//alert(ratingSum);
 document.getElementById('individRating').innerHTML = rating;
+
 ratingSum = Math.round( (ratingSum/20*count)*10000)/100;
 if(ratingSum > 100)
 {

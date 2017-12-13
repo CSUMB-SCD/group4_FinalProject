@@ -63,7 +63,7 @@
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
 <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="js/testAPI.js"></script>
+        <script src="js/callAPI.js"></script>
         <?php //print_r($_POST);
             if( $_POST['director'] != ''){
                 addMoviePerson($_POST['director'], 1);
