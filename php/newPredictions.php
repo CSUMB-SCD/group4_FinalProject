@@ -1,5 +1,6 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
     //header('Access-Control-Allow-Origin: *');
+    session_start();
     include '../inc/dbConnection.php';
     $dbConn = getDBConnection();
     //alert("no record found");
@@ -16,16 +17,20 @@
         )";
         
     $nPara = array();        
-    $nPara[':uID'] = $_GET['uID'];
-    $nPara[':aID'] = $_GET['a1ID'];
-    $nPara[':asID'] = $_GET['a2ID'];
-    $nPara[':dID'] = $_GET['dID'];
-    $nPara[':mID'] = $_GET['mID'];
+    $nPara[':uID'] = $_SESSION['userID'];
+    $nPara[':aID'] = $_SESSION['actor1'];
+    $nPara[':asID'] = $_SESSION['actor2'];
+    $nPara[':dID'] = $_SESSION['directorID'];
+    $nPara[':mID'] = $_SESSION['movieID'];
     $nPara[':r'] = $_GET['rating'];
     
-    
-    //$message = "wrong answer";
-    //echo "<script type='text/javascript'>alert('$message');</script>";
+    // $nPara[':uID'] = $_GET['uID'];
+    // $nPara[':aID'] = $_GET['a1ID'];
+    // $nPara[':asID'] = 15;//$_GET['a2ID'];
+    // $nPara[':dID'] = $_GET['dID'];
+    // $nPara[':mID'] = $_GET['mID'];
+    // $nPara[':r'] = $_GET['rating'];
+
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
 //alert('insert complete');

@@ -11,6 +11,7 @@ var actor1ID = "<?php echo $_SESSION['actor1']; ?>";
 var actor2ID = "<?php echo $_SESSION['actor2']; ?>";
 var directorID = "<?php echo $_SESSION['directorID']; ?>";
 var movieID = "<?php echo $_SESSION['movieID']; ?>";
+console.log(movieID);
 
 //var myAPI = process.env.SOME_VAR;
 //could store these in a database and call the db.
@@ -80,7 +81,7 @@ function addPrediction(){
     $.ajax({
             type: "GET",
             url:"../php/newPredictions.php",
-            data: { "rating":ratingSum, "uID":userID,"a1ID":actor1ID,"a2ID":actor2ID,"dID":directorID, "mID":movieID},
+            data: { "rating":ratingSum},
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('An error occurred... Look at the console (F12 or Ctrl+Shift+I, Console tab) for more information!');
 
