@@ -25,6 +25,7 @@
     
     if(isset($_POST['login'])){
         goMain();
+        $user = $_SESSION["userID"];
     }
 ?>
 
@@ -36,6 +37,7 @@
         <title>myPrediction</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
+        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
         <style>
             input[type=text] {
                 width: 130px;
@@ -99,7 +101,7 @@
         </div>
         <?php   include 'inc/footer.php';    ?>
     </body>
-    <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
+
         <script>
         function tableSearch() {
             let input = document.getElementById("myInput");

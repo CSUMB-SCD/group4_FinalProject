@@ -167,24 +167,45 @@ function updateUser($userID){
     }//eof if
 }
 function predictionTable($number){
+    global $dbConn;
     //  $predictions = getInfo('my_prediction');
     if($number == 1){
-        $sql = "SELECT * FROM my_prediction NATURAL JOIN movie_search";
-        $searches = preExeFetNOPARA($sql);
+        $sql = "SELECT movieTitle, pred_result, numLikes 
+                FROM my_prediction NATURAL JOIN movie_search";
+        $record = preExeFetNOPARA($sql);
+        
     }else if($number == 2){
-        $searches = getInfo('movie_search');
+        $user = $_SESSION["userID"];
+        $sql = "SELECT movieTitle, pred_result, numLikes
+                FROM (my_prediction NATURAL JOIN movie_search) 
+                WHERE userID = :userID
+                ORDER BY pred_result";
+        // alert($_SESSION["userID"]);
 
+        $nPara = array();
+        $nPara[':userID'] = $user;
+        $statement = $dbConn->prepare($sql);
+        $statement->execute($nPara);
+        $record = $statement->fetch(PDO::FETCH_ASSOC);
+        
+        var_dump($record);
+        alert(is_array($record));
+
+        
     }else if($number == 3){
-        $sql = "SELECT * FROM (my_prediction NATURAL JOIN movie_search) ORDER BY searchCount desc LIMIT 10";
-        $searches = preExeFetNOPARA($sql);
+        $sql = "SELECT movieTitle, pred_result, numLikes 
+                FROM (my_prediction NATURAL JOIN movie_search) ORDER BY pred_result desc LIMIT 10";
+        $record = preExeFetNOPARA($sql);
     }
-     foreach($searches as $search) {
+    
+    foreach($record as $search) {
         echo"<tr>";
             echo "<td>".$search['movieTitle']."</td>";
             echo "<td>".$search['pred_result']."</td>";
-            echo "<td></td>";
+            echo "<td>".$search['numLikes']."</td>";
          echo "</tr>";
     }
+     
 }
 
 ?>
