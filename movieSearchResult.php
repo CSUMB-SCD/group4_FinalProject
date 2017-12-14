@@ -18,7 +18,7 @@
     
     if(isset($_POST['login'])){
         //echo "goMain <br>";
-        goMain();
+        //goMain();
     }
 ?>
 
@@ -74,7 +74,7 @@
             if( $_POST['actorTwo'] != ''){
                 addMoviePerson($_POST['actorTwo'], 2);
             }
-            if( $_POST['movieTitle'] !=""){
+            if( ($_POST['movieTitle'] !="") ){
                 addMovieSearch($_POST['movieTitle'],$_POST['movieDate'] );
             }
         ?>
