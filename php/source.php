@@ -175,7 +175,7 @@ function predictionTable($number){
         $searches = getInfo('movie_search');
 
     }else if($number == 3){
-        $sql = "SELECT * FROM my_prediction NATURAL JOIN movie_search ORDER BY searchCount desc LIMIT 10";
+        $sql = "SELECT * FROM (my_prediction NATURAL JOIN movie_search) ORDER BY searchCount desc LIMIT 10";
         $searches = preExeFetNOPARA($sql);
     }
      foreach($searches as $search) {
