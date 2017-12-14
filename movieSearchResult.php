@@ -19,12 +19,6 @@
         session_destroy();
         header("Location: index.php");
     }
-    
-    //if(isset($_POST['login'])){
-    //     //echo "goMain <br>";
-    //     //goMain();
-    //     header("Location: index.php");
-    // }
 ?>
 
 <!doctype html>
@@ -72,6 +66,7 @@
         <script src="js/API.js"></script>
 
         <?php //print_r($_POST);
+
             if(isset($_SESSION["user"])){
                 if( $_POST['director'] != ''){
                     addMoviePerson($_POST['director'], 1);
