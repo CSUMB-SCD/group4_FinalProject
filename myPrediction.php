@@ -25,6 +25,7 @@
     
     if(isset($_POST['login'])){
         goMain();
+        $user = $_SESSION["userID"];
     }
 ?>
 
@@ -99,7 +100,7 @@
         </div>
         <?php   include 'inc/footer.php';    ?>
     </body>
-    <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
+        <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
         <script>
         function tableSearch() {
             let input = document.getElementById("myInput");
