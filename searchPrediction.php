@@ -3,7 +3,7 @@
     
     include 'inc/dbConnection.php';
     include 'php/source.php';
-     
+  
     $dbConn = getDBConnection(); 
      
     if(!isset($_SESSION["user"])) {  
@@ -59,17 +59,17 @@
                     <thead><tr>
                             <th>Movie Title</th>
                             <th>Prediction </th>
-                            <th>Likes</th>
+                            <th>UpVote</th>
                     </tr></thead>
                  <tbody>
-                    <tr><?php     predictionTable(1);    ?>
+                    <tr><?php     predictionVote();    ?>
                     </tr>     
                  </tbody>
                 </table>
             </div>
         </div>
         <?php   include 'inc/footer.php';    ?>
-    </body>
+
     <script>
         document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
     
@@ -91,7 +91,31 @@
                     }
                 }       
             }
-        }        
+        }
     </script>
+<!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- jQuery dependent!!! -->
+        <script>
+            function upVote(movieID){
+                $.ajax({
+                    type: "GET",
+                    url:"../php/upVote.php",
+                    async: false,
+                    dataType: "json",
+                    data: { "movieID":movieID,
+                    },
+                    success: function( data, status ) {
+                        if(!data)
+                           alert("no data");
+                        else
+                        alert("success");
+                    },
+                    complete: function(data,status) { //optional, used for debugging purposes
+                    }
+                });//AJAX
+            }
+        </script>
+    </body>
 </html>
 
