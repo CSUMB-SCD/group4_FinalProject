@@ -9,7 +9,7 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: gcloud setup
+          name: PHPUnit setup
           command: |
             wget https://phar.phpunit.de/phpunit.phar
             chmod +x phpunit.phar
