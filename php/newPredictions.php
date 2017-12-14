@@ -1,9 +1,10 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
-    //header('Access-Control-Allow-Origin: *');
     session_start();
+    
     include '../inc/dbConnection.php';
+    
     $dbConn = getDBConnection();
-    //alert("no record found");
+//alert("no record found");
     $sql = "INSERT INTO my_prediction (
             userID,  
             actor1ID,
@@ -24,6 +25,6 @@
     $nPara[':mID'] = $_SESSION['movieID'];
     $nPara[':r'] = $_GET['rating'];
     
-        $stmt = $dbConn->prepare($sql);
-        $stmt->execute($nPara);
+    $stmt = $dbConn->prepare($sql);
+    $stmt->execute($nPara);
 ?>

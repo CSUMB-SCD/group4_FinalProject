@@ -3,23 +3,23 @@ jobs:
    build:
      working_directory: ~/group4_FinalProject
      docker:
-       - image: circleci/php:7.1-node-browsers
+       - image: circleci/php:5.6-node-browsers
      steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+      # restore_cache:
+      #   key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: PHPUnit setup
           command: |
-            wget https://phar.phpunit.de/phpunit.phar
-            chmod +x phpunit.phar
-            sudo mv phpunit.phar /usr/local/bin/phpunit
+            wget https://phar.phpunit.de/phpunit-5.7.phar
+            chmod +x phpunit-5.7.phar
+            sudo mv phpunit-5.7.phar /usr/local/bin/phpunit
             phpunit --version
             
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
+      # save_cache:
+      #   key: dependency-cache-{{ checksum "package.json" }}
+      #   paths:
+      #     - ./node_modules
      #-run:
      #   name: Run Tests
      #   command: |
@@ -27,3 +27,4 @@ jobs:
      branches:
       only:
         - unit_tests
+        - master

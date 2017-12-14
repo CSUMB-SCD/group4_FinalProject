@@ -1,5 +1,5 @@
 var ratingSum = document.getElementById('overall').innerHTML;
-alert(ratingSum);
+//alert(ratingSum);
 
 $.ajax({
     type: "GET",

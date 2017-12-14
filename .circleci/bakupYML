@@ -1,0 +1,29 @@
+version: 2
+jobs:
+   build:
+     working_directory: ~/group4_FinalProject
+     docker:
+       - image: circleci/php:7.1-node-browsers
+     steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: PHPUnit setup
+          command: |
+            wget https://phar.phpunit.de/phpunit.phar
+            chmod +x phpunit.phar
+            sudo mv phpunit.phar /usr/local/bin/phpunit
+            phpunit --version
+            
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+     #-run:
+     #   name: Run Tests
+     #   command: |
+     #     phpunit --bootstrap src/Email.php tests/EmailTest
+     branches:
+      only:
+        - unit_tests
