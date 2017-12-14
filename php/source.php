@@ -180,29 +180,29 @@ function predictionTable($number){
                 FROM (my_prediction NATURAL JOIN movie_search) 
                 WHERE userID = :userID
                 ORDER BY pred_result";
-        // alert($_SESSION["userID"]);
-
+                
         $nPara = array();
         $nPara[':userID'] = $user;
         $statement = $dbConn->prepare($sql);
         $statement->execute($nPara);
-        $record = $statement->fetch(PDO::FETCH_ASSOC);
-        
-        var_dump($record);
-        alert(is_array($record));
+        $record = $statement->fetchAll(PDO::FETCH_ASSOC);        
+        // var_dump($user);
 
         
     }else if($number == 3){
         $sql = "SELECT movieTitle, pred_result, numLikes 
-                FROM (my_prediction NATURAL JOIN movie_search) ORDER BY pred_result desc LIMIT 10";
+                FROM (my_prediction NATURAL JOIN movie_search) 
+                ORDER BY pred_result desc LIMIT 9";
         $record = preExeFetNOPARA($sql);
+                // var_dump($record);
+
     }
     
     foreach($record as $search) {
         echo"<tr>";
-            echo "<td>".$search['movieTitle']."</td>";
-            echo "<td>".$search['pred_result']."</td>";
-            echo "<td>".$search['numLikes']."</td>";
+            echo "<td>".$search["movieTitle"]."</td>";
+            echo "<td>".$search["pred_result"]."</td>";
+            echo "<td>".$search["numLikes"]."</td>";
          echo "</tr>";
     }
      
