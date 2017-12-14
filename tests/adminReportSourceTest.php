@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-include 'inc/adminReportSource.php';
+//include 'inc/adminReportSource.php';
 
 function test_numUser()
 {
