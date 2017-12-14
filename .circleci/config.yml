@@ -27,3 +27,4 @@ jobs:
      branches:
       only:
         - unit_tests
+        - master
