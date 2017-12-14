@@ -169,12 +169,7 @@ function updateUser($userID){
 function predictionTable($number){
     global $dbConn;
     //  $predictions = getInfo('my_prediction');
-    if($number == 1){
-        $sql = "SELECT movieTitle, pred_result, numLikes 
-                FROM my_prediction NATURAL JOIN movie_search";
-        $record = preExeFetNOPARA($sql);
-        
-    }else if($number == 2){
+    if($number == 2){
         $user = $_SESSION["userID"];
         $sql = "SELECT movieTitle, pred_result, numLikes
                 FROM (my_prediction NATURAL JOIN movie_search) 
@@ -187,7 +182,7 @@ function predictionTable($number){
         $statement->execute($nPara);
         $record = $statement->fetchAll(PDO::FETCH_ASSOC);        
         // var_dump($user);
-
+        
         
     }else if($number == 3){
         $sql = "SELECT movieTitle, pred_result, numLikes 
@@ -205,7 +200,28 @@ function predictionTable($number){
             echo "<td>".$search["numLikes"]."</td>";
          echo "</tr>";
     }
-     
+}
+
+
+function predictionVote(){
+    
+    $sql = "SELECT movieTitle, pred_result, numLikes, movieID 
+                FROM my_prediction NATURAL JOIN movie_search";
+    $record = preExeFet($sql);
+    
+//print_r($record);
+  
+    foreach($record as $item) {
+        echo"<tr>";
+            echo "<td>".$item["movieTitle"]."</td>";
+            echo "<td>".$item["pred_result"]."</td>";
+            echo '<td style="text-align: center;"><input type="image" src ="../img/likeBtn.png" alt="Submit" 
+                    onclick= "upVote('.$item['movieID'].')" id="addONe" >';
+            
+            //echo '<td style="text-align: center;"><a href="upVote.php?movieID='.$item['movieID'].'&numlikes='.$item['numLikes']. 
+            //        ' onclick= "return confirmVote()" ><img src="../img/likeBtn.png" /></a></td>';
+         echo "</tr>";
+    }
 }
 
 ?>
