@@ -70,6 +70,7 @@
 <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="js/API.js"></script>
+
         <?php //print_r($_POST);
             if(isset($_SESSION["user"])){
                 if( $_POST['director'] != ''){

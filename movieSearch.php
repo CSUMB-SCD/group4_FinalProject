@@ -9,7 +9,6 @@
     if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
         $_SESSION["name"] = "Guest";
     }
-
     if(isset($_POST['logout'])){
         session_destroy();
         header("Location: index.php");

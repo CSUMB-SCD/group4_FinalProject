@@ -1,50 +1,22 @@
 <?php
-    session_start();  //start or resume an existing session
+    session_start();  
     
     include 'inc/dbConnection.php';
     include 'php/source.php';
      
     $dbConn = getDBConnection(); 
      
-    if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
+    if(!isset($_SESSION["user"])) {  
         $_SESSION["name"] = "Guest";
     }
     if(isset($_POST['logout'])){
         session_destroy();
         header("Location: index.php");
     }
-    
     if(isset($_POST['login'])){
         goMain();
     }
     
-    function fakeTable(){
-        echo"
-          <tr>
-            <td>Fake Movie 1 </td>
-            <td>90% </td>
-          </tr>
-          <tr>
-            <td>Fake Movie 2 </td>
-            <td>75% </td>
-          </tr>
-          <tr>
-            <td>Fake Movie 3</td>
-            <td>69% </td>
-          </tr>
-          <tr>
-            <td>Fake Movie 4 </td>
-            <td>21% </td>
-          </tr>
-          <tr>
-            <td>Fake Movie 5</td>
-            <td>99% </td>
-          </tr>
-          <tr>
-            <td>Fake Movie 6 </td>
-            <td>82% </td>
-          </tr>";
-    }
 ?>
 
 <!doctype html>
@@ -55,7 +27,6 @@
         <title>Search Prediction</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
-        
         <style>
             input[type=text] {
                 width: 130px;
@@ -66,11 +37,9 @@
                 padding: 10px 15px 10px 25px;
                 transition: width 0.4s ease-in-out;
             }
-            
             input[type=text]:focus {
                 width: 100%;
             }
-            
         </style>
     </head>
     <body>
