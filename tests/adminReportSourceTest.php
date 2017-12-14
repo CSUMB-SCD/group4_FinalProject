@@ -6,7 +6,7 @@ function test_numUser()
 {
     //should return a base number
     //currently have 3 admin and 2 user
-    $this->assertCount(0, numUser());
+    assertCount(0, numUser());
 }
 
 ?>
