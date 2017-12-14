@@ -7,19 +7,24 @@
      
     $dbConn = getDBConnection(); 
      
-    if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
+    if(!isset($_SESSION["user"])) {  //Check whether anyone is logged in
         $_SESSION["name"] = "Guest";
+        
     }
-    
+    if(!isset($_SESSION["userID"]))
+        $_SESSION["userID"] = 36;
+        
+        
     if(isset($_POST['logout'])){
         session_destroy();
         header("Location: index.php");
     }
     
-    if(isset($_POST['login'])){
-        //echo "goMain <br>";
-        goMain();
-    }
+    //if(isset($_POST['login'])){
+    //     //echo "goMain <br>";
+    //     //goMain();
+    //     header("Location: index.php");
+    // }
 ?>
 
 <!doctype html>
@@ -58,25 +63,32 @@
                     </tr>
                 </table>
             </div>
+            <div id="rating" style="visibility: hidden"></div>
         </div>
         <?php   include 'inc/footer.php';    ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
 <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="js/callAPI.js"></script>
+        <script src="js/API.js"></script>
+
         <?php //print_r($_POST);
-            if( $_POST['director'] != ''){
-                addMoviePerson($_POST['director'], 1);
+            if(isset($_SESSION["user"])){
+                if( $_POST['director'] != ''){
+                    addMoviePerson($_POST['director'], 1);
+                }
+                if( $_POST['actorOne'] != ''){
+                    addMoviePerson($_POST['actorOne'], 2);
+                }
+                if( $_POST['actorTwo'] != ''){
+                    addMoviePerson($_POST['actorTwo'], 2);
+                }
+                if( $_POST['movieTitle'] !=""){
+                    addMovieSearch($_POST['movieTitle'],$_POST['movieDate'] );
+                }
+                echo '<script src="js/DB.js"></script>';
             }
-            if( $_POST['actorOne'] != ''){
-                addMoviePerson($_POST['actorOne'], 2);
-            }
-            if( $_POST['actorTwo'] != ''){
-                addMoviePerson($_POST['actorTwo'], 2);
-            }
-            if( $_POST['movieTitle'] !=""){
-                addMovieSearch($_POST['movieTitle'],$_POST['movieDate'] );
-            }
+            
+            
         ?>
     </body>
 </html>
