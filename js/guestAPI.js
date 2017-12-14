@@ -6,12 +6,7 @@ var rating ="";//literal
 var person = "";
 var count = 0;
 var ratingSum = 0;
-var userID = "<?php echo $_SESSION['userID']; ?>";
-var actor1ID = "<?php echo $_SESSION['actor1']; ?>";
-var actor2ID = "<?php echo $_SESSION['actor2']; ?>";
-var directorID = "<?php echo $_SESSION['directorID']; ?>";
-var movieID = "<?php echo $_SESSION['movieID']; ?>";
-console.log(movieID);
+
 
 //var myAPI = process.env.SOME_VAR;
 //could store these in a database and call the db.
@@ -51,9 +46,6 @@ else
     document.getElementById('overall').innerHTML = ratingSum;
     document.getElementById("overall").style.color = "#f00";
 }
-alert(ratingSum);
-alert(userID);
-alert(actor1ID,actor2ID,directorID,movieID);
 addPrediction();
 function getData(person){
     $.ajax({
@@ -76,32 +68,4 @@ function getData(person){
         complete: function(data, status) { //optional, used for debugging purposes
         }
     }); //END AJAX
-}
-function addPrediction(){
-    $.ajax({
-            type: "GET",
-            url:"../php/newPredictions.php",
-            data: { "rating":ratingSum},
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert('An error occurred... Look at the console (F12 or Ctrl+Shift+I, Console tab) for more information!');
-
-                console.log('jqXHR:');
-                console.log(jqXHR);
-                console.log('textStatus:');
-                console.log(textStatus);
-                console.log('errorThrown:');
-                console.log(errorThrown);
-            },
-            success: function( data, status ) {
-                if( !data ) {//if (data == false)
-                    $("#username").css("backgroundColor","");
-                    $("#usernameError").css("color", "blue").append("<br>  Username available!");
-                }else{
-                    alert()
-            }
-            },
-            complete: function(data,status) { //optional, used for debugging purposes
-            alert(status);
-            }
-        });//AJAX
 }

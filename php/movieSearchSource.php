@@ -106,12 +106,12 @@ function getMovieID($name,$date){
             and dateSearch = :date";
     
     $nPara = array();
-    $nPara[':name'] = $person;
+    $nPara[':name'] = $name;
     $nPara[':date'] = $date;
     $statement = $dbConn->prepare($sql);
     $statement->execute($nPara);
     $record = $statement->fetch(PDO::FETCH_ASSOC);
-//alert('increase search count');    
+    
     return $record['movieID'];
 }
 function getUserID($person, $user){
@@ -234,7 +234,7 @@ function  updateMovie($title,$date){
     
     
     $_SESSION['movieID'] = getMovieID($title,$date);
-//alert('update movie searchCount');
+    
 }
 
 function addMovieSearch($title, $date){

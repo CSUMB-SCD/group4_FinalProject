@@ -1,5 +1,0 @@
-[14-Dec-2017 01:42:28 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'movieID' cannot be null' in /home/ubuntu/workspace/php/newPredictions.php:35
-Stack trace:
-#0 /home/ubuntu/workspace/php/newPredictions.php(35): PDOStatement->execute(Array)
-#1 {main}
-  thrown in /home/ubuntu/workspace/php/newPredictions.php on line 35

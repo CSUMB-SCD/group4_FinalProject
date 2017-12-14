@@ -24,14 +24,6 @@
     $nPara[':mID'] = $_SESSION['movieID'];
     $nPara[':r'] = $_GET['rating'];
     
-    // $nPara[':uID'] = $_GET['uID'];
-    // $nPara[':aID'] = $_GET['a1ID'];
-    // $nPara[':asID'] = 15;//$_GET['a2ID'];
-    // $nPara[':dID'] = $_GET['dID'];
-    // $nPara[':mID'] = $_GET['mID'];
-    // $nPara[':r'] = $_GET['rating'];
-
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($nPara);
-//alert('insert complete');
 ?>
