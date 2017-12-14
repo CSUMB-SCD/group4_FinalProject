@@ -1,4 +1,4 @@
-var ratingSum = document.getElementById('rating').innerHTML;
+var ratingSum = document.getElementById('overall').innerHTML;
 alert(ratingSum);
 
 $.ajax({
