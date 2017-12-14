@@ -1,6 +1,3 @@
-var ratingSum = document.getElementById('overall').innerHTML;
-alert(ratingSum);
-
 $.ajax({
     type: "GET",
     url:"../php/newPredictions.php",
@@ -8,3 +5,6 @@ $.ajax({
     success: function( data, status ) {
     }
 });//AJAX
+
+var ratingSum = document.getElementById('overall').innerHTML;
+//alert(ratingSum);
