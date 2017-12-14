@@ -6,8 +6,8 @@ jobs:
        - image: circleci/php:7.1-node-browsers
      steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+      # restore_cache:
+      #   key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: PHPUnit setup
           command: |
@@ -16,10 +16,10 @@ jobs:
             sudo mv phpunit.phar /usr/local/bin/phpunit
             phpunit --version
             
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
+      # save_cache:
+      #   key: dependency-cache-{{ checksum "package.json" }}
+      #   paths:
+      #     - ./node_modules
      #-run:
      #   name: Run Tests
      #   command: |
