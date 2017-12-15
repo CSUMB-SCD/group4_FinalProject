@@ -8,6 +8,9 @@ final class adminReportTest extends TestCase
     {
         //should return a base number
         //currently have 3 admin and 2 user
+        $mock = $this->getMockBuilder('\adminReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
         $this->assertCount(5, adminReport::numUser());
     }
 }//EOF
