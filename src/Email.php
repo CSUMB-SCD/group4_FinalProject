@@ -40,7 +40,13 @@ final class Email
     
     //unit test 1
     public function alert($msg) {
-        echo "<script type='text/javascript'>alert('$msg');</script>";
+      //  if($msg != null){
+         echo "<script type='text/javascript'>alert('$msg');</script>";
+       //     return true;
+      // } else {
+      //     echo "<script type='text/javascript'>alert('$msg');</script>";
+      //     return false;
+      // }
     }
     
 }//EOF

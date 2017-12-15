@@ -31,11 +31,11 @@ final class EmailTest extends TestCase
         );
     }
     
-    public function testCanBeUsedAsString()
+    public function testIsNotNull()
     {
-        $this->assertEquals(
-            'user@example.com',
-            Email::fromString('user@example.com')
+        $this->isNull(
+            'myMessage',
+            Email::alert($msg)
         );
     }
     
