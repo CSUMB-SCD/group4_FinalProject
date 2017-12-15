@@ -101,14 +101,5 @@ final class adminReport
         $record = $statement->fetch(PDO::FETCH_ASSOC);
         return $record;
     }
-    
-    public function getUserInfo($userID){
-        global $dbConn;
-        $sql = "SELECT * FROM user WHERE userID = $userID"; 
-        $statement = $dbConn -> prepare ($sql);
-        $statement -> execute();
-        $record = $statement->fetch(PDO::FETCH_ASSOC);
-        return $record;
-    }
 }
 ?>
