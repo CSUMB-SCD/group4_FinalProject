@@ -24,7 +24,8 @@ jobs:
           name: Run Tests
           command: |
             phpunit --bootstrap src/Email.php tests/EmailTest
+            phpunit --bootstrap src/adminReportSource.php tests/adminReportTest
      branches:
       only:
-        - unit_tests
+        - unit_test
         - master
