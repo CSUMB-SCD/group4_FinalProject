@@ -1,9 +1,9 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 
-//final class adminReport
-//{
+final class adminReport
+{
     
-     function preExeFetSQL($sql){
+    public function preExeFetSQL($sql){
         global $dbConn;
         
         $statement = $dbConn -> prepare ($sql);
@@ -12,21 +12,21 @@
         return $record;
     }
     
-     function numUser(){
+    public function numUser(){
         $sql = "SELECT  count(*)
                 FROM    user
                 WHERE   admin = 0";
         return preExeFetSQL($sql);
     }
     
-     function numAdmin(){
+    public function numAdmin(){
         $sql = "SELECT  count(*)
                 FROM    user
                 WHERE   admin = 1";
         return preExeFetSQL($sql);
     }    
         
-     function mostUser(){
+    public function mostUser(){
         $sql = "SELECT  username
                 FROM    user
                 WHERE   admin = 0
@@ -36,7 +36,7 @@
         return preExeFetSQL($sql);
     }   
         
-     function mostAdmin(){
+    public function mostAdmin(){
         $sql = "SELECT  username
                 FROM    user
                 WHERE   admin = 1
@@ -46,7 +46,7 @@
         return preExeFetSQL($sql);
     }    
        
-     function mostDir(){
+    public function mostDir(){
         $sql = "SELECT  name
                 FROM    movie_people
                 WHERE   roleID = 1
@@ -56,7 +56,7 @@
         return preExeFetSQL($sql);
     }    
         
-     function mostAct(){
+    public function mostAct(){
         $sql = "SELECT  name
                 FROM    movie_people
                 WHERE   roleID = 2
@@ -66,12 +66,12 @@
         return preExeFetSQL($sql);
     }    
     
-     function mostMovie(){
+    public function mostMovie(){
         $sql = "SELECT  movieTitle
                 FROM    movie_search
                 ORDER BY searchCount 
                 DESC LIMIT 1";
         return preExeFetSQL($sql);
     }
-//}
+}
 ?>
