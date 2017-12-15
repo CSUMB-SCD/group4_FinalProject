@@ -30,6 +30,17 @@ final class EmailTest extends TestCase
             Email::fromString('user@example.com')
         );
     }
-}
+    
+    public function testCanBeUsedAsString()
+    {
+        $this->assertEquals(
+            'user@example.com',
+            Email::fromString('user@example.com')
+        );
+    }
+    
+    
+    
+}//EOF
 
 ?>

@@ -4,6 +4,10 @@
 final class Email
 {
     private $email;
+    
+    private $msg;
+    
+    
 
     private function __construct($email)
     {
@@ -33,5 +37,12 @@ final class Email
             );
         }
     }
-}
-    ?>
+    
+    //unit test 1
+    public function alert($msg) {
+        echo "<script type='text/javascript'>alert('$msg');</script>";
+    }
+    
+}//EOF
+
+?>
