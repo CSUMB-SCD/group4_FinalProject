@@ -60,6 +60,15 @@ final class adminReportTest extends TestCase
         ->getMock();
         $this->assertEquals('reeeeee', adminReport::mostMovie());
     }
+    
+    
+    function test_checks_if_it_went_to_the_right_table(){
+        $this->arrayHasKey("movieTitle", dataBaseReport::getInfo("movie_search"));
+    }
+    
+    function test_get_function(){
+        $this->$this->assertCount(4, get("user","name"));
+    }
 }//EOF
 
 ?>
