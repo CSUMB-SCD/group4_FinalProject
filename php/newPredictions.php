@@ -1,10 +1,9 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
-    session_start();
-    
+
     include '../inc/dbConnection.php';
-    
+    session_start();
     $dbConn = getDBConnection();
-//alert("no record found");
+
     $sql = "INSERT INTO my_prediction (
             userID,  
             actor1ID,
@@ -18,6 +17,7 @@
         )";
         
     $nPara = array();        
+
     $nPara[':uID'] = $_SESSION['userID'];
     $nPara[':aID'] = $_SESSION['actor1'];
     $nPara[':asID'] = $_SESSION['actor2'];
