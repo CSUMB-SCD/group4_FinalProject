@@ -2,7 +2,7 @@
 use PHPUnit\Framework\TestCase;
 final class UnitTestingReportTest extends TestCase
 {
-    function test_numUserr_to_see_how_many_users_have_signed_up(){
+    function test_numUser_to_see_how_many_users_have_signed_up(){
         //should return a base number
         //currently have 3 admin and 2 user
         $mock = $this->getMockBuilder('\UnitTestingReport')
