@@ -3,24 +3,28 @@ jobs:
    build:
      working_directory: ~/group4_FinalProject
      docker:
-       - image: circleci/node:4.8.2
+       - image: circleci/php:5.6-node-browsers
      steps:
       - checkout
+      # restore_cache:
+      #   key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@3.10.10'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: install-npm-wee
-          command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - run:
-          name: test
-          command: './node_modules/.bin/mocha'
+          name: PHPUnit setup
+          command: |
+            wget https://phar.phpunit.de/phpunit-5.7.phar
+            chmod +x phpunit-5.7.phar
+            sudo mv phpunit-5.7.phar /usr/local/bin/phpunit
+            phpunit --version
+            
+      # save_cache:
+      #   key: dependency-cache-{{ checksum "package.json" }}
+      #   paths:
+      #     - ./node_modules
+     #-run:
+     #   name: Run Tests
+     #   command: |
+     #     phpunit --bootstrap src/Email.php tests/EmailTest
      branches:
       only:
-        - unit_tests
+        - unit_test
+        - master

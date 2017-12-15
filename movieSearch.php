@@ -9,7 +9,6 @@
     if(!isset($_SESSION["user"])) {  //Check whether the admin has logged in
         $_SESSION["name"] = "Guest";
     }
-
     if(isset($_POST['logout'])){
         session_destroy();
         header("Location: index.php");
@@ -65,7 +64,10 @@
                     </table>
                 </form>
         </div>
-        <?php   include 'inc/footer.php';    ?>
+        <?php   
+            include 'inc/footer.php';
+            $_SESSION['peeps'] = 0;
+        ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' 
         </script>
     </body>

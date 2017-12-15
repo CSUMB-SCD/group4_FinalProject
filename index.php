@@ -38,6 +38,7 @@
                     <tr><td class = "tdIndex">
                         <form method="POST" class="" name="loginForm">
                             <?php if( !isset($_SESSION["user"]) ){
+                                
                                     echo '<label><b>Username</b></label>';
                                     echo '<input type="text" placeholder="Enter Username" name="username" required class="ittAD">';
                                     echo '<label><b>Password</b></label>';
@@ -72,7 +73,7 @@
                             
                             <input type="submit" name= 'reg' id ="register" value="Register" class="btnAD btn sub" />
                             <?php
-                                if(isset($_POST['reg'])){// && !isset($_SESSION["user"]) ){
+                                if( isset($_POST['reg']) ){
                                     addUser();
                                     echo "<h3 id='addUser'>Register Complete.</h3>";
                                 }
