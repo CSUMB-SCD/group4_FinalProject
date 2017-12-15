@@ -1,6 +1,7 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 
-final class adminReport
+//final class adminReport
+class adminReport
 {
     
     public function preExeFetSQL($sql){
