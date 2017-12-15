@@ -1,5 +1,5 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
-final class usernameTest {
+final class usernameClass {
     public function username() {
         header('Access-Control-Allow-Origin: *');
         include '../inc/dbConnection.php';
