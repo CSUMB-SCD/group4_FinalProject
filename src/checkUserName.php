@@ -1,13 +1,13 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 final class usernameClass {
-    public function username() {
+    public function username($username) {
         header('Access-Control-Allow-Origin: *');
         include '../inc/dbConnection.php';
         $dbConn = getDBConnection();
         
             $sql = "SELECT username 
                     FROM user
-                    WHERE username = :username";
+                    WHERE username = " . $username;
         
             $statement = $dbConn->prepare($sql);
             $npara = array();
