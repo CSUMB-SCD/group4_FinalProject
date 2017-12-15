@@ -1,7 +1,8 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 
-    include '../inc/dbConnection.php';
     session_start();
+    
+    include '../inc/dbConnection.php';
     $dbConn = getDBConnection();
 
     $sql = "INSERT INTO my_prediction (
