@@ -2,8 +2,7 @@
 
 
 use PHPUnit\Framework\TestCase;
-//final class adminReportTest extends TestCase
-class adminReportTest extends TestCase
+final class adminReportTest extends TestCase
 {
     function test_numUser()
     {
