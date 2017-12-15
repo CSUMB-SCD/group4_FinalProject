@@ -28,6 +28,38 @@ final class adminReportTest extends TestCase
         ->getMock();
         $this->assertEquals('Jessie', adminReport::mostUser());
     }
+    function test_mostAdmin() {
+        //returns admin username
+        //returns username 
+        $mock = $this->getMockBuilder('\adminReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
+        $this->assertEquals('admin', adminReport::mostAdmin());
+    }
+    function test_mostDir() {
+        //returns admin username
+        //returns username 
+        $mock = $this->getMockBuilder('\adminReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
+        $this->assertEquals('tim burton', adminReport::mostDir());
+    }
+    function test_mostAct() {
+        //returns admin username
+        //returns username 
+        $mock = $this->getMockBuilder('\adminReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
+        $this->assertEquals('harrison ford', adminReport::mostAct());
+    }
+    function test_mostMovie() {
+        //returns admin username
+        //returns username 
+        $mock = $this->getMockBuilder('\adminReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
+        $this->assertEquals('reeeeee', adminReport::mostMovie());
+    }
 }//EOF
 
 ?>
