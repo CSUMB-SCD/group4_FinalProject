@@ -1,7 +1,6 @@
 <?php
-
-
 use PHPUnit\Framework\TestCase;
+include "../src/adminReportSource.php";
 final class adminReportTest extends TestCase
 {
     function test_numUser()
@@ -22,7 +21,6 @@ final class adminReportTest extends TestCase
         ->getMock();
         $this->assertCount(3, adminReport::numAdmin());
     }
-    
     function test_mostUser() {
         //returns username 
         $mock = $this->getMockBuilder('\adminReport')

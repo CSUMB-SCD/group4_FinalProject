@@ -1,9 +1,9 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 
-final class adminReport
-{
+//final class adminReport
+//{
     
-    public function preExeFetSQL($sql){
+     function preExeFetSQL($sql){
         global $dbConn;
         
         $statement = $dbConn -> prepare ($sql);
@@ -12,21 +12,21 @@ final class adminReport
         return $record;
     }
     
-    public function numUser(){
+     function numUser(){
         $sql = "SELECT  count(*)
                 FROM    user
                 WHERE   admin = 0";
         return preExeFetSQL($sql);
     }
     
-    public function numAdmin(){
+     function numAdmin(){
         $sql = "SELECT  count(*)
                 FROM    user
                 WHERE   admin = 1";
         return preExeFetSQL($sql);
     }    
         
-    public function mostUser(){
+     function mostUser(){
         $sql = "SELECT  username
                 FROM    user
                 WHERE   admin = 0
@@ -36,7 +36,7 @@ final class adminReport
         return preExeFetSQL($sql);
     }   
         
-    public function mostAdmin(){
+     function mostAdmin(){
         $sql = "SELECT  username
                 FROM    user
                 WHERE   admin = 1
@@ -46,7 +46,7 @@ final class adminReport
         return preExeFetSQL($sql);
     }    
        
-    public function mostDir(){
+     function mostDir(){
         $sql = "SELECT  name
                 FROM    movie_people
                 WHERE   roleID = 1
@@ -56,7 +56,7 @@ final class adminReport
         return preExeFetSQL($sql);
     }    
         
-    public function mostAct(){
+     function mostAct(){
         $sql = "SELECT  name
                 FROM    movie_people
                 WHERE   roleID = 2
@@ -66,12 +66,12 @@ final class adminReport
         return preExeFetSQL($sql);
     }    
     
-    public function mostMovie(){
+     function mostMovie(){
         $sql = "SELECT  movieTitle
                 FROM    movie_search
                 ORDER BY searchCount 
                 DESC LIMIT 1";
         return preExeFetSQL($sql);
     }
-}
+//}
 ?>
