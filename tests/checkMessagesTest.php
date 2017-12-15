@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-final class adminReportTest extends TestCase
+final class checkMessagesTest extends TestCase
 {
     
     
