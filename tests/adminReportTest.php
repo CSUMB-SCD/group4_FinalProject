@@ -71,18 +71,32 @@ final class UnitTestingReportTest extends TestCase
         $this->arrayHasKey("movieTitle", UnitTestingReport::getInfo("movie_search"));
     }
     
-    function test_get_function(){
+    function test_get_function_to_see_if_how_many_users_are_there(){
         $mock = $this->getMockBuilder('\UnitTestingReport')
         ->setMethods(array('preExeFetNOPARA'))
         ->getMock();
         $this->$this->assertCount(4, UnitTestingReport::get("user","name"));
     }
     
-    function test_getUserInfo(){
+    function test_getUserInfo_from_the_table(){
         $mock = $this->getMockBuilder('\UnitTestingReport')
         ->getMock();
         $this->$this->assertCount(8, UnitTestingReport::getUserInfo(17));
     }
+    
+    
+    function test_to_see_if_we_get_the_same_table(){
+        $sql = "SELECT  username
+        FROM    user
+        WHERE   admin = 0
+        GROUP BY username
+        ORDER BY loginCount 
+        DESC LIMIT 1";
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->getMock();
+        $this->$this->assertEquals(UnitTestingReport::preExeFetSQL($sql), UnitTestingReport::preExeFetNOPARA($sql));
+    }
+    
 }//EOF
 
 ?>
