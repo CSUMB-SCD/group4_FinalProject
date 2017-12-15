@@ -8,7 +8,7 @@ final class adminReportTest extends TestCase
     {
         //should return a base number
         //currently have 3 admin and 2 user
-        $this->assertCount(5, numUser());
+        $this->assertCount(5, adminReport::numUser());
     }
 }//EOF
 
