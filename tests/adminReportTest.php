@@ -1,83 +1,87 @@
 <?php
 use PHPUnit\Framework\TestCase;
-final class adminReportTest extends TestCase
+final class UnitTestingReportTest extends TestCase
 {
-    function test_numUser()
-    {
+    function test_numUserr_to_see_how_many_users_have_signed_up(){
         //should return a base number
         //currently have 3 admin and 2 user
-        $mock = $this->getMockBuilder('\adminReport')
+        $mock = $this->getMockBuilder('\UnitTestingReport')
         ->setMethods(array('preExeFetSQL'))
         ->getMock();
-        $this->assertCount(2, adminReport::numUser());
+        $this->assertCount(2, UnitTestingReport::numUser());
     }
-    function test_numAdmin()
-    {
+    
+    function test_numAdmin_to_see_if_will_return_the_3_admin_users(){
         //should return a base number
         //currently have 3 admin and 2 user
-        $mock = $this->getMockBuilder('\adminReport')
+        $mock = $this->getMockBuilder('\UnitTestingReport')
         ->setMethods(array('preExeFetSQL'))
         ->getMock();
-        $this->assertCount(3, adminReport::numAdmin());
+        $this->assertCount(3, UnitTestingReport::numAdmin());
     }
     
-    function test_mostUser() {
+    function test_mostUser_to_see_which_user_has_logged_in_the_most() {
         //returns username 
-        $mock = $this->getMockBuilder('\adminReport')
+        $mock = $this->getMockBuilder('\UnitTestingReport')
         ->setMethods(array('preExeFetSQL'))
         ->getMock();
-        $this->assertEquals('Jessie', adminReport::mostUser());
-    }
-    function test_mostAdmin() {
-        //returns admin username
-        //returns username 
-        $mock = $this->getMockBuilder('\adminReport')
-        ->setMethods(array('preExeFetSQL'))
-        ->getMock();
-        $this->assertEquals('admin', adminReport::mostAdmin());
-    }
-    function test_mostDir() {
-        //returns admin username
-        //returns username 
-        $mock = $this->getMockBuilder('\adminReport')
-        ->setMethods(array('preExeFetSQL'))
-        ->getMock();
-        $this->assertEquals('tim burton', adminReport::mostDir());
-    }
-    function test_mostAct() {
-        //returns admin username
-        //returns username 
-        $mock = $this->getMockBuilder('\adminReport')
-        ->setMethods(array('preExeFetSQL'))
-        ->getMock();
-        $this->assertEquals('harrison ford', adminReport::mostAct());
-    }
-    function test_mostMovie() {
-        //returns admin username
-        //returns username 
-        $mock = $this->getMockBuilder('\adminReport')
-        ->setMethods(array('preExeFetSQL'))
-        ->getMock();
-        $this->assertEquals('reeeeee', adminReport::mostMovie());
+        $this->assertEquals('Jessie', UnitTestingReport::mostUser());
     }
     
+    function test_mostAdminr_to_see_which_admin_has_logged_in_the_most() {
+        //returns admin username
+        //returns username 
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
+        $this->assertEquals('admin', UnitTestingReport::mostAdmin());
+    }
     
+    function test_mostDir_to_see_which_director_was_searched_up_the_most() {
+        //returns admin username
+        //returns username 
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
+        $this->assertEquals('tim burton', UnitTestingReport::mostDir());
+    }
+    
+    function test_mostActr_to_see_which_actor_was_searched_up_the_most() {
+        //returns admin username
+        //returns username 
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
+        $this->assertEquals('harrison ford', UnitTestingReport::mostAct());
+    }
+    
+    function test_mostMovier_to_see_which_movie_was_searched_up_the_most() {
+        //returns admin username
+        //returns username 
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
+        $this->assertEquals('reeeeee', UnitTestingReport::mostMovie());
+    }
+
     function test_checks_if_it_went_to_the_right_table(){
-        $mock = $this->getMockBuilder('\adminReport')
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->setMethods(array('preExeFetNOPARA'))
         ->getMock();
-        $this->arrayHasKey("movieTitle", adminReport::getInfo("movie_search"));
+        $this->arrayHasKey("movieTitle", UnitTestingReport::getInfo("movie_search"));
     }
     
     function test_get_function(){
-        $mock = $this->getMockBuilder('\adminReport')
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->setMethods(array('preExeFetNOPARA'))
         ->getMock();
-        $this->$this->assertCount(4, adminReport::get("user","name"));
+        $this->$this->assertCount(4, UnitTestingReport::get("user","name"));
     }
     
     function test_getUserInfo(){
-        $mock = $this->getMockBuilder('\adminReport')
+        $mock = $this->getMockBuilder('\UnitTestingReport')
         ->getMock();
-        $this->$this->assertCount(4, adminReport::getUserInfo(17));
+        $this->$this->assertCount(8, UnitTestingReport::getUserInfo(17));
     }
 }//EOF
 
