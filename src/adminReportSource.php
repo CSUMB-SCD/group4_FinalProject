@@ -12,6 +12,15 @@ final class adminReport
         return $record;
     }
     
+    public function preExeFetNOPARA($sql){
+        global $dbConn;
+        
+        $stmt = $dbConn -> prepare ($sql);
+        $stmt -> execute();
+        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $records;
+    }
+    
     public function numUser(){
         $sql = "SELECT  count(*)
                 FROM    user
@@ -72,6 +81,25 @@ final class adminReport
                 ORDER BY searchCount 
                 DESC LIMIT 1";
         return preExeFetSQL($sql);
+    }
+    
+    public function getInfo( $table ) {
+        $sql = "SELECT * FROM ".$table;
+        return preExeFetNOPARA($sql);
+    }
+
+    public function get($table, $column){
+        $sql = "SELECT DISTINCT ".$column." FROM ".$table;
+        return preExeFetNOPARA($sql);
+    }
+
+    public function getUserInfo($userID){
+        global $dbConn;
+        $sql = "SELECT * FROM user WHERE userID = $userID";
+        $statement = $dbConn -> prepare ($sql);
+        $statement -> execute();
+        $record = $statement->fetch(PDO::FETCH_ASSOC);
+        return $record;
     }
 }
 ?>

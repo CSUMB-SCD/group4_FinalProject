@@ -63,11 +63,15 @@ final class adminReportTest extends TestCase
     
     
     function test_checks_if_it_went_to_the_right_table(){
-        $this->arrayHasKey("movieTitle", dataBaseReport::getInfo("movie_search"));
+        $mock = $this->getMockBuilder('\adminReport')
+        ->getMock();
+        $this->arrayHasKey("movieTitle", adminReport::getInfo("movie_search"));
     }
     
     function test_get_function(){
-        $this->$this->assertCount(4, get("user","name"));
+        $mock = $this->getMockBuilder('\adminReport')
+        ->getMock();
+        $this->$this->assertCount(4, adminReport::get("user","name"));
     }
 }//EOF
 
