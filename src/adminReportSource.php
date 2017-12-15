@@ -1,6 +1,6 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 
-class UnitTestingReport
+final class UnitTestingReport
 {
     
     public function preExeFetSQL($sql){

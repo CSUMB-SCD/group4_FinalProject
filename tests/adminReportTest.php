@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-class UnitTestingReportTest extends TestCase
+final class UnitTestingReportTest extends TestCase
 {
     function test_numUser_to_see_how_many_users_have_signed_up(){
         //should return a base number
