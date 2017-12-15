@@ -25,7 +25,6 @@ jobs:
           command: |
             phpunit --bootstrap src/Email.php tests/EmailTest
             phpunit --bootstrap src/adminReportSource.php tests/adminReportTest
-            phpunit --bootstrap src/checkUserName.php tests/checkUserNameTest
      branches:
       only:
         - unit_test
