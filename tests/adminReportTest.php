@@ -73,6 +73,12 @@ final class adminReportTest extends TestCase
         ->getMock();
         $this->$this->assertCount(4, adminReport::get("user","name"));
     }
+    
+    function test_getUserInfo(){
+        $mock = $this->getMockBuilder('\adminReport')
+        ->getMock();
+        $this->$this->assertCount(8, adminReport::getUserInfo(17));
+    }
 }//EOF
 
 ?>
