@@ -2,7 +2,8 @@
 
 
 use PHPUnit\Framework\TestCase;
-final class adminReportTest extends TestCase
+//final class adminReportTest extends TestCase
+class adminReportTest extends TestCase
 {
     function test_numUser()
     {
@@ -11,7 +12,24 @@ final class adminReportTest extends TestCase
         $mock = $this->getMockBuilder('\adminReport')
         ->setMethods(array('preExeFetSQL'))
         ->getMock();
-        $this->assertCount(5, adminReport::numUser());
+        $this->assertCount(2, adminReport::numUser());
+    }
+    function test_numAdmin()
+    {
+        //should return a base number
+        //currently have 3 admin and 2 user
+        $mock = $this->getMockBuilder('\adminReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
+        $this->assertCount(3, adminReport::numAdmin());
+    }
+    
+    function test_mostUser() {
+        //returns username 
+        $mock = $this->getMockBuilder('\adminReport')
+        ->setMethods(array('preExeFetSQL'))
+        ->getMock();
+        $this->assertEquals('Jessie', adminReport::mostUser());
     }
 }//EOF
 

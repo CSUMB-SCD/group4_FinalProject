@@ -31,7 +31,6 @@ final class EmailTest extends TestCase
         );
     }
     
-
     public function testIsNotNull()
     {
         $this->isNull(
