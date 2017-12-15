@@ -12,7 +12,7 @@ final class adminReportTest extends TestCase
         );
     }
     
-    public function CensorshipTestIsNotNull()
+    public function CensorshipTestassertEquals()
     {
         $this->assertEquals(
             'apple',
