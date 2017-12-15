@@ -1,7 +1,7 @@
 <?php   //USE NAMEDPARAMETERS TO PREVENT SQL INJECTION
 
     global $dbConn;
-    //alert("no record found");
+//alert("no record found");
     $sql = "INSERT INTO my_prediction (
             userID,  
             actorID,
@@ -24,7 +24,7 @@
     $nPara[':dS'] = $_POST['dS'];
     $nPara[':r'] = $_POST['r'];
 //alert('named para go');
-        $stmt = $dbConn->prepare($sql);
-        $stmt->execute($nPara);
+    $stmt = $dbConn->prepare($sql);
+    $stmt->execute($nPara);
 //alert('insert complete');
 ?>
