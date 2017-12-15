@@ -26,5 +26,5 @@ jobs:
             phpunit --bootstrap php/adminReportSource.php tests/adminReportSourceTest
      branches:
       only:
-        - unit_tests
+        - unit_test
         - master

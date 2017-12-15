@@ -57,13 +57,12 @@
                     </tr>
                 </table>
             </div>
-            <div id="rating" style="visibility: hidden"></div>
         </div>
         <?php   include 'inc/footer.php';    ?>
         <script>document.getElementById('welcome').innerHTML += '<?php echo $_SESSION["name"] ?>' </script>
 <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="js/API.js"></script>
+        <script src="js/callAPI.js"></script>
 
         <?php //print_r($_POST);
 
