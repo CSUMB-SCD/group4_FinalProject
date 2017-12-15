@@ -20,10 +20,11 @@ jobs:
       #   key: dependency-cache-{{ checksum "package.json" }}
       #   paths:
       #     - ./node_modules
-     #-run:
-     #   name: Run Tests
-     #   command: |
-     #     phpunit --bootstrap src/Email.php tests/EmailTest
+      - run:
+          name: Run Tests
+          command: |
+            phpunit --bootstrap src/Email.php tests/EmailTest
+            phpunit --bootstrap src/adminReportSource.php tests/adminReportTest
      branches:
       only:
         - unit_test
