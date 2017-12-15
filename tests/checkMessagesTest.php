@@ -4,7 +4,7 @@ final class checkMessagesTest extends TestCase
 {
     
     
-    public function CensorshipTestIsNotNull()
+    function CensorshipTestIsNotNull()
     {
         $mock = $this->getMockBuilder('\checkMessage')
         ->getMock();
@@ -14,7 +14,7 @@ final class checkMessagesTest extends TestCase
         );
     }
     
-    public function CensorshipTestassertEquals()
+    function CensorshipTestassertEquals()
     {
         $mock = $this->getMockBuilder('\checkMessage')
         ->getMock();
