@@ -67,9 +67,6 @@ function goMain(){
 }
 
 //https://stackoverflow.com/questions/13851528/how-to-pop-an-alert-message-box-using-php
-function alert($msg) {
-    echo "<script type='text/javascript'>alert('$msg');</script>";
-}
 
 function loginCount($userID){
     global $dbConn;

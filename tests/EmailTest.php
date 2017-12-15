@@ -31,14 +31,23 @@ final class EmailTest extends TestCase
         );
     }
     
-
-    public function testIsNotNull()
+//==================
+    public function alertTestIsNotNull()
     {
         $this->isNull(
             'myMessage',
             Email::alert($msg)
         );
     }
+    
+    public function alertTestIsZero()
+    {
+        $msg = 'alert';
+        $this->assertNotEmpty([ Email::alert($msg) ]);
+    }
+    
+    
+    
     
 
 }//EOF
