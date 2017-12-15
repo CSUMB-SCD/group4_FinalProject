@@ -7,7 +7,7 @@ final class adminReportTest extends TestCase
     {
         //should return a base number
         //currently have 3 admin and 2 user
-        $mock = $this->getMockBuilder('\adminReport')
+        $mock = $this->getMockBuilder('\ ')
         ->setMethods(array('preExeFetSQL'))
         ->getMock();
         $this->assertCount(2, numUser());
@@ -16,14 +16,14 @@ final class adminReportTest extends TestCase
     {
         //should return a base number
         //currently have 3 admin and 2 user
-        $mock = $this->getMockBuilder('\adminReport')
+        $mock = $this->getMockBuilder('\ ')
         ->setMethods(array('preExeFetSQL'))
         ->getMock();
         $this->assertCount(3, numAdmin());
     }
     function test_mostUser() {
         //returns username 
-        $mock = $this->getMockBuilder('\adminReport')
+        $mock = $this->getMockBuilder('\ ')
         ->setMethods(array('preExeFetSQL'))
         ->getMock();
         $this->assertEquals('Jessie', mostUser());
