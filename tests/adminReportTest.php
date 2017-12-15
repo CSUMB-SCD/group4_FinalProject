@@ -97,6 +97,36 @@ final class UnitTestingReportTest extends TestCase
         $this->$this->assertEquals(UnitTestingReport::preExeFetSQL($sql), UnitTestingReport::preExeFetNOPARA($sql));
     }
     
+    function test_search_movie_person_by_their_role_and_name(){
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->getMock();
+        $this->$this->assertCount(6, UnitTestingReport::searchMoviePerson("george lucas", 1));
+    }
+    
+    function test_get_the_movie_id_by_the_date_and_name_of_movie(){
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->getMock();
+        $this->$this->assertEquals(14, UnitTestingReport::getMovieID("now you see me", "1212-12-04"));
+    }
+    
+    function test_get_the_user_id_by_their_name_and_username(){
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->getMock();
+        $this->$this->assertEquals(1, UnitTestingReport::getUserID("Vader", "admin2"));
+    }
+    
+    function test_search_movie_person_id_by_their_role_and_name(){
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->getMock();
+        $this->$this->assertCount(12, UnitTestingReport::getPersonID("george lucas", 1));
+    }
+    
+    function test_search_movie_by_their_title(){
+        $mock = $this->getMockBuilder('\UnitTestingReport')
+        ->getMock();
+        $this->$this->assertCount(4, UnitTestingReport::searchMovieSearch("thor"));
+    }
+    
 }//EOF
 
 ?>
