@@ -10,7 +10,7 @@ final class adminReportTest extends TestCase
         $mock = $this->getMockBuilder('\adminReport')
         ->setMethods(array('preExeFetSQL'))
         ->getMock();
-        $this->assertCount(2, adminReport::numUser());
+        $this->assertCount(2, numUser());
     }
     function test_numAdmin()
     {
@@ -19,14 +19,14 @@ final class adminReportTest extends TestCase
         $mock = $this->getMockBuilder('\adminReport')
         ->setMethods(array('preExeFetSQL'))
         ->getMock();
-        $this->assertCount(3, adminReport::numAdmin());
+        $this->assertCount(3, numAdmin());
     }
     function test_mostUser() {
         //returns username 
         $mock = $this->getMockBuilder('\adminReport')
         ->setMethods(array('preExeFetSQL'))
         ->getMock();
-        $this->assertEquals('Jessie', adminReport::mostUser());
+        $this->assertEquals('Jessie', mostUser());
     }
 }//EOF
 
